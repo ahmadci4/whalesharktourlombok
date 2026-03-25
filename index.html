@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO LANJUTAN -->
+    <title>Whale Shark Tour Lombok 2D1N | Editorial Premium Experience</title>
+    <meta name="description" content="Bergabunglah dalam petualangan mewah 2D1N dari Lombok ke Sumbawa. Berenang bersama hiu paus yang megah di Teluk Saleh.">
+    <meta name="keywords" content="whale shark lombok, whale shark sumbawa, swim with whale shark indonesia, lombok tour, saleh bay">
+    
+    <!-- FONT EDITORIAL: Montserrat (Sans) & Playfair Display (Serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- IKON -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- TAILWIND CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ocean: { 900: '#061626', 800: '#112B45', 600: '#2A5C8D', 400: '#528CBE' },
+                        editorial: { bg: '#F9FAFB', accent: '#3b597b' }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    letterSpacing: {
+                        widest: '.25em',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- KUSTOM CSS UNTUK ANIMASI & EFEK AESTHETIC -->
+    <style>
+        body { background-color: #F9FAFB; }
+        
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .glass-nav a, .glass-nav span, .glass-nav i {
+            color: #112B45 !important;
+        }
+
+        /* Efek awan/air halus di latar belakang */
+        .aesthetic-blob {
+            position: absolute;
+            background: radial-gradient(circle, rgba(169, 214, 229, 0.4) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: -1;
+        }
+
+        /* Animasi Muncul Halus */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+    </style>
+</head>
+<body class="text-gray-800 font-sans antialiased overflow-x-hidden">
+
+    <!-- NAVBAR TRANSPARAN -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-4 px-6 md:px-12 bg-transparent text-white">
+        <div class="max-w-7xl mx-auto flex justify-between items-center text-xs tracking-widest uppercase font-medium">
+            <div class="hidden md:flex gap-8">
+                <a href="#about" class="hover:text-ocean-400 transition-colors drop-shadow-md">About</a>
+                <a href="#package" class="hover:text-ocean-400 transition-colors drop-shadow-md">Package</a>
+            </div>
+            
+            <!-- Logo Pribadi -->
+            <div class="flex items-center gap-3 group cursor-pointer absolute left-1/2 transform -translate-x-1/2">
+                <img src="images/whaleshark-logo.jpg" alt="Logo Hiu Paus" class="h-10 md:h-12 w-auto object-contain rounded-full shadow-lg border-2 border-white/20">
+                <span class="font-sans font-bold tracking-[0.3em] hidden sm:block drop-shadow-md">WHALE SHARK</span>
+            </div>
+
+            <div class="hidden md:flex gap-8">
+                <a href="#discover" class="hover:text-ocean-400 transition-colors drop-shadow-md">Discover</a>
+                <a href="#booking" class="hover:text-ocean-400 transition-colors drop-shadow-md">Contact</a>
+            </div>
+
+            <!-- Tombol Menu Mobile -->
+            <button class="md:hidden ml-auto" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i data-lucide="menu" class="w-6 h-6 drop-shadow-md"></i>
+            </button>
+        </div>
+        
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white p-6 flex flex-col gap-4 text-center shadow-lg border-t border-gray-100 text-ocean-900">
+            <a href="#about" class="text-sm tracking-widest uppercase">About</a>
+            <a href="#package" class="text-sm tracking-widest uppercase">Package</a>
+            <a href="#discover" class="text-sm tracking-widest uppercase">Discover</a>
+            <a href="#booking" class="text-sm font-bold tracking-widest uppercase text-ocean-600">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION (Gambar 1) -->
+    <header class="relative h-screen flex flex-col items-center justify-center overflow-hidden">
+        <img src="images/1.png" alt="Berenang dengan Hiu Paus" class="absolute inset-0 w-full h-full object-cover object-center" loading="eager">
+        <div class="absolute inset-0 bg-black/20"></div> <!-- Overlay tipis -->
+        
+        <div class="relative z-10 text-center px-4 mt-16 reveal">
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-6 tracking-wide drop-shadow-lg">
+                SWIM WITH <br>WHALE SHARK?
+            </h1>
+            <p class="text-xs md:text-sm text-white tracking-[0.3em] uppercase max-w-2xl mx-auto font-bold mb-12 drop-shadow-lg">
+                2D1N Adventure from Lombok to Sumbawa
+            </p>
+            
+            <a href="#package" class="inline-flex items-center justify-center w-20 h-20 rounded-full border border-white/70 hover:bg-white/20 transition-all group backdrop-blur-sm shadow-xl">
+                <i data-lucide="play" class="w-8 h-8 text-white ml-1 group-hover:scale-110 transition-transform drop-shadow-md"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- BAGIAN ASIMETRIS (The Journey) -->
+    <section id="package" class="relative py-32 bg-editorial-bg overflow-hidden">
+        <div class="aesthetic-blob w-[600px] h-[600px] top-0 left-[-200px]"></div>
+        <div class="aesthetic-blob w-[800px] h-[800px] bottom-0 right-[-300px]"></div>
+
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 relative">
+                
+                <!-- KOLOM KIRI: Day 1 (Gambar 2) -->
+                <div class="pt-0 md:pt-32 reveal">
+                    <div class="relative">
+                        <div class="absolute -top-4 -left-4 w-24 h-24 bg-white opacity-80 backdrop-blur-md"></div>
+                        <img src="images/2.png" alt="Perjalanan Perahu Lombok Sumbawa" class="w-full aspect-[3/4] md:aspect-[4/3] object-cover shadow-2xl relative z-10 mb-8 rounded-sm">
+                    </div>
+                    
+                    <p class="text-xs tracking-widest text-gray-500 uppercase mb-3">Lombok / Sumbawa</p>
+                    <h2 class="text-4xl font-serif text-editorial-accent mb-6 tracking-wide">THE JOURNEY</h2>
+                    
+                    <div class="text-sm text-gray-600 leading-relaxed space-y-4">
+                        <p><strong>Day 1: Lombok - Labuan Jambu</strong></p>
+                        <p>Perjalanan darat dan laut yang indah melintasi pulau. Kami memulai dari Mataram, menyeberang menggunakan kapal feri dari Pelabuhan Kayangan menuju Poto Tano. Menikmati pemandangan laut yang jernih menuju desa pesisir Labuan Jambu.</p>
+                        <ul class="list-disc pl-5 mt-2 space-y-1 text-gray-500">
+                            <li>08:30 AM – Check-in di Mataram/Senggigi</li>
+                            <li>01:00 PM – Berangkat ke Pelabuhan Kayangan</li>
+                            <li>Sore – Perjalanan darat ke Labuan Jambu</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- KOLOM KANAN: Day 2 (Gambar 3) -->
+                <div class="pb-0 md:pb-32 reveal delay-200 mt-16 md:mt-0">
+                    <div class="md:text-right mb-8">
+                        <p class="text-xs tracking-widest text-gray-500 uppercase mb-3">How about going to</p>
+                        <h2 class="text-4xl md:text-5xl font-serif text-editorial-accent mb-6 tracking-wide">UNDERWATER</h2>
+                        
+                        <div class="text-sm text-gray-600 leading-relaxed space-y-4 md:pl-12">
+                            <p><strong>Day 2: Whale Shark Experience</strong></p>
+                            <p>Keajaiban yang sesungguhnya menanti di pagi buta. Menyelam melintasi perairan jernih Teluk Saleh, bermandikan cahaya mentari pagi, untuk berenang bersama spesies ikan terbesar di lautan di habitat alami mereka.</p>
+                            <ul class="md:list-none space-y-1 text-gray-500">
+                                <li>04:00 AM – Keberangkatan pagi buta</li>
+                                <li>Sunrise – Snorkeling dengan hiu paus</li>
+                                <li>12:00 PM – Kembali ke Lombok</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute -top-10 right-10 w-px h-24 bg-gray-300"></div>
+                        <img src="images/3.png" alt="Menyelam bersama Hiu Paus" class="w-full aspect-[3/4] object-cover shadow-2xl relative z-10 rounded-sm">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- DISCOVER GRID -->
+    <section id="discover" class="py-24 bg-white relative">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-20 reveal">
+                <h2 class="text-5xl md:text-6xl font-serif text-editorial-accent mb-4">Discover</h2>
+                <p class="text-xs tracking-widest text-gray-500 uppercase">choose the experience you want</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Grid 1 (Gambar 4 - Split shot) -->
+                <div class="reveal delay-100">
+                    <img src="images/4.png" alt="Kano Transparan dan Hiu Paus" class="w-full aspect-[4/3] object-cover mb-6 hover:opacity-90 transition-opacity cursor-pointer shadow-md rounded-sm">
+                    <h3 class="text-sm font-bold tracking-widest uppercase mb-3">SALEH BAY • SUMBAWA</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">Rasakan pengalaman magis melihat hiu paus yang sedang makan dari dekat di perairan Teluk Saleh yang belum terjamah.</p>
+                </div>
+                <!-- Grid 2 (Gambar 5 - Sunrise) -->
+                <div class="reveal delay-200">
+                    <img src="images/5.png" alt="Matahari Terbit di Atas Perahu" class="w-full aspect-[4/3] object-cover mb-6 hover:opacity-90 transition-opacity cursor-pointer shadow-md rounded-sm">
+                    <h3 class="text-sm font-bold tracking-widest uppercase mb-3">SUNRISE • BOAT TRIP</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">Mulailah hari Anda dengan ketenangan syahdu matahari terbit dari atas perahu tradisional dengan latar belakang pegunungan.</p>
+                </div>
+                <!-- Grid 3 (Gambar 2 lagi, karena nuansa perjalanannya sangat pas) -->
+                <div class="reveal delay-300">
+                    <img src="images/2.png" alt="Perjalanan Pulau yang Indah" class="w-full aspect-[4/3] object-cover mb-6 hover:opacity-90 transition-opacity cursor-pointer shadow-md rounded-sm">
+                    <h3 class="text-sm font-bold tracking-widest uppercase mb-3">SCENIC • JOURNEY</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">Nikmati pelayaran membelah samudra yang biru jernih, melewati deretan pulau tropis eksotis menuju spot utama.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HARGA & IMPORTANT NOTES -->
+    <section class="py-24 bg-editorial-bg border-t border-gray-100">
+        <div class="max-w-4xl mx-auto px-6">
+            
+            <div class="bg-white p-12 text-center border border-gray-100 shadow-xl reveal relative overflow-hidden rounded-sm">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-yellow-50 rounded-bl-full -z-0"></div>
+                <div class="relative z-10">
+                    <p class="text-xs tracking-widest text-gray-400 uppercase mb-4">All Inclusive Package</p>
+                    <div class="flex items-start justify-center gap-2 mb-6">
+                        <span class="text-2xl text-yellow-600 font-bold mt-2">IDR</span>
+                        <span class="text-6xl md:text-7xl font-serif font-bold text-gray-900 tracking-tight">2.650.000</span>
+                    </div>
+                    <p class="text-sm text-gray-500 mb-8">per orang • kuota terbatas</p>
+                </div>
+            </div>
+
+            <div class="mt-16 grid md:grid-cols-2 gap-8 text-sm text-gray-500 leading-relaxed reveal delay-100">
+                <div>
+                    <h4 class="font-bold text-gray-800 uppercase tracking-widest mb-3 text-xs">Informasi Penting</h4>
+                    <p class="mb-4">Hiu paus adalah hewan liar di habitat alaminya, penampakan tidak dapat dijamin 100%. Tingkat keberhasilan berdasarkan pengalaman di Teluk Saleh adalah ±60%.</p>
+                    <p>Jika tidak melihat hiu paus di hari pertama, kami akan melanjutkan pencarian di hari kedua untuk memaksimalkan peluang Anda.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-800 uppercase tracking-widest mb-3 text-xs">Kebijakan Refund</h4>
+                    <p>Jika setelah dua hari tidak ada penampakan, rombongan akan kembali ke titik penjemputan. Biaya operasional telah dikeluarkan oleh perusahaan, sehingga <strong>kami tidak dapat memberikan refund</strong> karena itinerary dan layanan telah diberikan penuh.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- BOOKING FORM -->
+    <section id="booking" class="py-24 bg-white">
+        <div class="max-w-2xl mx-auto px-6 text-center reveal">
+            <h2 class="text-4xl font-serif text-editorial-accent mb-4">Join The Journey</h2>
+            <p class="text-xs tracking-widest text-gray-500 uppercase mb-12">Isi form untuk reservasi via WhatsApp</p>
+
+            <form onsubmit="sendToWA(event)" class="space-y-6 text-left">
+                <div>
+                    <input type="text" id="name" required class="w-full px-0 py-4 border-b border-gray-300 focus:border-ocean-600 outline-none transition-all bg-transparent placeholder-gray-400 font-sans" placeholder="Nama Lengkap">
+                </div>
+                
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <input type="date" id="date" required class="w-full px-0 py-4 border-b border-gray-300 focus:border-ocean-600 outline-none transition-all bg-transparent text-gray-600 font-sans">
+                    </div>
+                    <div>
+                        <select id="pax" required class="w-full px-0 py-4 border-b border-gray-300 focus:border-ocean-600 outline-none transition-all bg-transparent text-gray-600 font-sans">
+                            <option value="" disabled selected>Jumlah Orang</option>
+                            <option value="1">1 Orang</option>
+                            <option value="2">2 Orang</option>
+                            <option value="3">3 Orang</option>
+                            <option value="4+">4+ Orang</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="pt-8 text-center">
+                    <button type="submit" class="inline-block bg-[#112B45] hover:bg-[#2A5C8D] text-white text-xs font-bold tracking-widest uppercase px-12 py-5 transition-all w-full md:w-auto shadow-xl hover:shadow-2xl rounded-sm">
+                        Book Experience
+                    </button>
+                    <p class="text-xs text-gray-400 mt-6"><i data-lucide="phone" class="w-3 h-3 inline mr-1"></i> WhatsApp Hotline: 0822 6655 8435</p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER (Gambar 6 - Latar Gelap) -->
+    <footer class="relative py-24 bg-[#0a1520] text-center text-white overflow-hidden">
+        <!-- Background Laut Gelap -->
+        <img src="images/6.png" class="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-screen" alt="Underwater background">
+        
+        <div class="relative z-10 max-w-4xl mx-auto px-6 flex flex-col items-center">
+            
+            <div class="flex items-center gap-4 mb-8">
+                <a href="#" class="text-white hover:text-ocean-400 transition-colors"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                <a href="#" class="text-white hover:text-ocean-400 transition-colors"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+            </div>
+
+            <div class="flex flex-col items-center gap-4 mb-4">
+                <div class="bg-white/10 p-3 rounded-full backdrop-blur-sm border border-white/20">
+                    <img src="images/whaleshark-logo.jpg" alt="Whale Shark Tour Logo" class="h-16 md:h-20 w-auto object-contain rounded-full mix-blend-lighten">
+                </div>
+                <div class="text-center leading-tight">
+                    <span class="font-serif text-3xl tracking-wide drop-shadow-md">WHALE SHARK</span><br>
+                    <span class="text-[10px] font-sans tracking-[0.3em] opacity-80 uppercase">Tour Lombok</span>
+                </div>
+            </div>
+
+            <p class="text-xs opacity-60 mt-8 max-w-sm tracking-widest uppercase leading-loose">
+                © 2026 Whale Shark Tour Lombok.<br>
+                Premium adventure from Lombok to Sumbawa.
+            </p>
+        </div>
+    </footer>
+
+    <!-- LOGIKA & SCRIPT -->
+    <script>
+        lucide.createIcons();
+
+        const navbar = document.getElementById('navbar');
+        const navLinks = navbar.querySelectorAll('a, span, i');
+        const logoImg = navbar.querySelector('img');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('glass-nav');
+                navbar.classList.remove('text-white');
+                navbar.classList.add('text-gray-900');
+                navLinks.forEach(el => el.classList.remove('drop-shadow-md'));
+                logoImg.classList.remove('border-white/20');
+                logoImg.classList.add('border-gray-200');
+            } else {
+                navbar.classList.remove('glass-nav');
+                navbar.classList.remove('text-gray-900');
+                navbar.classList.add('text-white');
+                navLinks.forEach(el => {
+                    el.style.color = '';
+                    el.classList.add('drop-shadow-md');
+                });
+                logoImg.classList.remove('border-gray-200');
+                logoImg.classList.add('border-white/20');
+            }
+        });
+
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { root: null, threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        function sendToWA(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const date = document.getElementById('date').value;
+            const pax = document.getElementById('pax').value;
+            
+            const message = `Halo Whale Shark Tour Lombok! 🦈%0A%0ASaya ingin bertanya mengenai Paket 2D1N.%0A%0A*Nama:* ${name}%0A*Tanggal:* ${date}%0A*Jumlah:* ${pax} Orang%0A%0AMohon info ketersediaan slotnya. Terima kasih.`;
+            const targetPhone = "6282266558435";
+            window.open(`https://wa.me/${targetPhone}?text=${message}`, '_blank');
+        }
+    </script>
+</body>
+</html>
