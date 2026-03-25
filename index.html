@@ -11,11 +11,10 @@
     <meta name="robots" content="index, follow">
     <meta name="author" content="Whale Shark Expeditions">
     
-    <!-- 🚀 OPEN GRAPH (UNTUK PREVIEW WA/SOSMED YANG KEREN) -->
+    <!-- 🚀 OPEN GRAPH -->
     <meta property="og:title" content="Whale Shark Expedition Lombok | Premium Experience">
     <meta property="og:description" content="Berenang bersama raksasa lembut di Teluk Saleh. Pesan trip eksklusifmu sekarang!">
     <meta property="og:image" content="images/1.png">
-    <meta property="og:url" content="https://website-anda.com">
     <meta property="og:type" content="website">
     
     <!-- FONT EDITORIAL -->
@@ -48,7 +47,7 @@
         }
     </script>
 
-    <!-- KUSTOM CSS -->
+    <!-- KUSTOM CSS (OPTIMASI ANTI-LAG) -->
     <style>
         body { background-color: #F9FAFB; position: relative; }
         
@@ -59,80 +58,59 @@
         }
         .glass-nav a, .glass-nav span, .glass-nav i { color: #112B45 !important; }
 
-        /* Google Translate Customization */
-        .goog-te-banner-frame { display: none !important; }
+        /* Menyembunyikan Widget Asli Google Translate */
+        .goog-te-banner-frame, .goog-logo-link, .goog-te-gadget span { display: none !important; }
         body { top: 0px !important; }
-        .goog-te-gadget { color: transparent !important; font-family: 'Montserrat', sans-serif !important; font-size: 0px !important; margin: 0 !important; }
-        .goog-logo-link, .goog-te-gadget span { display: none !important; }
-        .goog-te-gadget .goog-te-combo {
-            margin: 0; padding: 10px 12px 10px 36px; border-radius: 50px; border: 1px solid #e5e7eb;
-            background: #ffffff; color: #112B45; font-size: 13px; outline: none; cursor: pointer;
-            font-family: 'Montserrat', sans-serif; font-weight: 600; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            appearance: none; -webkit-appearance: none; -moz-appearance: none;
-            text-transform: uppercase; width: 140px; transition: all 0.3s ease;
-        }
-        .goog-te-combo:hover { border-color: #2A5C8D; }
-        
-        .lang-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); pointer-events: none; z-index: 10; color: #112B45; }
+        #google_translate_element { display: none; } /* Kita pakai custom menu */
 
-        /* Aesthetic Blob & Bubbles */
+        /* Aesthetic Blob */
         .aesthetic-blob {
             position: absolute; border-radius: 50%; z-index: -1; filter: blur(60px);
             background: radial-gradient(circle, rgba(169, 214, 229, 0.4) 0%, rgba(255,255,255,0) 70%);
+            will-change: transform;
         }
         
+        /* CSS Murni Bubbles (Performa Tinggi, Tidak Bikin Lag) */
         .bubbles-container { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 0; }
         .bubble {
             position: absolute; bottom: -50px;
-            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.8), rgba(255,255,255,0.05));
-            border-radius: 50%; box-shadow: inset 0 0 10px rgba(255,255,255,0.4);
-            animation: floatUp linear forwards; opacity: 0; backdrop-filter: blur(1px);
+            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.6), rgba(255,255,255,0.05));
+            border-radius: 50%; box-shadow: inset 0 0 5px rgba(255,255,255,0.3);
+            animation: floatUp infinite linear;
         }
         @keyframes floatUp {
-            0% { transform: translateY(0) scale(0.8) translateX(0); opacity: 0; }
-            10% { opacity: 0.6; }
-            90% { opacity: 0.3; }
-            100% { transform: translateY(-1000px) scale(1.5) translateX(20px); opacity: 0; }
+            0% { transform: translateY(0) scale(0.8); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.2; }
+            100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
         }
 
-        /* Animasi Text Standard */
-        .reveal { opacity: 0; transform: translateY(40px); transition: all 1s cubic-bezier(0.25, 1, 0.5, 1); }
+        /* Animasi Text Standard (Hardware Accelerated) */
+        .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; will-change: opacity, transform; }
         .reveal.active { opacity: 1; transform: translateY(0); }
         .delay-100 { transition-delay: 100ms; }
         .delay-200 { transition-delay: 200ms; }
         .delay-300 { transition-delay: 300ms; }
         
-        /* Animasi Mengambang lambat (Hero) */
-        .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+        /* Animasi Mengambang lambat */
+        .animate-float-slow { animation: float-slow 6s ease-in-out infinite; will-change: transform; }
         @keyframes float-slow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
         
-        /* Animasi Pulse FAB */
-        .animate-pulse-glow { animation: pulse-glow 2s infinite; }
-        @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); } 50% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } }
-
-        /* Animasi Per Huruf (Typewriter Fade-in) */
-        @keyframes charAppear {
-            0% { opacity: 0; transform: translateY(20px) scale(0.9); }
-            100% { opacity: 1; transform: translateY(0) scale(1); }
-        }
-        .animate-char { animation: charAppear 0.8s forwards cubic-bezier(0.25, 1, 0.5, 1); }
-
         /* Animasi List Timeline Bergeser ke Kiri */
         .timeline-dot {
-            opacity: 0;
-            transform: translateX(40px);
-            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+            opacity: 0; transform: translateX(30px); transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
         }
-        .timeline-dot.active {
-            opacity: 1;
-            transform: translateX(0);
-        }
+        .timeline-dot.active { opacity: 1; transform: translateX(0); }
         .timeline-dot::before {
             content: ''; position: absolute; left: -29px; top: 6px; width: 12px; height: 12px;
             border-radius: 50%; background-color: #3b597b; border: 2px solid white; box-shadow: 0 0 0 2px #3b597b;
         }
         
         .text-glow { text-shadow: 0 10px 40px rgba(255,255,255,0.3), 0 2px 10px rgba(0,0,0,0.6); }
+
+        /* Custom Scrollbar untuk Language Menu */
+        .lang-scroll::-webkit-scrollbar { width: 4px; }
+        .lang-scroll::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 10px; }
     </style>
 </head>
 <body class="text-gray-800 font-sans antialiased overflow-x-hidden">
@@ -161,36 +139,46 @@
         
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white p-6 flex flex-col gap-5 text-center shadow-lg border-t border-gray-100 text-ocean-900 z-40">
-            <a href="#itinerary" class="text-sm font-bold tracking-widest uppercase">Itinerary Detail</a>
-            <a href="#inclusion" class="text-sm font-bold tracking-widest uppercase">What's Included</a>
-            <a href="#fleet" class="text-sm font-bold tracking-widest uppercase">Our Fleet</a>
-            <a href="#reviews" class="text-sm font-bold tracking-widest uppercase">Traveler Reviews</a>
-            <a href="#faq" class="text-sm font-bold tracking-widest uppercase">FAQ</a>
-            <a href="#booking" class="text-sm font-bold tracking-widest uppercase text-ocean-600 mt-2 border-t pt-4">Book Expedition</a>
+            <a href="#itinerary" class="text-sm font-bold tracking-widest uppercase" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Itinerary</a>
+            <a href="#inclusion" class="text-sm font-bold tracking-widest uppercase" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Included</a>
+            <a href="#fleet" class="text-sm font-bold tracking-widest uppercase" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Fleet</a>
+            <a href="#reviews" class="text-sm font-bold tracking-widest uppercase" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Reviews</a>
+            <a href="#booking" class="text-sm font-bold tracking-widest uppercase text-ocean-600 mt-2 border-t pt-4" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Book Now</a>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION (CSS Bubbles Murni untuk Performa Maksimal) -->
     <header class="relative h-screen flex flex-col items-center justify-center overflow-hidden">
-        <!-- Latar Belakang Gelembung -->
-        <div class="bubbles-container"></div>
+        
+        <!-- CSS Static Bubbles -->
+        <div class="bubbles-container">
+            <div class="bubble" style="left: 10%; width: 15px; height: 15px; animation-duration: 6s; animation-delay: 0s;"></div>
+            <div class="bubble" style="left: 30%; width: 25px; height: 25px; animation-duration: 8s; animation-delay: 2s;"></div>
+            <div class="bubble" style="left: 50%; width: 10px; height: 10px; animation-duration: 5s; animation-delay: 4s;"></div>
+            <div class="bubble" style="left: 70%; width: 20px; height: 20px; animation-duration: 7s; animation-delay: 1s;"></div>
+            <div class="bubble" style="left: 85%; width: 30px; height: 30px; animation-duration: 9s; animation-delay: 3s;"></div>
+            <div class="bubble" style="left: 20%; width: 12px; height: 12px; animation-duration: 6s; animation-delay: 5s;"></div>
+            <div class="bubble" style="left: 60%; width: 18px; height: 18px; animation-duration: 7s; animation-delay: 6s;"></div>
+            <div class="bubble" style="left: 90%; width: 14px; height: 14px; animation-duration: 5s; animation-delay: 7s;"></div>
+        </div>
 
         <img src="images/1.png" alt="Ekspedisi berenang dengan hiu paus di Sumbawa" class="absolute inset-0 w-full h-full object-cover object-center transform scale-105 hover:scale-100 transition-transform duration-[20s]" style="z-index: -1;">
         <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-ocean-900/50" style="z-index: -1;"></div>
         
-        <div class="relative z-10 text-center px-4 mt-16 animate-float-slow pointer-events-none w-full">
-            <h1 class="text-2xl md:text-4xl lg:text-5xl font-serif text-white mb-2 tracking-wide drop-shadow-lg">
-                <span class="split-char">SWIM</span> <span class="split-char">WITH</span> <br>
-                <span class="font-cinzel text-[3.5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] leading-none text-white mt-2 block drop-shadow-2xl font-bold text-glow split-char mx-auto">
+        <div class="relative z-10 text-center px-4 mt-16 animate-float-slow pointer-events-none w-full reveal active">
+            <h1 class="font-serif text-white mb-2 tracking-wide drop-shadow-lg text-2xl md:text-4xl lg:text-5xl">
+                SWIM WITH <br>
+                <!-- Ukuran text hero HP dirubah menggunakan VW agar fit/tidak wrap berantakan -->
+                <span class="font-cinzel text-[13vw] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] leading-none text-white mt-2 block drop-shadow-2xl font-bold text-glow mx-auto">
                     WHALE SHARK
                 </span>
             </h1>
-            <p class="text-[10px] md:text-xs text-white tracking-[0.3em] uppercase max-w-2xl mx-auto font-bold mb-12 drop-shadow-lg mt-6 split-char">
+            <p class="text-[9px] md:text-xs text-white tracking-[0.3em] uppercase max-w-2xl mx-auto font-bold mb-12 drop-shadow-lg mt-6">
                 An Exclusive Premium Adventure from Lombok to Sumbawa
             </p>
         </div>
         
-        <a href="#itinerary" class="absolute bottom-12 inline-flex items-center justify-center w-16 h-16 rounded-full border border-white/50 hover:bg-white/20 transition-all group backdrop-blur-sm z-20">
+        <a href="#itinerary" class="absolute bottom-12 inline-flex items-center justify-center w-16 h-16 rounded-full border border-white/50 hover:bg-white/20 transition-all group backdrop-blur-sm z-20 reveal delay-200">
             <i data-lucide="arrow-down" class="w-6 h-6 text-white group-hover:translate-y-2 transition-transform duration-500"></i>
         </a>
     </header>
@@ -226,7 +214,7 @@
         </div>
     </section>
 
-    <!-- DETAILED ITINERARY -->
+    <!-- DETAILED ITINERARY (Dengan animasi geser list) -->
     <section id="itinerary" class="py-24 bg-white border-y border-gray-100">
         <div class="max-w-4xl mx-auto px-6">
             <div class="text-center mb-16 reveal">
@@ -319,15 +307,6 @@
         </div>
     </section>
 
-    <!-- ECO-TOURISM PROMISE -->
-    <section class="py-20 bg-ocean-900 text-white relative overflow-hidden">
-        <div class="max-w-4xl mx-auto px-6 text-center relative z-10 reveal">
-            <i data-lucide="leaf" class="w-10 h-10 text-gold-500 mx-auto mb-6"></i>
-            <h2 class="text-3xl font-serif mb-4">Our Eco-Tourism Promise</h2>
-            <p class="text-sm text-gray-300 leading-relaxed font-light">Kami menjunjung tinggi etika pariwisata yang bertanggung jawab. Pelayaran kami dirancang untuk tidak mengganggu siklus alami ekosistem perairan Sumbawa. Bersama kami, Anda sepakat untuk menjaga jarak aman, tidak menyentuh satwa, dan meminimalisir penggunaan plastik sekali pakai selama ekspedisi berlangsung.</p>
-        </div>
-    </section>
-
     <!-- OUR FLEET & AMENITIES -->
     <section id="fleet" class="py-24 bg-white border-b border-gray-100 relative overflow-hidden">
         <div class="max-w-6xl mx-auto px-6">
@@ -374,7 +353,7 @@
         </div>
     </section>
 
-    <!-- REVIEWS / TESTIMONIALS (BAHASA CASUAL/NATURAL) -->
+    <!-- REVIEWS / TESTIMONIALS -->
     <section id="reviews" class="py-24 bg-editorial-bg relative">
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center mb-16 reveal">
@@ -412,48 +391,8 @@
         </div>
     </section>
 
-    <!-- FAQ -->
-    <section id="faq" class="py-24 bg-white border-y border-gray-100">
-        <div class="max-w-3xl mx-auto px-6">
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-4xl font-serif text-editorial-accent mb-4">Essential Inquiries</h2>
-                <p class="text-[10px] font-bold tracking-widest text-gray-500 uppercase">Pertanyaan Umum Ekspedisi</p>
-            </div>
-
-            <div class="space-y-4 reveal delay-100">
-                <div class="bg-editorial-bg border border-gray-200 rounded-sm">
-                    <button class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none hover:bg-gray-100 transition-colors">
-                        <span class="font-bold text-sm text-ocean-900">Apakah wisata ini cocok bagi pemula yang kurang mahir berenang?</span>
-                        <i data-lucide="plus" class="w-4 h-4 text-ocean-600 transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-content hidden px-6 pb-5 text-sm text-gray-600 leading-relaxed pt-4">
-                        Sangat cocok. Keselamatan Anda adalah hal mutlak. Kami menyediakan jaket pelampung berspesifikasi tinggi, dan pemandu renang kami (*dive master/guide*) akan mendedikasikan waktu untuk mengawal Anda selama berada di dalam air.
-                    </div>
-                </div>
-                <div class="bg-editorial-bg border border-gray-200 rounded-sm">
-                    <button class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none hover:bg-gray-100 transition-colors">
-                        <span class="font-bold text-sm text-ocean-900">Apakah terdapat jaminan pasti bertemu Hiu Paus?</span>
-                        <i data-lucide="plus" class="w-4 h-4 text-ocean-600 transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-content hidden px-6 pb-5 text-sm text-gray-600 leading-relaxed pt-4">
-                        Hiu paus merupakan bagian dari alam liar yang siklusnya tak dapat dikendalikan sepenuhnya. Mengingat Teluk Saleh adalah habitat alami mereka, peluang perjumpaan sangatlah masif (mencapai 80%). Namun secara profesional, kami tidak dapat menerbitkan jaminan 100%. Tim kami selalu melakukan observasi maksimal setiap paginya.
-                    </div>
-                </div>
-                <div class="bg-editorial-bg border border-gray-200 rounded-sm">
-                    <button class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none hover:bg-gray-100 transition-colors">
-                        <span class="font-bold text-sm text-ocean-900">Apakah diperkenankan membawa anak di bawah umur?</span>
-                        <i data-lucide="plus" class="w-4 h-4 text-ocean-600 transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-content hidden px-6 pb-5 text-sm text-gray-600 leading-relaxed pt-4">
-                        Ekspedisi ini relatif aman bagi keluarga. Walau demikian, untuk meminimalisir rasa lelah dari durasi perjalanan darat, kami sangat merekomendasikan batas usia minimum peserta adalah 7 tahun.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- HARGA & NOTES -->
-    <section class="py-24 bg-editorial-bg border-b border-gray-100">
+    <section class="py-24 bg-white border-y border-gray-100">
         <div class="max-w-4xl mx-auto px-6">
             <div class="bg-ocean-900 p-12 text-center shadow-2xl reveal relative overflow-hidden rounded-sm text-white">
                 <div class="absolute top-0 right-0 w-64 h-64 bg-gold-500 rounded-bl-full opacity-10"></div>
@@ -478,12 +417,12 @@
     </section>
 
     <!-- BOOKING FORM -->
-    <section id="booking" class="py-24 bg-white relative">
+    <section id="booking" class="py-24 bg-editorial-bg relative">
         <div class="max-w-3xl mx-auto px-6 text-center reveal">
             <h2 class="text-4xl font-serif text-editorial-accent mb-4">Secure Your Spot</h2>
             <p class="text-[10px] font-bold tracking-widest text-gray-500 uppercase mb-12">Konsultasi dan Reservasi Eksklusif via WhatsApp</p>
 
-            <form onsubmit="sendToWA(event)" class="space-y-6 text-left bg-editorial-bg p-10 md:p-14 shadow-xl rounded-sm border border-gray-200 relative">
+            <form onsubmit="sendToWA(event)" class="space-y-6 text-left bg-white p-10 md:p-14 shadow-xl rounded-sm border border-gray-200 relative">
                 <div class="absolute top-0 left-0 w-full h-1 bg-ocean-800"></div>
                 
                 <div>
@@ -516,10 +455,17 @@
         </div>
     </section>
 
-    <!-- FOOTER (Terdapat Gelembung Air) -->
+    <!-- FOOTER (Gelembung CSS) -->
     <footer class="relative py-24 bg-[#0a1520] text-center text-white overflow-hidden">
-        <!-- Latar Belakang Gelembung Khusus Footer -->
-        <div class="bubbles-container"></div>
+        
+        <!-- CSS Static Bubbles Footer -->
+        <div class="bubbles-container">
+            <div class="bubble" style="left: 15%; width: 20px; height: 20px; animation-duration: 7s; animation-delay: 1s;"></div>
+            <div class="bubble" style="left: 45%; width: 15px; height: 15px; animation-duration: 5s; animation-delay: 3s;"></div>
+            <div class="bubble" style="left: 75%; width: 25px; height: 25px; animation-duration: 8s; animation-delay: 0s;"></div>
+            <div class="bubble" style="left: 85%; width: 10px; height: 10px; animation-duration: 6s; animation-delay: 4s;"></div>
+            <div class="bubble" style="left: 30%; width: 12px; height: 12px; animation-duration: 5.5s; animation-delay: 2s;"></div>
+        </div>
 
         <img src="images/6.png" alt="Tekstur Bawah Laut" loading="lazy" class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen" style="z-index: -1;">
         
@@ -546,12 +492,34 @@
         </div>
     </footer>
 
-    <!-- WIDGET GOOGLE TRANSLATE (KIRI BAWAH) - SELALU TAMPIL -->
-    <div class="fixed bottom-6 left-6 z-50 flex items-center bg-white shadow-2xl rounded-full border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow">
-        <div class="pl-4 pr-2 py-2 bg-gray-50 flex items-center justify-center border-r border-gray-100">
-            <i data-lucide="globe" class="w-5 h-5 text-ocean-900"></i>
+    <!-- WIDGET GOOGLE TRANSLATE HIDDEN (Kita gunakan untuk memproses pergantian bahasa) -->
+    <div id="google_translate_element" style="display:none;"></div>
+
+    <!-- CUSTOM LANGUAGE MENU (KIRI BAWAH) - ELEGAN & RINGAN -->
+    <div class="fixed bottom-6 left-6 z-50 flex flex-col items-start group">
+        <div class="absolute bottom-full mb-4 left-0 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto">
+            <div class="bg-white rounded-xl shadow-2xl border border-gray-100 w-40 overflow-hidden">
+                <div class="bg-gray-50 px-4 py-3 border-b border-gray-100">
+                    <p class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">Pilih Bahasa</p>
+                </div>
+                <!-- Daftar Bahasa (Max tinggi agar bisa discroll) -->
+                <div class="max-h-56 overflow-y-auto lang-scroll py-2">
+                    <button onclick="changeLanguage('id')" class="w-full text-left px-4 py-2 text-xs text-gray-700 hover:bg-ocean-50 hover:text-ocean-900 font-medium transition-colors">🇮🇩 Indonesia</button>
+                    <button onclick="changeLanguage('en')" class="w-full text-left px-4 py-2 text-xs text-gray-700 hover:bg-ocean-50 hover:text-ocean-900 font-medium transition-colors">🇬🇧 English</button>
+                    <button onclick="changeLanguage('zh-CN')" class="w-full text-left px-4 py-2 text-xs text-gray-700 hover:bg-ocean-50 hover:text-ocean-900 font-medium transition-colors">🇨🇳 Mandarin</button>
+                    <button onclick="changeLanguage('ja')" class="w-full text-left px-4 py-2 text-xs text-gray-700 hover:bg-ocean-50 hover:text-ocean-900 font-medium transition-colors">🇯🇵 Japanese</button>
+                    <button onclick="changeLanguage('ko')" class="w-full text-left px-4 py-2 text-xs text-gray-700 hover:bg-ocean-50 hover:text-ocean-900 font-medium transition-colors">🇰🇷 Korean</button>
+                    <button onclick="changeLanguage('de')" class="w-full text-left px-4 py-2 text-xs text-gray-700 hover:bg-ocean-50 hover:text-ocean-900 font-medium transition-colors">🇩🇪 German</button>
+                    <button onclick="changeLanguage('fr')" class="w-full text-left px-4 py-2 text-xs text-gray-700 hover:bg-ocean-50 hover:text-ocean-900 font-medium transition-colors">🇫🇷 French</button>
+                    <button onclick="changeLanguage('es')" class="w-full text-left px-4 py-2 text-xs text-gray-700 hover:bg-ocean-50 hover:text-ocean-900 font-medium transition-colors">🇪🇸 Spanish</button>
+                    <button onclick="changeLanguage('ru')" class="w-full text-left px-4 py-2 text-xs text-gray-700 hover:bg-ocean-50 hover:text-ocean-900 font-medium transition-colors">🇷🇺 Russian</button>
+                    <button onclick="changeLanguage('it')" class="w-full text-left px-4 py-2 text-xs text-gray-700 hover:bg-ocean-50 hover:text-ocean-900 font-medium transition-colors">🇮🇹 Italian</button>
+                </div>
+            </div>
         </div>
-        <div id="google_translate_element" class="-ml-2"></div>
+        <button class="w-14 h-14 bg-white text-ocean-900 rounded-full flex items-center justify-center shadow-2xl border border-gray-100 hover:-translate-y-1 transition-transform relative">
+            <i data-lucide="globe" class="w-6 h-6"></i>
+        </button>
     </div>
 
     <!-- EXPANDABLE FLOATING CTA (KANAN BAWAH) -->
@@ -578,10 +546,18 @@
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'id', 
-                includedLanguages: 'en,id,zh-CN,zh-TW,ja,ko,fr,de,es,ru,it',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                includedLanguages: 'en,id,zh-CN,ja,ko,fr,de,es,ru,it',
                 autoDisplay: false
             }, 'google_translate_element');
+        }
+        
+        // Fungsi untuk men-trigger Google Translate dari Custom Menu kita
+        function changeLanguage(langCode) {
+            var selectField = document.querySelector(".goog-te-combo");
+            if(selectField) {
+                selectField.value = langCode;
+                selectField.dispatchEvent(new Event('change'));
+            }
         }
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
@@ -596,49 +572,41 @@
         const logoImg = navbar.querySelector('.nav-logo');
         const navBrandText = document.getElementById('nav-brand-text');
         
+        // Optimasi Scroll Event menggunakan RequestAnimationFrame agar bebas Lag
+        let isScrolling = false;
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                // Tampilan Navbar saat di-scroll
-                navbar.classList.add('glass-nav');
-                navbar.classList.remove('text-white', 'py-4');
-                navbar.classList.add('text-gray-900', 'py-3');
-                navLinks.forEach(el => el.classList.remove('drop-shadow-md'));
-                logoImg.classList.remove('border-white/20');
-                logoImg.classList.add('border-gray-200');
-                
-                // Animasi Mobile Logo muncul besar (Cinzel) ketika Scroll Down
-                navBrandText.classList.remove('hidden', 'sm:block', 'font-sans', 'text-xs', 'font-extrabold', 'tracking-[0.3em]');
-                navBrandText.classList.add('font-cinzel', 'text-xl', 'font-bold', 'text-ocean-900', 'tracking-widest');
-            } else {
-                // Tampilan Navbar di posisi paling atas
-                navbar.classList.remove('glass-nav');
-                navbar.classList.remove('text-gray-900', 'py-3');
-                navbar.classList.add('text-white', 'py-4');
-                navLinks.forEach(el => {
-                    el.style.color = '';
-                    el.classList.add('drop-shadow-md');
+            if (!isScrolling) {
+                window.requestAnimationFrame(() => {
+                    if (window.scrollY > 50) {
+                        navbar.classList.add('glass-nav');
+                        navbar.classList.remove('text-white', 'py-4');
+                        navbar.classList.add('text-gray-900', 'py-3');
+                        navLinks.forEach(el => el.classList.remove('drop-shadow-md'));
+                        logoImg.classList.remove('border-white/20');
+                        logoImg.classList.add('border-gray-200');
+                        
+                        navBrandText.classList.remove('hidden', 'sm:block', 'font-sans', 'text-xs', 'font-extrabold', 'tracking-[0.3em]');
+                        navBrandText.classList.add('font-cinzel', 'text-xl', 'font-bold', 'text-ocean-900', 'tracking-widest');
+                    } else {
+                        navbar.classList.remove('glass-nav', 'text-gray-900', 'py-3');
+                        navbar.classList.add('text-white', 'py-4');
+                        navLinks.forEach(el => {
+                            el.style.color = '';
+                            el.classList.add('drop-shadow-md');
+                        });
+                        logoImg.classList.remove('border-gray-200');
+                        logoImg.classList.add('border-white/20');
+                        
+                        navBrandText.classList.add('hidden', 'sm:block', 'font-sans', 'text-xs', 'font-extrabold', 'tracking-[0.3em]');
+                        navBrandText.classList.remove('font-cinzel', 'text-xl', 'font-bold', 'text-ocean-900', 'tracking-widest');
+                    }
+                    isScrolling = false;
                 });
-                logoImg.classList.remove('border-gray-200');
-                logoImg.classList.add('border-white/20');
-                
-                // Mengembalikan text Mobile ke keadaan semula (tersembunyi)
-                navBrandText.classList.add('hidden', 'sm:block', 'font-sans', 'text-xs', 'font-extrabold', 'tracking-[0.3em]');
-                navBrandText.classList.remove('font-cinzel', 'text-xl', 'font-bold', 'text-ocean-900', 'tracking-widest');
+                isScrolling = true;
             }
         });
 
-        // 2. Animasi Huruf Timbul (Typewriter Fade-In) pada Hero Section
-        const splitChars = document.querySelectorAll('.split-char');
-        splitChars.forEach((el, indexOffset) => {
-            const text = el.innerText;
-            el.innerHTML = text.split('').map((char, i) => {
-                if(char === ' ') return '&nbsp;';
-                // Memberikan delay bertahap agar huruf muncul berurutan (stagger)
-                return `<span class="inline-block opacity-0 translate-y-4 animate-char" style="animation-delay: ${(i * 0.05) + (indexOffset * 0.2)}s">${char}</span>`;
-            }).join('');
-        });
-
-        // 3. Animasi Reveal Umum (Scroll ke atas pelan)
+        // 2. Animasi Reveal Umum (Scroll ke atas pelan)
         const revealElements = document.querySelectorAll('.reveal');
         const revealObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
@@ -650,45 +618,23 @@
         }, { root: null, threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
         revealElements.forEach(el => revealObserver.observe(el));
 
-        // 4. Animasi Timeline List (Bergeser ke kiri satu persatu)
+        // 3. Animasi Timeline List (Bergeser ke kiri satu persatu)
         const timelineDots = document.querySelectorAll('.timeline-dot');
         const timelineObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    // Memicu class aktif dengan sedikit jeda transisi
-                    setTimeout(() => { entry.target.classList.add('active'); }, 100);
+                    setTimeout(() => { entry.target.classList.add('active'); }, 50);
                     observer.unobserve(entry.target);
                 }
             });
         }, { root: null, threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
         
         timelineDots.forEach((el, index) => {
-            el.style.transitionDelay = `${index * 0.15}s`; // Memberi jarak 0.15s antar list
+            el.style.transitionDelay = `${(index % 4) * 0.15}s`; // Memberi jarak antar list di masing-masing hari
             timelineObserver.observe(el);
         });
 
-        // 5. Bubbles Animation Terisolasi (Hanya Hero & Footer)
-        const bubbleContainers = document.querySelectorAll('.bubbles-container');
-        function createBubble() {
-            bubbleContainers.forEach(container => {
-                const bubble = document.createElement('div');
-                bubble.classList.add('bubble');
-                const size = Math.random() * 25 + 5; 
-                const left = Math.random() * 100;
-                const duration = Math.random() * 5 + 4; 
-                
-                bubble.style.width = `${size}px`;
-                bubble.style.height = `${size}px`;
-                bubble.style.left = `${left}%`;
-                bubble.style.animationDuration = `${duration}s`;
-                
-                container.appendChild(bubble);
-                setTimeout(() => { bubble.remove(); }, duration * 1000);
-            });
-        }
-        setInterval(createBubble, 700);
-
-        // 6. Expandable FAB Logic (Tombol Kanan Bawah)
+        // 4. Expandable FAB Logic (Tombol Kanan Bawah)
         const fabToggle = document.getElementById('fab-toggle');
         const fabMenu = document.getElementById('fab-menu');
         const icon1 = document.getElementById('fab-icon-1');
@@ -711,29 +657,13 @@
             }
         });
 
-        // 7. FAQ Accordion Logic
-        const faqToggles = document.querySelectorAll('.faq-toggle');
-        faqToggles.forEach(toggle => {
-            toggle.addEventListener('click', () => {
-                const content = toggle.nextElementSibling;
-                const icon = toggle.querySelector('i');
-                document.querySelectorAll('.faq-content').forEach(c => { if (c !== content) c.classList.add('hidden'); });
-                document.querySelectorAll('.faq-toggle i').forEach(i => { if (i !== icon) i.style.transform = 'rotate(0deg)'; });
-                content.classList.toggle('hidden');
-                if (content.classList.contains('hidden')) icon.style.transform = 'rotate(0deg)';
-                else icon.style.transform = 'rotate(45deg)';
-            });
-        });
-
-        // 8. WhatsApp Submit Logic
+        // 5. WhatsApp Submit Logic
         function sendToWA(e) {
             e.preventDefault();
             const name = document.getElementById('name').value;
             const date = document.getElementById('date').value;
             const pax = document.getElementById('pax').value;
-            
             const message = `Salam hormat tim Whale Shark Expeditions.%0A%0ASaya bermaksud mengajukan reservasi untuk paket Premium 2D1N.%0A%0A*Informasi Ekspedisi:*%0A- Nama: ${name}%0A- Tanggal: ${date}%0A- Peserta: ${pax} Orang%0A%0AMohon konfirmasi ketersediaan armada dan panduan pembayaran selanjutnya. Terima kasih.`;
-            
             const targetPhone = "6282266558435";
             window.open(`https://wa.me/${targetPhone}?text=${message}`, '_blank');
         }
