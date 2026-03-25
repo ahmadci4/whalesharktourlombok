@@ -4,8 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Whale Shark Expedition Lombok | Premium 2D1N Experience</title>
-    <meta name="description" content="Bergabunglah dalam ekspedisi eksklusif 2D1N dari Lombok ke Sumbawa. Temui langsung hiu paus di perairan Teluk Saleh dengan layanan premium dan ramah lingkungan.">
+    <!-- 🚀 BASIC SEO & META TAGS -->
+    <title>Whale Shark Expedition Lombok | Premium Experience</title>
+    <meta name="description" content="Bergabunglah dalam ekspedisi eksklusif dari Lombok ke Sumbawa. Temui langsung hiu paus di perairan Teluk Saleh dengan layanan premium dan ramah lingkungan.">
+    <meta name="keywords" content="whale shark lombok, tour hiu paus lombok, sumbawa whale shark, saleh bay tour, wisata hiu paus indonesia">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Whale Shark Expeditions">
+    
+    <!-- 🚀 OPEN GRAPH (UNTUK PREVIEW WA/SOSMED YANG KEREN) -->
+    <meta property="og:title" content="Whale Shark Expedition Lombok | Premium Experience">
+    <meta property="og:description" content="Berenang bersama raksasa lembut di Teluk Saleh. Pesan trip eksklusifmu sekarang!">
+    <meta property="og:image" content="images/1.png">
+    <meta property="og:url" content="https://website-anda.com">
+    <meta property="og:type" content="website">
     
     <!-- FONT EDITORIAL -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,7 +59,7 @@
         }
         .glass-nav a, .glass-nav span, .glass-nav i { color: #112B45 !important; }
 
-        /* Google Translate Customization - Solid Visible Dropdown */
+        /* Google Translate Customization */
         .goog-te-banner-frame { display: none !important; }
         body { top: 0px !important; }
         .goog-te-gadget { color: transparent !important; font-family: 'Montserrat', sans-serif !important; font-size: 0px !important; margin: 0 !important; }
@@ -70,7 +81,6 @@
             background: radial-gradient(circle, rgba(169, 214, 229, 0.4) 0%, rgba(255,255,255,0) 70%);
         }
         
-        /* Bubble container now scoped to specific sections */
         .bubbles-container { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 0; }
         .bubble {
             position: absolute; bottom: -50px;
@@ -85,25 +95,44 @@
             100% { transform: translateY(-1000px) scale(1.5) translateX(20px); opacity: 0; }
         }
 
-        /* Animasi Text & Reveal */
+        /* Animasi Text Standard */
         .reveal { opacity: 0; transform: translateY(40px); transition: all 1s cubic-bezier(0.25, 1, 0.5, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
         .delay-100 { transition-delay: 100ms; }
         .delay-200 { transition-delay: 200ms; }
         .delay-300 { transition-delay: 300ms; }
         
+        /* Animasi Mengambang lambat (Hero) */
         .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
         @keyframes float-slow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
-
+        
+        /* Animasi Pulse FAB */
         .animate-pulse-glow { animation: pulse-glow 2s infinite; }
         @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); } 50% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } }
 
-        .text-glow { text-shadow: 0 10px 40px rgba(255,255,255,0.3), 0 2px 10px rgba(0,0,0,0.6); }
+        /* Animasi Per Huruf (Typewriter Fade-in) */
+        @keyframes charAppear {
+            0% { opacity: 0; transform: translateY(20px) scale(0.9); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .animate-char { animation: charAppear 0.8s forwards cubic-bezier(0.25, 1, 0.5, 1); }
 
+        /* Animasi List Timeline Bergeser ke Kiri */
+        .timeline-dot {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .timeline-dot.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
         .timeline-dot::before {
             content: ''; position: absolute; left: -29px; top: 6px; width: 12px; height: 12px;
             border-radius: 50%; background-color: #3b597b; border: 2px solid white; box-shadow: 0 0 0 2px #3b597b;
         }
+        
+        .text-glow { text-shadow: 0 10px 40px rgba(255,255,255,0.3), 0 2px 10px rgba(0,0,0,0.6); }
     </style>
 </head>
 <body class="text-gray-800 font-sans antialiased overflow-x-hidden">
@@ -113,8 +142,8 @@
         <div class="max-w-7xl mx-auto flex justify-between items-center text-xs tracking-widest uppercase font-bold">
             
             <div class="flex items-center gap-3 group cursor-pointer relative z-50">
-                <img src="images/whaleshark-logo.jpg" alt="Logo Hiu Paus" class="h-10 md:h-12 w-auto object-contain rounded-full shadow-lg border-2 border-white/20 transition-all nav-logo">
-                <span class="font-sans font-extrabold tracking-[0.3em] hidden sm:block drop-shadow-md nav-text">WHALE SHARK</span>
+                <img src="images/whaleshark-logo.jpg" alt="Logo Hiu Paus Tour Lombok" class="h-10 md:h-12 w-auto object-contain rounded-full shadow-lg border-2 border-white/20 transition-all nav-logo">
+                <span id="nav-brand-text" class="font-sans font-extrabold tracking-[0.3em] hidden sm:block drop-shadow-md transition-all duration-300 whitespace-nowrap">WHALE SHARK</span>
             </div>
 
             <div class="hidden lg:flex items-center gap-7 relative z-50">
@@ -141,23 +170,23 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION (Terdapat Gelembung Air) -->
+    <!-- HERO SECTION -->
     <header class="relative h-screen flex flex-col items-center justify-center overflow-hidden">
         <!-- Latar Belakang Gelembung -->
         <div class="bubbles-container"></div>
 
-        <img src="images/1.png" alt="Ekspedisi Hiu Paus" class="absolute inset-0 w-full h-full object-cover object-center transform scale-105 hover:scale-100 transition-transform duration-[20s]" loading="eager" style="z-index: -1;">
+        <img src="images/1.png" alt="Ekspedisi berenang dengan hiu paus di Sumbawa" class="absolute inset-0 w-full h-full object-cover object-center transform scale-105 hover:scale-100 transition-transform duration-[20s]" style="z-index: -1;">
         <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-ocean-900/50" style="z-index: -1;"></div>
         
-        <div class="relative z-10 text-center px-4 mt-16 reveal animate-float-slow pointer-events-none">
+        <div class="relative z-10 text-center px-4 mt-16 animate-float-slow pointer-events-none w-full">
             <h1 class="text-2xl md:text-4xl lg:text-5xl font-serif text-white mb-2 tracking-wide drop-shadow-lg">
-                ENCOUNTER THE <br>
-                <span class="font-cinzel text-[3.5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] leading-none text-white mt-2 block drop-shadow-2xl font-bold text-glow">
-                    GENTLE GIANTS
+                <span class="split-char">SWIM</span> <span class="split-char">WITH</span> <br>
+                <span class="font-cinzel text-[3.5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] leading-none text-white mt-2 block drop-shadow-2xl font-bold text-glow split-char mx-auto">
+                    WHALE SHARK
                 </span>
             </h1>
-            <p class="text-[10px] md:text-xs text-white tracking-[0.3em] uppercase max-w-2xl mx-auto font-bold mb-12 drop-shadow-lg mt-6">
-                An Exclusive 2D1N Expedition from Lombok to Sumbawa
+            <p class="text-[10px] md:text-xs text-white tracking-[0.3em] uppercase max-w-2xl mx-auto font-bold mb-12 drop-shadow-lg mt-6 split-char">
+                An Exclusive Premium Adventure from Lombok to Sumbawa
             </p>
         </div>
         
@@ -175,7 +204,7 @@
                 <div class="reveal">
                     <div class="relative">
                         <div class="absolute -top-4 -left-4 w-24 h-24 bg-white opacity-80 backdrop-blur-md"></div>
-                        <img src="images/2.png" alt="Ekspedisi Bahari" class="w-full aspect-[4/3] object-cover shadow-2xl relative z-10 mb-8 rounded-sm">
+                        <img src="images/2.png" alt="Perjalanan darat laut Lombok Sumbawa" loading="lazy" class="w-full aspect-[4/3] object-cover shadow-2xl relative z-10 mb-8 rounded-sm">
                     </div>
                     <p class="text-[10px] font-bold tracking-widest text-ocean-600 uppercase mb-3">Lombok to Sumbawa</p>
                     <h2 class="text-4xl font-serif text-editorial-accent mb-6 tracking-wide">THE OVERLAND CROSSING</h2>
@@ -190,7 +219,7 @@
                     </div>
                     <div class="relative">
                         <div class="absolute -top-10 right-10 w-px h-24 bg-gray-300"></div>
-                        <img src="images/3.png" alt="Berenang dengan Hiu Paus" class="w-full aspect-[3/4] object-cover shadow-2xl relative z-10 rounded-sm">
+                        <img src="images/3.png" alt="Berinteraksi dengan Hiu Paus Teluk Saleh" loading="lazy" class="w-full aspect-[3/4] object-cover shadow-2xl relative z-10 rounded-sm">
                     </div>
                 </div>
             </div>
@@ -202,14 +231,14 @@
         <div class="max-w-4xl mx-auto px-6">
             <div class="text-center mb-16 reveal">
                 <h2 class="text-4xl font-serif text-editorial-accent mb-4">Expedition Timeline</h2>
-                <p class="text-[10px] font-bold tracking-widest text-gray-500 uppercase">Rencana Perjalanan Eksklusif 2 Hari 1 Malam</p>
+                <p class="text-[10px] font-bold tracking-widest text-gray-500 uppercase">Rencana Perjalanan Eksklusif</p>
             </div>
 
             <div class="space-y-16">
                 <!-- Day 1 -->
                 <div class="reveal">
                     <h3 class="text-2xl font-serif text-ocean-900 border-b border-gray-200 pb-4 mb-8">Day 1: Departure & Tranquility</h3>
-                    <div class="border-l-2 border-gray-200 pl-6 ml-3 space-y-8 text-sm">
+                    <div class="border-l-2 border-gray-200 pl-6 ml-3 space-y-8 text-sm overflow-hidden pb-4">
                         <div class="relative timeline-dot">
                             <p class="font-bold text-ocean-900 mb-1">08:30 AM - Penjemputan Eksklusif</p>
                             <p class="text-gray-500">Tim profesional kami menjemput Anda di akomodasi sekitar Mataram, Senggigi, atau Bandara Internasional Lombok.</p>
@@ -232,7 +261,7 @@
                 <!-- Day 2 -->
                 <div class="reveal delay-100">
                     <h3 class="text-2xl font-serif text-ocean-900 border-b border-gray-200 pb-4 mb-8">Day 2: The Majestic Encounter</h3>
-                    <div class="border-l-2 border-gray-200 pl-6 ml-3 space-y-8 text-sm">
+                    <div class="border-l-2 border-gray-200 pl-6 ml-3 space-y-8 text-sm overflow-hidden pb-4">
                         <div class="relative timeline-dot">
                             <p class="font-bold text-ocean-900 mb-1">04:00 AM - Pelayaran Menembus Fajar</p>
                             <p class="text-gray-500">Meninggalkan pesisir menggunakan perahu kayu tradisional menuju titik kumpul Hiu Paus di tengah Teluk Saleh.</p>
@@ -255,7 +284,7 @@
         </div>
     </section>
 
-    <!-- NEW SECTION: WHAT'S INCLUDED (Transparansi) -->
+    <!-- WHAT'S INCLUDED -->
     <section id="inclusion" class="py-24 bg-editorial-bg relative">
         <div class="max-w-5xl mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-12 bg-white p-10 shadow-lg border border-gray-100 rounded-sm reveal">
@@ -290,7 +319,7 @@
         </div>
     </section>
 
-    <!-- NEW SECTION: ECO-TOURISM PROMISE -->
+    <!-- ECO-TOURISM PROMISE -->
     <section class="py-20 bg-ocean-900 text-white relative overflow-hidden">
         <div class="max-w-4xl mx-auto px-6 text-center relative z-10 reveal">
             <i data-lucide="leaf" class="w-10 h-10 text-gold-500 mx-auto mb-6"></i>
@@ -339,19 +368,19 @@
                     </div>
                 </div>
                 <div class="order-1 md:order-2 reveal delay-100">
-                    <img src="images/4.png" alt="Kapal Whale Shark" class="w-full aspect-square object-cover shadow-2xl rounded-sm">
+                    <img src="images/4.png" alt="Kapal Whale Shark Sumbawa" loading="lazy" class="w-full aspect-square object-cover shadow-2xl rounded-sm">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- REVIEWS / TESTIMONIALS -->
+    <!-- REVIEWS / TESTIMONIALS (BAHASA CASUAL/NATURAL) -->
     <section id="reviews" class="py-24 bg-editorial-bg relative">
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center mb-16 reveal">
                 <i data-lucide="feather" class="w-8 h-8 text-ocean-400 mx-auto mb-4 opacity-70"></i>
                 <h2 class="text-4xl font-serif text-editorial-accent mb-4">Traveler Stories</h2>
-                <p class="text-[10px] font-bold tracking-widest text-gray-500 uppercase">Jejak kenangan para penjelajah</p>
+                <p class="text-[10px] font-bold tracking-widest text-gray-500 uppercase">Kata mereka yang udah nyobain</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
@@ -360,24 +389,24 @@
                     <div class="flex text-gold-500 mb-4">
                         <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
                     </div>
-                    <p class="text-sm text-gray-600 italic mb-6 leading-relaxed">"Sebuah pengalaman magis yang sangat terorganisir. Menyelam bersama kawanan hiu paus saat matahari terbit adalah momen yang akan selalu saya ingat seumur hidup."</p>
-                    <p class="text-[10px] font-bold uppercase tracking-widest text-ocean-900">- Alexander T. (United Kingdom)</p>
+                    <p class="text-sm text-gray-600 italic mb-6 leading-relaxed">"Sumpah trip ini pecah banget! Pas nyebur langsung disamperin hiu paus segede gaban tapi super jinak. Krunya asik parah dan sigap banget ngejagain kita di air. Recommended abis pokoknya!"</p>
+                    <p class="text-[10px] font-bold uppercase tracking-widest text-ocean-900">- Bimo T. (Jakarta)</p>
                 </div>
                 <!-- Review 2 -->
                 <div class="bg-white p-8 rounded-sm shadow-sm border border-gray-100 reveal delay-200">
                     <div class="flex text-gold-500 mb-4">
                         <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
                     </div>
-                    <p class="text-sm text-gray-600 italic mb-6 leading-relaxed">"Fasilitas dan pelayanan luar biasa dari penjemputan di hotel hingga akhir trip. Kru sangat profesional dan menjaga etika konservasi alam. Sangat direkomendasikan."</p>
-                    <p class="text-[10px] font-bold uppercase tracking-widest text-ocean-900">- Elena S. (Spanyol)</p>
+                    <p class="text-sm text-gray-600 italic mb-6 leading-relaxed">"Awalnya deg-degan mampus karena basic renangku pas-pasan. Tapi ternyata aman banget, dikasih life jacket & guidenya ekstra sabar nemenin ke mana-mana. Worth every penny buat pengalaman sekali seumur hidup!"</p>
+                    <p class="text-[10px] font-bold uppercase tracking-widest text-ocean-900">- Sisca N. (Surabaya)</p>
                 </div>
                 <!-- Review 3 -->
                 <div class="bg-white p-8 rounded-sm shadow-sm border border-gray-100 reveal delay-300">
                     <div class="flex text-gold-500 mb-4">
                         <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
                     </div>
-                    <p class="text-sm text-gray-600 italic mb-6 leading-relaxed">"Awalnya ragu karena kemampuan berenang saya pas-pasan, namun panduan yang sabar serta alat keamanan yang layak membuat saya merasa sangat aman menyelam bersama mamalia raksasa tersebut."</p>
-                    <p class="text-[10px] font-bold uppercase tracking-widest text-ocean-900">- Michael K. (Jakarta)</p>
+                    <p class="text-sm text-gray-600 italic mb-6 leading-relaxed">"Bangun jam 3 pagi kebayar lunas pas liat sunrise di atas kapal, apalagi pas kawanan hiu pausnya mulai muncul ke permukaan! Servisnya juara sih, makanannya enak, kita bener-bener tinggal terima beres."</p>
+                    <p class="text-[10px] font-bold uppercase tracking-widest text-ocean-900">- Kevin S. (Bali)</p>
                 </div>
             </div>
         </div>
@@ -492,7 +521,7 @@
         <!-- Latar Belakang Gelembung Khusus Footer -->
         <div class="bubbles-container"></div>
 
-        <img src="images/6.png" class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen" alt="Underwater background" style="z-index: -1;">
+        <img src="images/6.png" alt="Tekstur Bawah Laut" loading="lazy" class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen" style="z-index: -1;">
         
         <div class="relative z-10 max-w-4xl mx-auto px-6 flex flex-col items-center pointer-events-auto">
             <div class="flex items-center gap-6 mb-10">
@@ -503,7 +532,7 @@
             
             <div class="flex flex-col items-center gap-4 mb-6">
                 <div class="bg-white/10 p-4 rounded-full backdrop-blur-md border border-white/20 shadow-2xl">
-                    <img src="images/whaleshark-logo.jpg" alt="Whale Shark Tour Logo" class="h-20 w-auto object-contain rounded-full mix-blend-lighten">
+                    <img src="images/whaleshark-logo.jpg" alt="Whale Shark Tour Logo" loading="lazy" class="h-20 w-auto object-contain rounded-full mix-blend-lighten">
                 </div>
                 <div class="text-center mt-2">
                     <span class="font-serif text-3xl tracking-widest drop-shadow-md block mb-1">WHALE SHARK</span>
@@ -522,7 +551,6 @@
         <div class="pl-4 pr-2 py-2 bg-gray-50 flex items-center justify-center border-r border-gray-100">
             <i data-lucide="globe" class="w-5 h-5 text-ocean-900"></i>
         </div>
-        <!-- Wadah Asli Google Translate -->
         <div id="google_translate_element" class="-ml-2"></div>
     </div>
 
@@ -550,7 +578,7 @@
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'id', 
-                includedLanguages: 'en,id,zh-CN,zh-TW,ja,ko,fr,de,es,ru,it', // Menambahkan bahasa populer agar lebih relevan (Opsional)
+                includedLanguages: 'en,id,zh-CN,zh-TW,ja,ko,fr,de,es,ru,it',
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
                 autoDisplay: false
             }, 'google_translate_element');
@@ -562,20 +590,27 @@
     <script>
         lucide.createIcons();
 
-        // 1. Navbar Scroll Effect
+        // 1. Navbar Scroll Effect & Mobile Logo Typography Change
         const navbar = document.getElementById('navbar');
         const navLinks = navbar.querySelectorAll('.nav-link, .nav-text');
         const logoImg = navbar.querySelector('.nav-logo');
+        const navBrandText = document.getElementById('nav-brand-text');
         
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
+                // Tampilan Navbar saat di-scroll
                 navbar.classList.add('glass-nav');
                 navbar.classList.remove('text-white', 'py-4');
                 navbar.classList.add('text-gray-900', 'py-3');
                 navLinks.forEach(el => el.classList.remove('drop-shadow-md'));
                 logoImg.classList.remove('border-white/20');
                 logoImg.classList.add('border-gray-200');
+                
+                // Animasi Mobile Logo muncul besar (Cinzel) ketika Scroll Down
+                navBrandText.classList.remove('hidden', 'sm:block', 'font-sans', 'text-xs', 'font-extrabold', 'tracking-[0.3em]');
+                navBrandText.classList.add('font-cinzel', 'text-xl', 'font-bold', 'text-ocean-900', 'tracking-widest');
             } else {
+                // Tampilan Navbar di posisi paling atas
                 navbar.classList.remove('glass-nav');
                 navbar.classList.remove('text-gray-900', 'py-3');
                 navbar.classList.add('text-white', 'py-4');
@@ -585,10 +620,25 @@
                 });
                 logoImg.classList.remove('border-gray-200');
                 logoImg.classList.add('border-white/20');
+                
+                // Mengembalikan text Mobile ke keadaan semula (tersembunyi)
+                navBrandText.classList.add('hidden', 'sm:block', 'font-sans', 'text-xs', 'font-extrabold', 'tracking-[0.3em]');
+                navBrandText.classList.remove('font-cinzel', 'text-xl', 'font-bold', 'text-ocean-900', 'tracking-widest');
             }
         });
 
-        // 2. Reveal Animation Observer
+        // 2. Animasi Huruf Timbul (Typewriter Fade-In) pada Hero Section
+        const splitChars = document.querySelectorAll('.split-char');
+        splitChars.forEach((el, indexOffset) => {
+            const text = el.innerText;
+            el.innerHTML = text.split('').map((char, i) => {
+                if(char === ' ') return '&nbsp;';
+                // Memberikan delay bertahap agar huruf muncul berurutan (stagger)
+                return `<span class="inline-block opacity-0 translate-y-4 animate-char" style="animation-delay: ${(i * 0.05) + (indexOffset * 0.2)}s">${char}</span>`;
+            }).join('');
+        });
+
+        // 3. Animasi Reveal Umum (Scroll ke atas pelan)
         const revealElements = document.querySelectorAll('.reveal');
         const revealObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
@@ -600,15 +650,32 @@
         }, { root: null, threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
         revealElements.forEach(el => revealObserver.observe(el));
 
-        // 3. Bubbles Animation Terisolasi
+        // 4. Animasi Timeline List (Bergeser ke kiri satu persatu)
+        const timelineDots = document.querySelectorAll('.timeline-dot');
+        const timelineObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Memicu class aktif dengan sedikit jeda transisi
+                    setTimeout(() => { entry.target.classList.add('active'); }, 100);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { root: null, threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
+        
+        timelineDots.forEach((el, index) => {
+            el.style.transitionDelay = `${index * 0.15}s`; // Memberi jarak 0.15s antar list
+            timelineObserver.observe(el);
+        });
+
+        // 5. Bubbles Animation Terisolasi (Hanya Hero & Footer)
         const bubbleContainers = document.querySelectorAll('.bubbles-container');
         function createBubble() {
             bubbleContainers.forEach(container => {
                 const bubble = document.createElement('div');
                 bubble.classList.add('bubble');
-                const size = Math.random() * 25 + 5; // Ukuran bervariasi
+                const size = Math.random() * 25 + 5; 
                 const left = Math.random() * 100;
-                const duration = Math.random() * 5 + 4; // 4 hingga 9 detik
+                const duration = Math.random() * 5 + 4; 
                 
                 bubble.style.width = `${size}px`;
                 bubble.style.height = `${size}px`;
@@ -621,7 +688,7 @@
         }
         setInterval(createBubble, 700);
 
-        // 4. Expandable FAB Logic
+        // 6. Expandable FAB Logic (Tombol Kanan Bawah)
         const fabToggle = document.getElementById('fab-toggle');
         const fabMenu = document.getElementById('fab-menu');
         const icon1 = document.getElementById('fab-icon-1');
@@ -644,7 +711,7 @@
             }
         });
 
-        // 5. FAQ Accordion Logic
+        // 7. FAQ Accordion Logic
         const faqToggles = document.querySelectorAll('.faq-toggle');
         faqToggles.forEach(toggle => {
             toggle.addEventListener('click', () => {
@@ -658,14 +725,13 @@
             });
         });
 
-        // 6. WhatsApp Submit Logic
+        // 8. WhatsApp Submit Logic
         function sendToWA(e) {
             e.preventDefault();
             const name = document.getElementById('name').value;
             const date = document.getElementById('date').value;
             const pax = document.getElementById('pax').value;
             
-            // Format Pesan Premium
             const message = `Salam hormat tim Whale Shark Expeditions.%0A%0ASaya bermaksud mengajukan reservasi untuk paket Premium 2D1N.%0A%0A*Informasi Ekspedisi:*%0A- Nama: ${name}%0A- Tanggal: ${date}%0A- Peserta: ${pax} Orang%0A%0AMohon konfirmasi ketersediaan armada dan panduan pembayaran selanjutnya. Terima kasih.`;
             
             const targetPhone = "6282266558435";
