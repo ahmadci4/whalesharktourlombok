@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Whale Shark Tour Lombok 2D1N | Editorial Premium Experience</title>
-    <meta name="description" content="Bergabunglah dalam petualangan mewah 2D1N dari Lombok ke Sumbawa. Berenang bersama hiu paus yang megah di Teluk Saleh.">
+    <title>Whale Shark Expedition Lombok | Premium 2D1N Experience</title>
+    <meta name="description" content="Bergabunglah dalam ekspedisi eksklusif 2D1N dari Lombok ke Sumbawa. Temui langsung hiu paus di perairan Teluk Saleh dengan layanan premium dan ramah lingkungan.">
     
     <!-- FONT EDITORIAL -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
     <!-- IKON -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -23,7 +23,8 @@
                 extend: {
                     colors: {
                         ocean: { 900: '#061626', 800: '#112B45', 600: '#2A5C8D', 400: '#528CBE' },
-                        editorial: { bg: '#F9FAFB', accent: '#3b597b' }
+                        editorial: { bg: '#F9FAFB', accent: '#3b597b' },
+                        gold: { 500: '#D4AF37', 400: '#F3E5AB' }
                     },
                     fontFamily: {
                         sans: ['Montserrat', 'sans-serif'],
@@ -42,22 +43,26 @@
         
         .glass-nav {
             background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(0,0,0,0.05);
         }
         .glass-nav a, .glass-nav span, .glass-nav i { color: #112B45 !important; }
 
-        /* Google Translate Customization - Floating Style */
+        /* Google Translate Customization - Solid Visible Dropdown */
         .goog-te-banner-frame { display: none !important; }
         body { top: 0px !important; }
-        .goog-te-gadget { color: transparent !important; font-family: 'Montserrat', sans-serif !important; font-size: 0px !important; }
-        .goog-logo-link { display: none !important; }
+        .goog-te-gadget { color: transparent !important; font-family: 'Montserrat', sans-serif !important; font-size: 0px !important; margin: 0 !important; }
+        .goog-logo-link, .goog-te-gadget span { display: none !important; }
         .goog-te-gadget .goog-te-combo {
-            margin: 0; padding: 10px 16px; border-radius: 8px; border: 1px solid #e5e7eb;
-            background: #ffffff; color: #112B45; font-size: 14px; outline: none; cursor: pointer;
-            font-family: 'Montserrat', sans-serif; font-weight: 500; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin: 0; padding: 10px 12px 10px 36px; border-radius: 50px; border: 1px solid #e5e7eb;
+            background: #ffffff; color: #112B45; font-size: 13px; outline: none; cursor: pointer;
+            font-family: 'Montserrat', sans-serif; font-weight: 600; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             appearance: none; -webkit-appearance: none; -moz-appearance: none;
+            text-transform: uppercase; width: 140px; transition: all 0.3s ease;
         }
+        .goog-te-combo:hover { border-color: #2A5C8D; }
+        
+        .lang-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); pointer-events: none; z-index: 10; color: #112B45; }
 
         /* Aesthetic Blob & Bubbles */
         .aesthetic-blob {
@@ -65,275 +70,353 @@
             background: radial-gradient(circle, rgba(169, 214, 229, 0.4) 0%, rgba(255,255,255,0) 70%);
         }
         
-        #bubbles-container { position: fixed; inset: 0; z-index: 40; pointer-events: none; overflow: hidden; }
+        /* Bubble container now scoped to specific sections */
+        .bubbles-container { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 0; }
         .bubble {
             position: absolute; bottom: -50px;
-            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), rgba(255,255,255,0.1));
-            border-radius: 50%; box-shadow: inset 0 0 10px rgba(255,255,255,0.5);
-            animation: floatUp linear forwards; opacity: 0; backdrop-filter: blur(2px);
+            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.8), rgba(255,255,255,0.05));
+            border-radius: 50%; box-shadow: inset 0 0 10px rgba(255,255,255,0.4);
+            animation: floatUp linear forwards; opacity: 0; backdrop-filter: blur(1px);
         }
         @keyframes floatUp {
             0% { transform: translateY(0) scale(0.8) translateX(0); opacity: 0; }
             10% { opacity: 0.6; }
             90% { opacity: 0.3; }
-            100% { transform: translateY(-110vh) scale(1.5) translateX(20px); opacity: 0; }
+            100% { transform: translateY(-1000px) scale(1.5) translateX(20px); opacity: 0; }
         }
 
         /* Animasi Text & Reveal */
-        .reveal { opacity: 0; transform: translateY(50px) scale(0.95); transition: all 1s cubic-bezier(0.25, 1, 0.5, 1); }
-        .reveal.active { opacity: 1; transform: translateY(0) scale(1); }
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 1s cubic-bezier(0.25, 1, 0.5, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
         .delay-100 { transition-delay: 100ms; }
         .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
         
         .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
         @keyframes float-slow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
 
         .animate-pulse-glow { animation: pulse-glow 2s infinite; }
-        @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); } 50% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } }
+        @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); } 50% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } }
 
         .text-glow { text-shadow: 0 10px 40px rgba(255,255,255,0.3), 0 2px 10px rgba(0,0,0,0.6); }
+
+        .timeline-dot::before {
+            content: ''; position: absolute; left: -29px; top: 6px; width: 12px; height: 12px;
+            border-radius: 50%; background-color: #3b597b; border: 2px solid white; box-shadow: 0 0 0 2px #3b597b;
+        }
     </style>
 </head>
 <body class="text-gray-800 font-sans antialiased overflow-x-hidden">
 
-    <!-- Container Gelembung -->
-    <div id="bubbles-container"></div>
-
     <!-- NAVBAR -->
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-4 px-6 md:px-12 bg-transparent text-white">
-        <div class="max-w-7xl mx-auto flex justify-between items-center text-xs tracking-widest uppercase font-medium">
+        <div class="max-w-7xl mx-auto flex justify-between items-center text-xs tracking-widest uppercase font-bold">
             
             <div class="flex items-center gap-3 group cursor-pointer relative z-50">
                 <img src="images/whaleshark-logo.jpg" alt="Logo Hiu Paus" class="h-10 md:h-12 w-auto object-contain rounded-full shadow-lg border-2 border-white/20 transition-all nav-logo">
-                <span class="font-sans font-bold tracking-[0.3em] hidden sm:block drop-shadow-md nav-text">WHALE SHARK</span>
+                <span class="font-sans font-extrabold tracking-[0.3em] hidden sm:block drop-shadow-md nav-text">WHALE SHARK</span>
             </div>
 
-            <div class="hidden md:flex items-center gap-8 relative z-50">
-                <a href="#about" class="hover:text-ocean-400 transition-colors drop-shadow-md nav-link">About</a>
-                <a href="#package" class="hover:text-ocean-400 transition-colors drop-shadow-md nav-link">Package</a>
-                <a href="#discover" class="hover:text-ocean-400 transition-colors drop-shadow-md nav-link">Discover</a>
-                <a href="#guide" class="hover:text-ocean-400 transition-colors drop-shadow-md nav-link">Guide</a>
+            <div class="hidden lg:flex items-center gap-7 relative z-50">
+                <a href="#itinerary" class="hover:text-ocean-400 transition-colors drop-shadow-md nav-link">Itinerary</a>
+                <a href="#inclusion" class="hover:text-ocean-400 transition-colors drop-shadow-md nav-link">Inclusions</a>
+                <a href="#fleet" class="hover:text-ocean-400 transition-colors drop-shadow-md nav-link">Fleet</a>
+                <a href="#reviews" class="hover:text-ocean-400 transition-colors drop-shadow-md nav-link">Reviews</a>
+                <a href="#faq" class="hover:text-ocean-400 transition-colors drop-shadow-md nav-link">FAQ</a>
             </div>
 
-            <button class="md:hidden ml-auto nav-link relative z-50" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+            <button class="lg:hidden ml-auto nav-link relative z-50" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
                 <i data-lucide="menu" class="w-6 h-6 drop-shadow-md"></i>
             </button>
         </div>
         
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white p-6 flex flex-col gap-4 text-center shadow-lg border-t border-gray-100 text-ocean-900 z-40">
-            <a href="#about" class="text-sm tracking-widest uppercase mt-4">About</a>
-            <a href="#package" class="text-sm tracking-widest uppercase">Package</a>
-            <a href="#discover" class="text-sm tracking-widest uppercase">Discover</a>
-            <a href="#guide" class="text-sm tracking-widest uppercase">Guide</a>
-            <a href="#faq" class="text-sm tracking-widest uppercase">FAQ</a>
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white p-6 flex flex-col gap-5 text-center shadow-lg border-t border-gray-100 text-ocean-900 z-40">
+            <a href="#itinerary" class="text-sm font-bold tracking-widest uppercase">Itinerary Detail</a>
+            <a href="#inclusion" class="text-sm font-bold tracking-widest uppercase">What's Included</a>
+            <a href="#fleet" class="text-sm font-bold tracking-widest uppercase">Our Fleet</a>
+            <a href="#reviews" class="text-sm font-bold tracking-widest uppercase">Traveler Reviews</a>
+            <a href="#faq" class="text-sm font-bold tracking-widest uppercase">FAQ</a>
+            <a href="#booking" class="text-sm font-bold tracking-widest uppercase text-ocean-600 mt-2 border-t pt-4">Book Expedition</a>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION (Terdapat Gelembung Air) -->
     <header class="relative h-screen flex flex-col items-center justify-center overflow-hidden">
-        <img src="images/1.png" alt="Berenang dengan Hiu Paus" class="absolute inset-0 w-full h-full object-cover object-center transform scale-105 hover:scale-100 transition-transform duration-[20s]" loading="eager">
-        <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-ocean-900/40"></div>
+        <!-- Latar Belakang Gelembung -->
+        <div class="bubbles-container"></div>
+
+        <img src="images/1.png" alt="Ekspedisi Hiu Paus" class="absolute inset-0 w-full h-full object-cover object-center transform scale-105 hover:scale-100 transition-transform duration-[20s]" loading="eager" style="z-index: -1;">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-ocean-900/50" style="z-index: -1;"></div>
         
-        <div class="relative z-10 text-center px-4 mt-16 reveal animate-float-slow">
-            <h1 class="text-3xl md:text-5xl lg:text-5xl font-serif text-white mb-2 tracking-wide drop-shadow-lg">
-                SWIM WITH <br>
-                <span class="font-cinzel text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] leading-none text-white mt-2 block drop-shadow-2xl font-bold text-glow">
-                    WHALE SHARK
+        <div class="relative z-10 text-center px-4 mt-16 reveal animate-float-slow pointer-events-none">
+            <h1 class="text-2xl md:text-4xl lg:text-5xl font-serif text-white mb-2 tracking-wide drop-shadow-lg">
+                ENCOUNTER THE <br>
+                <span class="font-cinzel text-[3.5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] leading-none text-white mt-2 block drop-shadow-2xl font-bold text-glow">
+                    GENTLE GIANTS
                 </span>
             </h1>
-            <p class="text-xs md:text-sm text-white tracking-[0.3em] uppercase max-w-2xl mx-auto font-bold mb-12 drop-shadow-lg mt-6">
-                2D1N Adventure from Lombok to Sumbawa
+            <p class="text-[10px] md:text-xs text-white tracking-[0.3em] uppercase max-w-2xl mx-auto font-bold mb-12 drop-shadow-lg mt-6">
+                An Exclusive 2D1N Expedition from Lombok to Sumbawa
             </p>
-            
-            <a href="#package" class="inline-flex items-center justify-center w-20 h-20 rounded-full border border-white/70 hover:bg-white/20 transition-all group backdrop-blur-sm shadow-xl">
-                <i data-lucide="arrow-down" class="w-8 h-8 text-white group-hover:translate-y-2 transition-transform duration-500 drop-shadow-md"></i>
-            </a>
         </div>
+        
+        <a href="#itinerary" class="absolute bottom-12 inline-flex items-center justify-center w-16 h-16 rounded-full border border-white/50 hover:bg-white/20 transition-all group backdrop-blur-sm z-20">
+            <i data-lucide="arrow-down" class="w-6 h-6 text-white group-hover:translate-y-2 transition-transform duration-500"></i>
+        </a>
     </header>
 
-    <!-- BAGIAN THE JOURNEY -->
-    <section id="package" class="relative py-32 bg-editorial-bg overflow-hidden">
+    <!-- THE JOURNEY (Visual Overview) -->
+    <section class="relative py-24 bg-editorial-bg overflow-hidden">
         <div class="aesthetic-blob w-[600px] h-[600px] top-0 left-[-200px]"></div>
-        <div class="aesthetic-blob w-[800px] h-[800px] bottom-0 right-[-300px]"></div>
 
         <div class="max-w-6xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 relative">
-                
-                <div class="pt-0 md:pt-32 reveal">
+                <div class="reveal">
                     <div class="relative">
                         <div class="absolute -top-4 -left-4 w-24 h-24 bg-white opacity-80 backdrop-blur-md"></div>
-                        <img src="images/2.png" alt="Perjalanan Perahu" class="w-full aspect-[4/3] object-cover shadow-2xl relative z-10 mb-8 rounded-sm">
+                        <img src="images/2.png" alt="Ekspedisi Bahari" class="w-full aspect-[4/3] object-cover shadow-2xl relative z-10 mb-8 rounded-sm">
                     </div>
-                    <p class="text-xs tracking-widest text-gray-500 uppercase mb-3">Lombok / Sumbawa</p>
-                    <h2 class="text-4xl font-serif text-editorial-accent mb-6 tracking-wide">THE JOURNEY</h2>
-                    <div class="text-sm text-gray-600 leading-relaxed space-y-4">
-                        <p><strong>Day 1: Lombok - Labuan Jambu</strong></p>
-                        <p>Perjalanan dimulai dari Mataram, menyeberang lautan jernih menuju Sumbawa. Menikmati pemandangan eksotis menuju desa pesisir Labuan Jambu.</p>
-                        <ul class="list-disc pl-5 mt-2 space-y-1 text-gray-500">
-                            <li>08:30 AM – Check-in Mataram/Senggigi</li>
-                            <li>01:00 PM – Penyeberangan Feri</li>
-                            <li>Sore – Menuju Labuan Jambu</li>
-                        </ul>
-                    </div>
+                    <p class="text-[10px] font-bold tracking-widest text-ocean-600 uppercase mb-3">Lombok to Sumbawa</p>
+                    <h2 class="text-4xl font-serif text-editorial-accent mb-6 tracking-wide">THE OVERLAND CROSSING</h2>
+                    <p class="text-sm text-gray-600 leading-relaxed">Mulai petualangan Anda dari pesisir Lombok menuju perairan tenang Sumbawa. Sebuah ekspedisi yang dirancang khusus untuk memberikan kenyamanan perjalanan darat yang berpadu dengan kemegahan pesona bahari Nusantara.</p>
                 </div>
 
-                <div class="pb-0 md:pb-32 reveal delay-200 mt-16 md:mt-0">
+                <div class="reveal delay-200 mt-16 md:mt-12">
                     <div class="md:text-right mb-8">
-                        <p class="text-xs tracking-widest text-gray-500 uppercase mb-3">How about going to</p>
-                        <h2 class="text-4xl md:text-5xl font-serif text-editorial-accent mb-6 tracking-wide">UNDERWATER</h2>
-                        <div class="text-sm text-gray-600 leading-relaxed space-y-4 md:pl-12">
-                            <p><strong>Day 2: Whale Shark Experience</strong></p>
-                            <p>Menyelam melintasi perairan jernih Teluk Saleh di pagi buta, untuk berenang bersama hiu paus raksasa nan lembut di habitat aslinya.</p>
-                            <ul class="md:list-none space-y-1 text-gray-500">
-                                <li>04:00 AM – Keberangkatan pagi buta</li>
-                                <li>Sunrise – Berenang dengan hiu paus</li>
-                                <li>12:00 PM – Perjalanan kembali</li>
-                            </ul>
-                        </div>
+                        <p class="text-[10px] font-bold tracking-widest text-ocean-600 uppercase mb-3">Into The Deep</p>
+                        <h2 class="text-4xl md:text-5xl font-serif text-editorial-accent mb-6 tracking-wide">THE MARINE ENCOUNTER</h2>
+                        <p class="text-sm text-gray-600 leading-relaxed md:pl-12">Jelajahi perairan kristal Teluk Saleh di waktu fajar. Saksikan secara langsung tarian bawah air satwa laut terbesar di dunia. Sebuah momen magis tak terlupakan yang dijaga kelestariannya secara bertanggung jawab.</p>
                     </div>
                     <div class="relative">
                         <div class="absolute -top-10 right-10 w-px h-24 bg-gray-300"></div>
-                        <img src="images/3.png" alt="Hiu Paus" class="w-full aspect-[3/4] object-cover shadow-2xl relative z-10 rounded-sm">
+                        <img src="images/3.png" alt="Berenang dengan Hiu Paus" class="w-full aspect-[3/4] object-cover shadow-2xl relative z-10 rounded-sm">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- DISCOVER GRID -->
-    <section id="discover" class="py-24 bg-white relative border-y border-gray-100">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-20 reveal">
-                <h2 class="text-5xl md:text-6xl font-serif text-editorial-accent mb-4">Discover</h2>
-                <p class="text-xs tracking-widest text-gray-500 uppercase">choose the experience you want</p>
+    <!-- DETAILED ITINERARY -->
+    <section id="itinerary" class="py-24 bg-white border-y border-gray-100">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-serif text-editorial-accent mb-4">Expedition Timeline</h2>
+                <p class="text-[10px] font-bold tracking-widest text-gray-500 uppercase">Rencana Perjalanan Eksklusif 2 Hari 1 Malam</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+            <div class="space-y-16">
+                <!-- Day 1 -->
+                <div class="reveal">
+                    <h3 class="text-2xl font-serif text-ocean-900 border-b border-gray-200 pb-4 mb-8">Day 1: Departure & Tranquility</h3>
+                    <div class="border-l-2 border-gray-200 pl-6 ml-3 space-y-8 text-sm">
+                        <div class="relative timeline-dot">
+                            <p class="font-bold text-ocean-900 mb-1">08:30 AM - Penjemputan Eksklusif</p>
+                            <p class="text-gray-500">Tim profesional kami menjemput Anda di akomodasi sekitar Mataram, Senggigi, atau Bandara Internasional Lombok.</p>
+                        </div>
+                        <div class="relative timeline-dot">
+                            <p class="font-bold text-ocean-900 mb-1">10:00 AM - Jalur Lintas Pulau</p>
+                            <p class="text-gray-500">Perjalanan darat ber-AC menyusuri pemandangan dataran timur Lombok menuju pelabuhan.</p>
+                        </div>
+                        <div class="relative timeline-dot">
+                            <p class="font-bold text-ocean-900 mb-1">01:00 PM - Penyeberangan Samudra</p>
+                            <p class="text-gray-500">Berlayar dengan feri melintasi Selat Alas menuju Sumbawa. Waktu bebas untuk bersantai dan makan siang (personal expense).</p>
+                        </div>
+                        <div class="relative timeline-dot">
+                            <p class="font-bold text-ocean-900 mb-1">04:00 PM - Tiba di Pesisir Sumbawa</p>
+                            <p class="text-gray-500">Check-in di penginapan Labuan Jambu. Kesempatan menikmati senja pedesaan nelayan sembari menyiapkan energi untuk fajar esok hari.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 2 -->
                 <div class="reveal delay-100">
-                    <img src="images/4.png" class="w-full aspect-[4/3] object-cover mb-6 hover:opacity-90 transition-opacity shadow-md rounded-sm">
-                    <h3 class="text-sm font-bold tracking-widest uppercase mb-3">SALEH BAY • SUMBAWA</h3>
-                    <p class="text-xs text-gray-500 leading-relaxed">Rasakan magisnya berhadapan langsung dengan hiu paus di perairan Teluk Saleh.</p>
-                </div>
-                <div class="reveal delay-200">
-                    <img src="images/5.png" class="w-full aspect-[4/3] object-cover mb-6 hover:opacity-90 transition-opacity shadow-md rounded-sm">
-                    <h3 class="text-sm font-bold tracking-widest uppercase mb-3">SUNRISE • BOAT TRIP</h3>
-                    <p class="text-xs text-gray-500 leading-relaxed">Pemandangan matahari terbit syahdu dari perahu tradisional tradisional.</p>
-                </div>
-                <div class="reveal delay-300">
-                    <img src="images/2.png" class="w-full aspect-[4/3] object-cover mb-6 hover:opacity-90 transition-opacity shadow-md rounded-sm">
-                    <h3 class="text-sm font-bold tracking-widest uppercase mb-3">SCENIC • JOURNEY</h3>
-                    <p class="text-xs text-gray-500 leading-relaxed">Pelayaran membelah lautan biru, melewati deretan pulau tropis eksotis.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- NEW SECTION 1: ESSENTIAL GUIDE -->
-    <section id="guide" class="py-24 bg-editorial-bg relative">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row gap-16 items-center">
-                <div class="md:w-1/3 reveal">
-                    <h2 class="text-4xl font-serif text-editorial-accent mb-4">Preparation<br>Guide</h2>
-                    <p class="text-sm text-gray-600 mb-6">Persiapkan hal-hal penting ini untuk memastikan pengalaman Anda nyaman dan tak terlupakan selama berada di lautan.</p>
-                    <a href="#booking" class="text-xs font-bold tracking-widest uppercase border-b border-ocean-600 pb-1 hover:text-ocean-400 transition-colors">Konsultasi Sekarang &rarr;</a>
-                </div>
-                <div class="md:w-2/3 grid grid-cols-2 md:grid-cols-4 gap-6 reveal delay-100">
-                    <div class="bg-white p-6 rounded-sm shadow-sm border border-gray-100 text-center hover:-translate-y-2 transition-transform">
-                        <i data-lucide="camera" class="w-8 h-8 mx-auto text-ocean-400 mb-4"></i>
-                        <h4 class="text-xs font-bold uppercase mb-2">Action Cam</h4>
-                        <p class="text-[10px] text-gray-500">Kamera bawah air atau GoPro.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-sm shadow-sm border border-gray-100 text-center hover:-translate-y-2 transition-transform">
-                        <i data-lucide="sun" class="w-8 h-8 mx-auto text-ocean-400 mb-4"></i>
-                        <h4 class="text-xs font-bold uppercase mb-2">Sunblock</h4>
-                        <p class="text-[10px] text-gray-500">Disarankan jenis Reef-Safe.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-sm shadow-sm border border-gray-100 text-center hover:-translate-y-2 transition-transform">
-                        <i data-lucide="shirt" class="w-8 h-8 mx-auto text-ocean-400 mb-4"></i>
-                        <h4 class="text-xs font-bold uppercase mb-2">Swimwear</h4>
-                        <p class="text-[10px] text-gray-500">Pakaian renang & ganti secukupnya.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-sm shadow-sm border border-gray-100 text-center hover:-translate-y-2 transition-transform">
-                        <i data-lucide="pill" class="w-8 h-8 mx-auto text-ocean-400 mb-4"></i>
-                        <h4 class="text-xs font-bold uppercase mb-2">Medicine</h4>
-                        <p class="text-[10px] text-gray-500">Obat anti mabuk laut/pribadi.</p>
+                    <h3 class="text-2xl font-serif text-ocean-900 border-b border-gray-200 pb-4 mb-8">Day 2: The Majestic Encounter</h3>
+                    <div class="border-l-2 border-gray-200 pl-6 ml-3 space-y-8 text-sm">
+                        <div class="relative timeline-dot">
+                            <p class="font-bold text-ocean-900 mb-1">04:00 AM - Pelayaran Menembus Fajar</p>
+                            <p class="text-gray-500">Meninggalkan pesisir menggunakan perahu kayu tradisional menuju titik kumpul Hiu Paus di tengah Teluk Saleh.</p>
+                        </div>
+                        <div class="relative timeline-dot">
+                            <p class="font-bold text-ocean-900 mb-1">06:00 AM - Berenang Bersama Raksasa</p>
+                            <p class="text-gray-500">Mentari pagi menyapa. Anda memiliki waktu eksklusif untuk snorkeling dan berinteraksi secara aman dengan Hiu Paus di habitat murninya.</p>
+                        </div>
+                        <div class="relative timeline-dot">
+                            <p class="font-bold text-ocean-900 mb-1">08:30 AM - Sarapan Bahari</p>
+                            <p class="text-gray-500">Menyantap sarapan ringan yang telah kami siapkan di atas dek perahu seraya menikmati udara lautan yang segar.</p>
+                        </div>
+                        <div class="relative timeline-dot">
+                            <p class="font-bold text-ocean-900 mb-1">11:00 AM - Kepulangan</p>
+                            <p class="text-gray-500">Kembali ke Lombok dengan membawa kenangan tak terlupakan. Perkiraan tiba di akomodasi Anda pada sore menjelang senja.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- NEW SECTION 2: THE JOURNAL / ARTICLES -->
-    <section class="py-24 bg-white border-y border-gray-100">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="flex justify-between items-end mb-16 reveal">
+    <!-- NEW SECTION: WHAT'S INCLUDED (Transparansi) -->
+    <section id="inclusion" class="py-24 bg-editorial-bg relative">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 bg-white p-10 shadow-lg border border-gray-100 rounded-sm reveal">
+                <!-- Included -->
                 <div>
-                    <h2 class="text-4xl font-serif text-editorial-accent mb-2">The Journal</h2>
-                    <p class="text-xs tracking-widest text-gray-500 uppercase">Stories from the deep</p>
+                    <h3 class="text-2xl font-serif text-ocean-900 mb-6 flex items-center gap-2">
+                        <i data-lucide="check-circle-2" class="w-6 h-6 text-green-600"></i> What's Included
+                    </h3>
+                    <ul class="space-y-4 text-sm text-gray-600">
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-green-500 shrink-0"></i> <span>Transportasi mobil AC private (Lombok - Sumbawa PP).</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-green-500 shrink-0"></i> <span>Tiket penyeberangan Kapal Feri VIP.</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-green-500 shrink-0"></i> <span>Perahu tradisional khusus (*Charter Boat*) di Teluk Saleh.</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-green-500 shrink-0"></i> <span>Peralatan snorkeling & jaket keselamatan premium.</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-green-500 shrink-0"></i> <span>Sarapan pagi, roti, teh, dan kopi hangat di atas kapal.</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-green-500 shrink-0"></i> <span>Dokumentasi bawah air (GoPro) oleh pemandu.</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-green-500 shrink-0"></i> <span>Tiket masuk area konservasi & sumbangan desa adat.</span></li>
+                    </ul>
                 </div>
-                <a href="#" class="hidden md:block text-xs font-bold tracking-widest uppercase border-b border-gray-300 pb-1">View All Stories</a>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-10">
-                <!-- Article 1 -->
-                <div class="group cursor-pointer reveal delay-100">
-                    <div class="overflow-hidden rounded-sm mb-6">
-                        <img src="images/3.png" alt="Blog 1" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                    <p class="text-[10px] tracking-widest text-gray-400 uppercase mb-2">Travel Tips • 5 Min Read</p>
-                    <h3 class="text-xl font-serif text-ocean-900 mb-3 group-hover:text-ocean-600 transition-colors">Etika Berenang Bersama Hiu Paus</h3>
-                    <p class="text-sm text-gray-500 leading-relaxed">Ketahui jarak aman dan hal apa saja yang tidak boleh dilakukan saat berinteraksi dengan raksasa lembut lautan ini demi menjaga kelestariannya.</p>
-                </div>
-                <!-- Article 2 -->
-                <div class="group cursor-pointer reveal delay-200">
-                    <div class="overflow-hidden rounded-sm mb-6">
-                        <img src="images/5.png" alt="Blog 2" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                    <p class="text-[10px] tracking-widest text-gray-400 uppercase mb-2">Destination • 4 Min Read</p>
-                    <h3 class="text-xl font-serif text-ocean-900 mb-3 group-hover:text-ocean-600 transition-colors">Mengenal Lebih Dekat Teluk Saleh</h3>
-                    <p class="text-sm text-gray-500 leading-relaxed">Mengapa Teluk Saleh di Sumbawa menjadi salah satu habitat menetap terbaik bagi populasi hiu paus di perairan Indonesia.</p>
+                <!-- Excluded -->
+                <div class="bg-gray-50 p-6 rounded-sm border border-gray-100">
+                    <h3 class="text-xl font-serif text-gray-800 mb-6 flex items-center gap-2">
+                        <i data-lucide="x-circle" class="w-5 h-5 text-red-400"></i> Not Included
+                    </h3>
+                    <ul class="space-y-4 text-sm text-gray-500">
+                        <li class="flex items-start gap-3"><i data-lucide="x" class="w-4 h-4 text-red-400 shrink-0 mt-0.5"></i> <span>Akomodasi (Hotel) di Labuan Jambu/Sumbawa.</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="x" class="w-4 h-4 text-red-400 shrink-0 mt-0.5"></i> <span>Makan siang dan makan malam selama perjalanan.</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="x" class="w-4 h-4 text-red-400 shrink-0 mt-0.5"></i> <span>Pengeluaran kebutuhan pribadi.</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="x" class="w-4 h-4 text-red-400 shrink-0 mt-0.5"></i> <span>Gratifikasi/Tip untuk kru dan pemandu lokal (bersifat sukarela).</span></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- NEW SECTION 3: FAQ -->
-    <section id="faq" class="py-24 bg-editorial-bg">
+    <!-- NEW SECTION: ECO-TOURISM PROMISE -->
+    <section class="py-20 bg-ocean-900 text-white relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10 reveal">
+            <i data-lucide="leaf" class="w-10 h-10 text-gold-500 mx-auto mb-6"></i>
+            <h2 class="text-3xl font-serif mb-4">Our Eco-Tourism Promise</h2>
+            <p class="text-sm text-gray-300 leading-relaxed font-light">Kami menjunjung tinggi etika pariwisata yang bertanggung jawab. Pelayaran kami dirancang untuk tidak mengganggu siklus alami ekosistem perairan Sumbawa. Bersama kami, Anda sepakat untuk menjaga jarak aman, tidak menyentuh satwa, dan meminimalisir penggunaan plastik sekali pakai selama ekspedisi berlangsung.</p>
+        </div>
+    </section>
+
+    <!-- OUR FLEET & AMENITIES -->
+    <section id="fleet" class="py-24 bg-white border-b border-gray-100 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="order-2 md:order-1 reveal">
+                    <h2 class="text-4xl font-serif text-editorial-accent mb-4">Vessels &<br>Comfort</h2>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-8">Ekspedisi ini didukung oleh infrastruktur yang mengutamakan keselamatan tanpa mengurangi nilai autentik perjalanan bahari Nusantara.</p>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="life-buoy" class="w-6 h-6 text-ocean-600 shrink-0"></i>
+                            <div>
+                                <h4 class="text-xs font-bold uppercase text-ocean-900 mb-1">Standard Keamanan</h4>
+                                <p class="text-[10px] text-gray-500">Pelampung berstandar maritim untuk setiap penumpang.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="anchor" class="w-6 h-6 text-ocean-600 shrink-0"></i>
+                            <div>
+                                <h4 class="text-xs font-bold uppercase text-ocean-900 mb-1">Kru Bersertifikat</h4>
+                                <p class="text-[10px] text-gray-500">Dikemudikan oleh nelayan ahli pembaca arus laut Sumbawa.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="camera" class="w-6 h-6 text-ocean-600 shrink-0"></i>
+                            <div>
+                                <h4 class="text-xs font-bold uppercase text-ocean-900 mb-1">Dokumentasi Pro</h4>
+                                <p class="text-[10px] text-gray-500">Pemandu dibekali alat rekam bawah air yang mumpuni.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="coffee" class="w-6 h-6 text-ocean-600 shrink-0"></i>
+                            <div>
+                                <h4 class="text-xs font-bold uppercase text-ocean-900 mb-1">Fasilitas Dasar</h4>
+                                <p class="text-[10px] text-gray-500">Air mineral bersih dan kehangatan seduhan teh pagi.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 reveal delay-100">
+                    <img src="images/4.png" alt="Kapal Whale Shark" class="w-full aspect-square object-cover shadow-2xl rounded-sm">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS / TESTIMONIALS -->
+    <section id="reviews" class="py-24 bg-editorial-bg relative">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <i data-lucide="feather" class="w-8 h-8 text-ocean-400 mx-auto mb-4 opacity-70"></i>
+                <h2 class="text-4xl font-serif text-editorial-accent mb-4">Traveler Stories</h2>
+                <p class="text-[10px] font-bold tracking-widest text-gray-500 uppercase">Jejak kenangan para penjelajah</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-white p-8 rounded-sm shadow-sm border border-gray-100 reveal delay-100">
+                    <div class="flex text-gold-500 mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-sm text-gray-600 italic mb-6 leading-relaxed">"Sebuah pengalaman magis yang sangat terorganisir. Menyelam bersama kawanan hiu paus saat matahari terbit adalah momen yang akan selalu saya ingat seumur hidup."</p>
+                    <p class="text-[10px] font-bold uppercase tracking-widest text-ocean-900">- Alexander T. (United Kingdom)</p>
+                </div>
+                <!-- Review 2 -->
+                <div class="bg-white p-8 rounded-sm shadow-sm border border-gray-100 reveal delay-200">
+                    <div class="flex text-gold-500 mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-sm text-gray-600 italic mb-6 leading-relaxed">"Fasilitas dan pelayanan luar biasa dari penjemputan di hotel hingga akhir trip. Kru sangat profesional dan menjaga etika konservasi alam. Sangat direkomendasikan."</p>
+                    <p class="text-[10px] font-bold uppercase tracking-widest text-ocean-900">- Elena S. (Spanyol)</p>
+                </div>
+                <!-- Review 3 -->
+                <div class="bg-white p-8 rounded-sm shadow-sm border border-gray-100 reveal delay-300">
+                    <div class="flex text-gold-500 mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-sm text-gray-600 italic mb-6 leading-relaxed">"Awalnya ragu karena kemampuan berenang saya pas-pasan, namun panduan yang sabar serta alat keamanan yang layak membuat saya merasa sangat aman menyelam bersama mamalia raksasa tersebut."</p>
+                    <p class="text-[10px] font-bold uppercase tracking-widest text-ocean-900">- Michael K. (Jakarta)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-24 bg-white border-y border-gray-100">
         <div class="max-w-3xl mx-auto px-6">
             <div class="text-center mb-16 reveal">
-                <h2 class="text-4xl font-serif text-editorial-accent mb-4">Common Questions</h2>
-                <p class="text-xs tracking-widest text-gray-500 uppercase">Yang sering ditanyakan</p>
+                <h2 class="text-4xl font-serif text-editorial-accent mb-4">Essential Inquiries</h2>
+                <p class="text-[10px] font-bold tracking-widest text-gray-500 uppercase">Pertanyaan Umum Ekspedisi</p>
             </div>
 
             <div class="space-y-4 reveal delay-100">
-                <!-- FAQ Item 1 -->
-                <div class="bg-white border border-gray-100 rounded-sm">
-                    <button class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none">
-                        <span class="font-bold text-sm">Apakah pemula yang tidak bisa berenang boleh ikut?</span>
+                <div class="bg-editorial-bg border border-gray-200 rounded-sm">
+                    <button class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none hover:bg-gray-100 transition-colors">
+                        <span class="font-bold text-sm text-ocean-900">Apakah wisata ini cocok bagi pemula yang kurang mahir berenang?</span>
                         <i data-lucide="plus" class="w-4 h-4 text-ocean-600 transition-transform duration-300"></i>
                     </button>
-                    <div class="faq-content hidden px-6 pb-5 text-sm text-gray-500 leading-relaxed border-t border-gray-50">
-                        Sangat boleh. Kami menyediakan pelampung (life jacket) dan pemandu kami akan terus mendampingi Anda di dalam air. Anda bisa berpegangan pada tali penyeimbang kapal saat melihat hiu paus.
+                    <div class="faq-content hidden px-6 pb-5 text-sm text-gray-600 leading-relaxed pt-4">
+                        Sangat cocok. Keselamatan Anda adalah hal mutlak. Kami menyediakan jaket pelampung berspesifikasi tinggi, dan pemandu renang kami (*dive master/guide*) akan mendedikasikan waktu untuk mengawal Anda selama berada di dalam air.
                     </div>
                 </div>
-                <!-- FAQ Item 2 -->
-                <div class="bg-white border border-gray-100 rounded-sm">
-                    <button class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none">
-                        <span class="font-bold text-sm">Apakah pasti 100% bertemu Hiu Paus?</span>
+                <div class="bg-editorial-bg border border-gray-200 rounded-sm">
+                    <button class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none hover:bg-gray-100 transition-colors">
+                        <span class="font-bold text-sm text-ocean-900">Apakah terdapat jaminan pasti bertemu Hiu Paus?</span>
                         <i data-lucide="plus" class="w-4 h-4 text-ocean-600 transition-transform duration-300"></i>
                     </button>
-                    <div class="faq-content hidden px-6 pb-5 text-sm text-gray-500 leading-relaxed border-t border-gray-50">
-                        Hiu paus adalah satwa liar di habitat bebas. Meski peluangnya tinggi (sekitar 60-80% di Teluk Saleh), kami tidak bisa memberikan jaminan 100%. Jika hari pertama tidak muncul, kita akan coba lagi esok paginya.
+                    <div class="faq-content hidden px-6 pb-5 text-sm text-gray-600 leading-relaxed pt-4">
+                        Hiu paus merupakan bagian dari alam liar yang siklusnya tak dapat dikendalikan sepenuhnya. Mengingat Teluk Saleh adalah habitat alami mereka, peluang perjumpaan sangatlah masif (mencapai 80%). Namun secara profesional, kami tidak dapat menerbitkan jaminan 100%. Tim kami selalu melakukan observasi maksimal setiap paginya.
                     </div>
                 </div>
-                <!-- FAQ Item 3 -->
-                <div class="bg-white border border-gray-100 rounded-sm">
-                    <button class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none">
-                        <span class="font-bold text-sm">Anak-anak boleh ikut?</span>
+                <div class="bg-editorial-bg border border-gray-200 rounded-sm">
+                    <button class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none hover:bg-gray-100 transition-colors">
+                        <span class="font-bold text-sm text-ocean-900">Apakah diperkenankan membawa anak di bawah umur?</span>
                         <i data-lucide="plus" class="w-4 h-4 text-ocean-600 transition-transform duration-300"></i>
                     </button>
-                    <div class="faq-content hidden px-6 pb-5 text-sm text-gray-500 leading-relaxed border-t border-gray-50">
-                        Boleh. Wisata ini relatif aman untuk keluarga. Namun, disarankan anak berusia minimal 7 tahun agar lebih mudah diarahkan dan bisa menikmati perjalanan darat yang cukup panjang.
+                    <div class="faq-content hidden px-6 pb-5 text-sm text-gray-600 leading-relaxed pt-4">
+                        Ekspedisi ini relatif aman bagi keluarga. Walau demikian, untuk meminimalisir rasa lelah dari durasi perjalanan darat, kami sangat merekomendasikan batas usia minimum peserta adalah 7 tahun.
                     </div>
                 </div>
             </div>
@@ -341,118 +424,122 @@
     </section>
 
     <!-- HARGA & NOTES -->
-    <section class="py-24 bg-white border-t border-gray-100">
+    <section class="py-24 bg-editorial-bg border-b border-gray-100">
         <div class="max-w-4xl mx-auto px-6">
-            <div class="bg-editorial-bg p-12 text-center border border-gray-100 shadow-md reveal relative overflow-hidden rounded-sm">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-yellow-100 rounded-bl-full opacity-50"></div>
+            <div class="bg-ocean-900 p-12 text-center shadow-2xl reveal relative overflow-hidden rounded-sm text-white">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-gold-500 rounded-bl-full opacity-10"></div>
                 <div class="relative z-10">
-                    <p class="text-xs tracking-widest text-gray-400 uppercase mb-4">All Inclusive Package</p>
+                    <p class="text-[10px] font-bold tracking-[0.3em] text-gold-400 uppercase mb-4">Eksklusif Premium Package</p>
                     <div class="flex items-start justify-center gap-2 mb-6">
-                        <span class="text-2xl text-yellow-600 font-bold mt-2">IDR</span>
-                        <span class="text-6xl md:text-7xl font-serif font-bold text-gray-900 tracking-tight">2.650.000</span>
+                        <span class="text-2xl text-gold-400 font-bold mt-2">IDR</span>
+                        <span class="text-6xl md:text-8xl font-serif font-bold text-white tracking-tight drop-shadow-lg">2.650.000</span>
                     </div>
-                    <p class="text-sm text-gray-500 mb-8">per orang • kuota terbatas</p>
+                    <p class="text-[10px] text-gray-300 mb-8 font-bold tracking-widest uppercase">Per Orang • Tersedia Terbatas</p>
                 </div>
             </div>
             
-            <div class="mt-12 bg-red-50 p-6 rounded-sm border border-red-100 text-center reveal delay-100">
-                <p class="text-xs text-red-600 font-bold tracking-widest uppercase mb-2"><i data-lucide="alert-circle" class="w-4 h-4 inline mr-1"></i> Kebijakan Refund</p>
-                <p class="text-sm text-gray-600">Biaya operasional telah dikeluarkan sepenuhnya oleh perusahaan. Jika setelah 2 hari tidak terjadi penampakan hiu paus, <strong>kami tidak dapat memberikan refund</strong>.</p>
+            <div class="mt-8 bg-white p-8 rounded-sm border border-gray-200 text-center reveal delay-100 flex flex-col md:flex-row items-center gap-6 justify-center shadow-sm">
+                <div class="bg-gray-100 p-4 rounded-full shrink-0"><i data-lucide="scale" class="w-6 h-6 text-gray-700"></i></div>
+                <div class="text-left">
+                    <p class="text-[10px] text-gray-800 font-extrabold tracking-widest uppercase mb-2 border-b border-gray-200 pb-2 inline-block">Ketentuan Transparansi & Refund</p>
+                    <p class="text-xs text-gray-500 leading-relaxed">Ekspedisi bahari ini beroperasi secara penuh dari sisi logistik dan armada terlepas dari pergerakan alam liar. Oleh sebab itu, jika pencarian yang dilakukan secara maksimal tidak membuahkan perjumpaan dengan hiu paus, maka <strong>dana reservasi tidak dapat dikembalikan (non-refundable)</strong> demi menutupi beban operasional dasar perusahaan.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- BOOKING FORM -->
-    <section id="booking" class="py-24 bg-editorial-bg">
-        <div class="max-w-2xl mx-auto px-6 text-center reveal">
-            <h2 class="text-4xl font-serif text-editorial-accent mb-4">Join The Journey</h2>
-            <p class="text-xs tracking-widest text-gray-500 uppercase mb-12">Isi form untuk reservasi via WhatsApp</p>
+    <section id="booking" class="py-24 bg-white relative">
+        <div class="max-w-3xl mx-auto px-6 text-center reveal">
+            <h2 class="text-4xl font-serif text-editorial-accent mb-4">Secure Your Spot</h2>
+            <p class="text-[10px] font-bold tracking-widest text-gray-500 uppercase mb-12">Konsultasi dan Reservasi Eksklusif via WhatsApp</p>
 
-            <form onsubmit="sendToWA(event)" class="space-y-6 text-left bg-white p-10 shadow-xl rounded-sm">
+            <form onsubmit="sendToWA(event)" class="space-y-6 text-left bg-editorial-bg p-10 md:p-14 shadow-xl rounded-sm border border-gray-200 relative">
+                <div class="absolute top-0 left-0 w-full h-1 bg-ocean-800"></div>
+                
                 <div>
-                    <input type="text" id="name" required class="w-full px-0 py-4 border-b border-gray-300 focus:border-ocean-600 outline-none transition-all bg-transparent placeholder-gray-400 font-sans" placeholder="Nama Lengkap">
+                    <label class="block text-[10px] font-bold uppercase tracking-widest text-ocean-900 mb-2">Nama Representatif Pemesan</label>
+                    <input type="text" id="name" required class="w-full px-0 py-3 border-b border-gray-300 focus:border-ocean-800 outline-none transition-all bg-transparent font-sans text-gray-800" placeholder="Ketik nama lengkap Anda...">
                 </div>
-                <div class="grid grid-cols-2 gap-8">
+                <div class="grid grid-cols-2 gap-8 mt-8">
                     <div>
-                        <input type="date" id="date" required class="w-full px-0 py-4 border-b border-gray-300 focus:border-ocean-600 outline-none transition-all bg-transparent text-gray-600 font-sans">
+                        <label class="block text-[10px] font-bold uppercase tracking-widest text-ocean-900 mb-2">Estimasi Tanggal</label>
+                        <input type="date" id="date" required class="w-full px-0 py-3 border-b border-gray-300 focus:border-ocean-800 outline-none transition-all bg-transparent text-gray-800 font-sans">
                     </div>
                     <div>
-                        <select id="pax" required class="w-full px-0 py-4 border-b border-gray-300 focus:border-ocean-600 outline-none transition-all bg-transparent text-gray-600 font-sans">
-                            <option value="" disabled selected>Jumlah Orang</option>
-                            <option value="1">1 Orang</option>
+                        <label class="block text-[10px] font-bold uppercase tracking-widest text-ocean-900 mb-2">Jumlah Entourage</label>
+                        <select id="pax" required class="w-full px-0 py-3 border-b border-gray-300 focus:border-ocean-800 outline-none transition-all bg-transparent text-gray-800 font-sans">
+                            <option value="" disabled selected>Pilih...</option>
+                            <option value="1">1 Orang (Solo)</option>
                             <option value="2">2 Orang</option>
                             <option value="3">3 Orang</option>
-                            <option value="4+">4+ Orang</option>
+                            <option value="4+">4+ Orang (Grup)</option>
                         </select>
                     </div>
                 </div>
-                <div class="pt-8 text-center">
-                    <button type="submit" class="inline-block bg-[#112B45] hover:bg-[#2A5C8D] text-white text-xs font-bold tracking-widest uppercase px-12 py-5 transition-all w-full shadow-md hover:shadow-xl rounded-sm">
-                        Kirim Form Booking
+                <div class="pt-12 text-center">
+                    <button type="submit" class="inline-flex items-center justify-center gap-3 bg-[#112B45] hover:bg-[#2A5C8D] text-white text-xs font-bold tracking-widest uppercase px-12 py-5 transition-all w-full md:w-auto shadow-xl hover:shadow-2xl hover:-translate-y-1 rounded-sm">
+                        <i data-lucide="calendar-check" class="w-4 h-4"></i> Ajukan Reservasi
                     </button>
+                    <p class="text-[10px] text-gray-500 mt-5 uppercase tracking-[0.2em] font-bold">Terhubung Langsung Ke Eksekutif Kami</p>
                 </div>
             </form>
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- FOOTER (Terdapat Gelembung Air) -->
     <footer class="relative py-24 bg-[#0a1520] text-center text-white overflow-hidden">
-        <img src="images/6.png" class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen" alt="Underwater background">
+        <!-- Latar Belakang Gelembung Khusus Footer -->
+        <div class="bubbles-container"></div>
+
+        <img src="images/6.png" class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen" alt="Underwater background" style="z-index: -1;">
         
-        <div class="relative z-10 max-w-4xl mx-auto px-6 flex flex-col items-center">
-            <div class="flex items-center gap-4 mb-8">
-                <a href="#" class="text-white hover:text-ocean-400 transition-colors"><i data-lucide="facebook" class="w-6 h-6"></i></a>
-                <a href="#" class="text-white hover:text-ocean-400 transition-colors"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+        <div class="relative z-10 max-w-4xl mx-auto px-6 flex flex-col items-center pointer-events-auto">
+            <div class="flex items-center gap-6 mb-10">
+                <a href="#" class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:bg-white hover:text-ocean-900 transition-all"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:bg-white hover:text-ocean-900 transition-all"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:bg-white hover:text-ocean-900 transition-all"><i data-lucide="mail" class="w-4 h-4"></i></a>
             </div>
-            <div class="flex flex-col items-center gap-4 mb-4">
-                <div class="bg-white/10 p-3 rounded-full backdrop-blur-sm border border-white/20">
-                    <img src="images/whaleshark-logo.jpg" alt="Whale Shark Tour Logo" class="h-16 md:h-20 w-auto object-contain rounded-full mix-blend-lighten">
+            
+            <div class="flex flex-col items-center gap-4 mb-6">
+                <div class="bg-white/10 p-4 rounded-full backdrop-blur-md border border-white/20 shadow-2xl">
+                    <img src="images/whaleshark-logo.jpg" alt="Whale Shark Tour Logo" class="h-20 w-auto object-contain rounded-full mix-blend-lighten">
                 </div>
-                <div class="text-center leading-tight">
-                    <span class="font-serif text-3xl tracking-wide drop-shadow-md">WHALE SHARK</span><br>
-                    <span class="text-[10px] font-sans tracking-[0.3em] opacity-80 uppercase">Tour Lombok</span>
+                <div class="text-center mt-2">
+                    <span class="font-serif text-3xl tracking-widest drop-shadow-md block mb-1">WHALE SHARK</span>
+                    <span class="text-[10px] font-sans font-bold tracking-[0.4em] opacity-80 uppercase">Tour Lombok</span>
                 </div>
             </div>
-            <p class="text-xs opacity-60 mt-8 max-w-sm tracking-widest uppercase leading-loose">
-                © 2026 Whale Shark Tour Lombok.<br>Premium adventure from Lombok to Sumbawa.
+            
+            <p class="text-[10px] opacity-50 mt-10 max-w-sm tracking-[0.2em] uppercase leading-loose font-bold">
+                © 2026 WHALE SHARK EXPEDITIONS.<br>LUXURY & SUSTAINABLE TOURISM INDONESIA.
             </p>
         </div>
     </footer>
 
-    <!-- FLOATING TRANSLATE BUTTON (KIRI BAWAH) -->
-    <div class="fixed bottom-6 left-6 z-50 flex flex-col items-start group">
-        <!-- Translate Dropdown Container -->
-        <div class="absolute bottom-full mb-4 left-0 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto">
-            <div class="bg-white p-3 rounded-xl shadow-2xl border border-gray-100">
-                <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-2 px-1">Pilih Bahasa</p>
-                <div id="google_translate_element"></div>
-            </div>
+    <!-- WIDGET GOOGLE TRANSLATE (KIRI BAWAH) - SELALU TAMPIL -->
+    <div class="fixed bottom-6 left-6 z-50 flex items-center bg-white shadow-2xl rounded-full border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow">
+        <div class="pl-4 pr-2 py-2 bg-gray-50 flex items-center justify-center border-r border-gray-100">
+            <i data-lucide="globe" class="w-5 h-5 text-ocean-900"></i>
         </div>
-        
-        <!-- Trigger Button -->
-        <button class="w-14 h-14 bg-white text-ocean-900 rounded-full flex items-center justify-center shadow-xl border border-gray-100 hover:-translate-y-1 transition-transform relative">
-            <i data-lucide="languages" class="w-6 h-6"></i>
-        </button>
+        <!-- Wadah Asli Google Translate -->
+        <div id="google_translate_element" class="-ml-2"></div>
     </div>
 
     <!-- EXPANDABLE FLOATING CTA (KANAN BAWAH) -->
     <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
-        <!-- Hidden/Expandable Menu -->
         <div id="fab-menu" class="flex flex-col gap-3 transition-all duration-300 opacity-0 translate-y-10 scale-90 origin-bottom pointer-events-none">
-            <!-- Email -->
             <a href="mailto:info@whalesharktour.com" class="w-12 h-12 bg-editorial-accent text-white rounded-full flex items-center justify-center shadow-xl hover:-translate-x-1 transition-transform group relative ml-auto">
                 <i data-lucide="mail" class="w-5 h-5"></i>
                 <span class="absolute right-full mr-3 bg-gray-900 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-2 rounded-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">Email Us</span>
             </a>
-            <!-- WhatsApp -->
             <a href="https://wa.me/6282266558435" target="_blank" class="w-12 h-12 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-xl hover:-translate-x-1 transition-transform group relative ml-auto">
                 <i data-lucide="phone" class="w-5 h-5 fill-current"></i>
                 <span class="absolute right-full mr-3 bg-gray-900 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-2 rounded-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">WhatsApp</span>
             </a>
         </div>
         
-        <!-- Main Bubble Toggle -->
-        <button id="fab-toggle" class="w-16 h-16 bg-ocean-800 text-white rounded-full flex items-center justify-center shadow-2xl hover:bg-ocean-600 transition-colors animate-pulse-glow z-10 relative">
+        <button id="fab-toggle" class="w-16 h-16 bg-ocean-800 text-white rounded-full flex items-center justify-center shadow-2xl hover:bg-ocean-600 transition-colors animate-pulse-glow z-10 relative border-2 border-white/10">
             <i data-lucide="message-circle" class="w-7 h-7" id="fab-icon-1"></i>
             <i data-lucide="x" class="w-7 h-7 absolute hidden" id="fab-icon-2"></i>
         </button>
@@ -463,6 +550,7 @@
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'id', 
+                includedLanguages: 'en,id,zh-CN,zh-TW,ja,ko,fr,de,es,ru,it', // Menambahkan bahasa populer agar lebih relevan (Opsional)
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
                 autoDisplay: false
             }, 'google_translate_element');
@@ -512,46 +600,33 @@
         }, { root: null, threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
         revealElements.forEach(el => revealObserver.observe(el));
 
-        // 3. Bubbles Animation Generator
-        const bubbleContainer = document.getElementById('bubbles-container');
+        // 3. Bubbles Animation Terisolasi
+        const bubbleContainers = document.querySelectorAll('.bubbles-container');
         function createBubble() {
-            const bubble = document.createElement('div');
-            bubble.classList.add('bubble');
-            
-            // Random properties
-            const size = Math.random() * 20 + 5; // 5px - 25px
-            const left = Math.random() * 100; // 0 - 100vw
-            const duration = Math.random() * 4 + 4; // 4s - 8s
-            
-            bubble.style.width = `${size}px`;
-            bubble.style.height = `${size}px`;
-            bubble.style.left = `${left}vw`;
-            bubble.style.animationDuration = `${duration}s`;
-            
-            bubbleContainer.appendChild(bubble);
-            
-            // Remove after animation completes
-            setTimeout(() => { bubble.remove(); }, duration * 1000);
+            bubbleContainers.forEach(container => {
+                const bubble = document.createElement('div');
+                bubble.classList.add('bubble');
+                const size = Math.random() * 25 + 5; // Ukuran bervariasi
+                const left = Math.random() * 100;
+                const duration = Math.random() * 5 + 4; // 4 hingga 9 detik
+                
+                bubble.style.width = `${size}px`;
+                bubble.style.height = `${size}px`;
+                bubble.style.left = `${left}%`;
+                bubble.style.animationDuration = `${duration}s`;
+                
+                container.appendChild(bubble);
+                setTimeout(() => { bubble.remove(); }, duration * 1000);
+            });
         }
-        
-        // Buat gelembung berkala
-        setInterval(createBubble, 800);
-        
-        // Buat gelembung ekstra saat scroll
-        let isScrolling;
-        window.addEventListener('scroll', () => {
-            window.clearTimeout(isScrolling);
-            createBubble(); // Tambah 1 gelembung tiap gerak scroll
-            isScrolling = setTimeout(() => {}, 66);
-        }, false);
+        setInterval(createBubble, 700);
 
-        // 4. Expandable FAB Logic (Kanan Bawah)
+        // 4. Expandable FAB Logic
         const fabToggle = document.getElementById('fab-toggle');
         const fabMenu = document.getElementById('fab-menu');
         const icon1 = document.getElementById('fab-icon-1');
         const icon2 = document.getElementById('fab-icon-2');
         let fabOpen = false;
-
         fabToggle.addEventListener('click', () => {
             fabOpen = !fabOpen;
             if (fabOpen) {
@@ -575,21 +650,11 @@
             toggle.addEventListener('click', () => {
                 const content = toggle.nextElementSibling;
                 const icon = toggle.querySelector('i');
-                
-                // Tutup semua yang lain (opsional)
-                document.querySelectorAll('.faq-content').forEach(c => {
-                    if (c !== content) c.classList.add('hidden');
-                });
-                document.querySelectorAll('.faq-toggle i').forEach(i => {
-                    if (i !== icon) i.style.transform = 'rotate(0deg)';
-                });
-
+                document.querySelectorAll('.faq-content').forEach(c => { if (c !== content) c.classList.add('hidden'); });
+                document.querySelectorAll('.faq-toggle i').forEach(i => { if (i !== icon) i.style.transform = 'rotate(0deg)'; });
                 content.classList.toggle('hidden');
-                if (content.classList.contains('hidden')) {
-                    icon.style.transform = 'rotate(0deg)';
-                } else {
-                    icon.style.transform = 'rotate(45deg)'; // Ubah + jadi x
-                }
+                if (content.classList.contains('hidden')) icon.style.transform = 'rotate(0deg)';
+                else icon.style.transform = 'rotate(45deg)';
             });
         });
 
@@ -600,7 +665,9 @@
             const date = document.getElementById('date').value;
             const pax = document.getElementById('pax').value;
             
-            const message = `Halo Whale Shark Tour Lombok! 🦈%0A%0ASaya ingin bertanya mengenai Paket 2D1N.%0A%0A*Nama:* ${name}%0A*Tanggal:* ${date}%0A*Jumlah:* ${pax} Orang%0A%0AMohon info ketersediaan slotnya. Terima kasih.`;
+            // Format Pesan Premium
+            const message = `Salam hormat tim Whale Shark Expeditions.%0A%0ASaya bermaksud mengajukan reservasi untuk paket Premium 2D1N.%0A%0A*Informasi Ekspedisi:*%0A- Nama: ${name}%0A- Tanggal: ${date}%0A- Peserta: ${pax} Orang%0A%0AMohon konfirmasi ketersediaan armada dan panduan pembayaran selanjutnya. Terima kasih.`;
+            
             const targetPhone = "6282266558435";
             window.open(`https://wa.me/${targetPhone}?text=${message}`, '_blank');
         }
