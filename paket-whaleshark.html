@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta name="google-site-verification" content="7pQm4-xD7D2cbj0vZbSHTAWYQanSd8MSoFQfybzYj7s" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whale Shark Packages | Premium Experience</title>
+    <link rel="icon" type="image/png" sizes="192x192" href="images/whaleshark-logo.png">
+    <link rel="apple-touch-icon" href="images/whaleshark-logo.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ocean: { 900: '#061626', 800: '#112B45', 600: '#2A5C8D', 400: '#528CBE' },
+                        editorial: { bg: '#F9FAFB', accent: '#3b597b' },
+                        gold: { 500: '#D4AF37', 400: '#F3E5AB' }
+                    },
+                    fontFamily: { sans: ['Montserrat', 'sans-serif'], serif: ['Playfair Display', 'serif'], cinzel: ['Cinzel Decorative', 'serif'] },
+                    letterSpacing: { widest: '.25em' }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #F9FAFB; position: relative; }
+        .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .glass-nav a, .glass-nav span, .glass-nav i { color: #112B45 !important; }
+        .goog-te-banner-frame, .goog-logo-link, .goog-te-gadget span { display: none !important; }
+        body { top: 0px !important; } #google_translate_element { display: none; } 
+        .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; will-change: opacity, transform; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .delay-100 { transition-delay: 100ms; } .delay-200 { transition-delay: 200ms; }
+        .timeline-dot { opacity: 0; transform: translateX(30px); transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
+        .timeline-dot.active { opacity: 1; transform: translateX(0); }
+        .timeline-dot::before { content: ''; position: absolute; left: -29px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background-color: #3b597b; border: 2px solid white; box-shadow: 0 0 0 2px #3b597b; }
+        .package-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .package-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+    </style>
+</head>
+<body class="text-gray-800 font-sans antialiased overflow-x-hidden">
+
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-4 px-6 md:px-12 bg-transparent text-white">
+        <div class="max-w-7xl mx-auto flex justify-between items-center text-xs tracking-widest uppercase font-bold">
+            <div class="flex items-center gap-3 group cursor-pointer relative z-50">
+                <img src="images/whaleshark-logo.png" alt="Logo Hiu Paus Tour Lombok" class="h-10 md:h-12 w-auto object-contain rounded-full shadow-lg border-2 border-white/20 transition-all nav-logo">
+                <span id="nav-brand-text" class="font-sans font-extrabold tracking-[0.3em] hidden sm:block drop-shadow-md transition-all duration-300 whitespace-nowrap">WHALE SHARK</span>
+            </div>
+            
+            <div class="hidden lg:flex items-center gap-7 relative z-50">
+                <a href="index.html" class="hover:text-ocean-400 transition-colors drop-shadow-md nav-link">Home</a>
+                <a href="paket-whaleshark.html" class="hover:text-ocean-400 transition-colors drop-shadow-md nav-link text-gold-400">Whale Shark</a>
+                <a href="paket-komodo.html" class="hover:text-ocean-400 transition-colors drop-shadow-md nav-link">Komodo Trip</a>
+                <a href="index.html#fleet" class="hover:text-ocean-400 transition-colors drop-shadow-md nav-link">Fleet</a>
+            </div>
+
+            <button class="lg:hidden ml-auto nav-link relative z-50" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i data-lucide="menu" class="w-6 h-6 drop-shadow-md"></i>
+            </button>
+        </div>
+        
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white p-6 flex flex-col gap-5 text-center shadow-lg border-t border-gray-100 text-ocean-900 z-40">
+            <a href="index.html" class="text-sm font-bold tracking-widest uppercase">Home</a>
+            <a href="paket-whaleshark.html" class="text-sm font-bold tracking-widest uppercase text-gold-500">Whale Shark Packages</a>
+            <a href="paket-komodo.html" class="text-sm font-bold tracking-widest uppercase">Sailing Komodo</a>
+            <a href="index.html#fleet" class="text-sm font-bold tracking-widest uppercase">Our Fleet</a>
+        </div>
+    </nav>
+
+    <!-- HEADER WHALE SHARK -->
+    <header class="relative pt-32 pb-24 flex flex-col items-center justify-center overflow-hidden">
+        <img src="images/1.jpg" alt="Ekspedisi Hiu Paus" class="absolute inset-0 w-full h-full object-cover object-center transform scale-105" style="z-index: -1;">
+        <div class="absolute inset-0 bg-gradient-to-b from-ocean-900/80 to-ocean-900/90" style="z-index: -1;"></div>
+        <div class="relative z-10 text-center px-4 reveal active">
+            <h1 class="font-serif text-white mb-2 tracking-wide text-4xl md:text-6xl">WHALE SHARK EXPEDITIONS</h1>
+            <p class="text-xs text-gold-400 tracking-[0.3em] uppercase font-bold mt-4">Teluk Saleh, Sumbawa Packages</p>
+        </div>
+    </header>
+
+    <section id="packages" class="py-24 bg-white border-y border-gray-100">
+        <div class="max-w-5xl mx-auto px-6">
+            
+            <!-- 1. SHARING PROGRAM WHALE SHARK -->
+            <article class="package-card bg-editorial-bg border border-gray-200 rounded-lg p-6 md:p-12 mb-16 reveal">
+                <div class="border-b border-gray-200 pb-8 mb-8">
+                    <h3 class="text-2xl md:text-3xl font-serif text-ocean-900 mb-4 leading-snug">SHARING PROGRAM WHALE SHARK DARI LOMBOK – SUMBAWA</h3>
+                    <p class="text-4xl font-bold text-gold-500 mb-6">Rp 2.650.000</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">Rasakan pengalaman luar biasa berenang bersama hiu paus di habitat aslinya di Teluk Saleh, Sumbawa. Program ini dirancang untuk Anda yang ingin menikmati perjalanan seru dengan sistem sharing (bergabung dengan peserta lain), sehingga lebih hemat tanpa mengurangi kenyamanan.</p>
+                </div>
+                
+                <div class="mb-10">
+                    <h4 class="text-lg font-bold text-ocean-900 mb-6 flex items-center gap-2">📅 DAY 1: LOMBOK – SUMBAWA</h4>
+                    <div class="border-l-2 border-gray-200 pl-6 ml-3 space-y-6 text-sm">
+                        <div class="relative timeline-dot">
+                            <p class="font-bold text-ocean-900 mb-1">08:30 AM – Penjemputan</p>
+                            <p class="text-gray-600">Kami akan menjemput Anda di hotel area Mataram, Senggigi, atau Pelabuhan Bangsal.<br>Peserta kurang dari 4 orang: menggunakan shuttle bus<br>Peserta 5 orang atau lebih: menggunakan transportasi private</p>
+                        </div>
+                        <div class="relative timeline-dot">
+                            <p class="font-bold text-ocean-900 mb-1">10:00 AM – Perjalanan Darat</p>
+                            <p class="text-gray-600">Perjalanan menuju pelabuhan menggunakan kendaraan ber-AC, melewati pemandangan indah Lombok bagian timur.</p>
+                        </div>
+                        <div class="relative timeline-dot">
+                            <p class="font-bold text-ocean-900 mb-1">01:00 PM – Penyeberangan ke Sumbawa</p>
+                            <p class="text-gray-600">Menyeberang dengan feri melalui Selat Alas menuju Sumbawa.<br>Waktu bebas untuk bersantai dan makan siang (biaya pribadi).</p>
+                        </div>
+                        <div class="relative timeline-dot">
+                            <p class="font-bold text-ocean-900 mb-1">03:00 PM – Tiba di Sumbawa</p>
+                            <p class="text-gray-600">Tiba di Sumbawa, kemudian melanjutkan perjalanan menuju Labuan Jambu.</p>
+                        </div>
+                        <div class="relative timeline-dot">
+                            <p class="font-bold text-ocean-900 mb-1">08:00 PM – Check-in Penginapan</p>
+                            <p class="text-gray-600">Check-in di penginapan di Labuan Jambu.<br>Nikmati suasana tenang desa nelayan dan beristirahat untuk persiapan aktivitas esok hari.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-10">
+                    <h4 class="text-lg font-bold text-ocean-900 mb-6 flex items-center gap-2">📅 DAY 2: PENGALAMAN HIU PAUS</h4>
+                    <div class="border-l-2 border-gray-200 pl-6 ml-3 space-y-6 text-sm">
+                        <div class="relative timeline-dot">
+                            <p class="font-bold text-ocean-900 mb-1">04:00 AM – Berangkat ke Lokasi</p>
+                            <p class="text-gray-600">Berangkat dari penginapan menggunakan perahu menuju lokasi hiu paus di Teluk Saleh.</p>
+                        </div>
+                        <div class="relative timeline-dot">
+                            <p class="font-bold text-ocean-900 mb-1">06:00 AM – Snorkeling dengan Hiu Paus</p>
+                            <p class="text-gray-600">Tiba di lokasi. Nikmati pengalaman snorkeling dan melihat hiu paus secara langsung di habitat alaminya dengan aman.</p>
+                        </div>
+                        <div class="relative timeline-dot">
+                            <p class="font-bold text-ocean-900 mb-1">08:30 AM – Sarapan di Perahu</p>
+                            <p class="text-gray-600">Sarapan ringan disediakan di atas perahu sambil menikmati udara laut yang segar.</p>
+                        </div>
+                        <div class="relative timeline-dot">
+                            <p class="font-bold text-ocean-900 mb-1">11:00 AM – Perjalanan Pulang</p>
+                            <p class="text-gray-600">Kembali ke Lombok dengan membawa pengalaman yang tak terlupakan.</p>
+                        </div>
+                        <div class="relative timeline-dot">
+                            <p class="font-bold text-ocean-900 mb-1">08:00 PM – Tiba di Lombok</p>
+                            <p class="text-gray-600">Tiba di Lombok dan kami akan mengantar Anda kembali ke penginapan di area Senggigi, Mataram, atau Pelabuhan Bangsal.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-8 p-6 bg-white border border-gray-100 rounded-md shadow-sm">
+                    <h4 class="font-bold text-ocean-900 mb-3">✨ Catatan Penting</h4>
+                    <ul class="list-disc pl-5 text-sm text-gray-600 space-y-2">
+                        <li>Program ini bersifat sharing (gabung dengan peserta lain)</li>
+                        <li>Jadwal dapat menyesuaikan kondisi cuaca dan situasi di lapangan</li>
+                    </ul>
+                </div>
+
+                <div class="mb-8 p-6 bg-yellow-50 border border-yellow-200 rounded-md">
+                    <h4 class="font-bold text-yellow-800 mb-3">⚠️ INFORMASI PENTING: PERTEMUAN DENGAN HIU PAUS</h4>
+                    <p class="text-sm text-gray-700 leading-relaxed mb-2">Hiu paus adalah satwa liar yang hidup di habitat alaminya, sehingga pertemuan tidak dapat dijamin. Berdasarkan pengalaman di Teluk Saleh, peluang bertemu hiu paus sekitar 60–80%.</p>
+                    <p class="text-sm text-gray-700 leading-relaxed mb-2">Jika pada hari pertama belum berhasil melihat hiu paus, pencarian akan dilanjutkan pada hari kedua untuk meningkatkan peluang.</p>
+                    <p class="text-sm text-gray-700 leading-relaxed">Jika setelah dua hari masih belum bertemu hiu paus, perjalanan akan tetap kembali ke titik penjemputan awal. Seluruh biaya operasional selama perjalanan tetap ditanggung oleh penyelenggara, namun tidak ada pengembalian dana, karena seluruh rangkaian program telah dijalankan sesuai rencana.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 text-sm">
+                    <div>
+                        <h4 class="font-bold text-green-700 mb-4">✅ Termasuk (Include)</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>Transportasi pulang-pergi Lombok – Sumbawa</li>
+                            <li>Tiket feri (PP)</li>
+                            <li>Akomodasi 1 malam di Labuan Jambu</li>
+                            <li>Lunch box</li>
+                            <li>Perahu untuk trip hiu paus (sharing)</li>
+                            <li>Guide lokal berpengalaman</li>
+                            <li>Peralatan snorkeling</li>
+                            <li>Dokumentasi GoPro</li>
+                            <li>Air mineral selama perjalanan</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-red-600 mb-4">❌ Tidak Termasuk (Exclude)</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>Makan malam</li>
+                            <li>Pengeluaran pribadi</li>
+                            <li>Asuransi perjalanan</li>
+                            <li>Tips untuk guide & crew (opsional)</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 2. 1 DAY TRIP WHALE SHARK -->
+            <article class="package-card bg-editorial-bg border border-gray-200 rounded-lg p-6 md:p-12 mb-16 reveal delay-100">
+                <div class="border-b border-gray-200 pb-8 mb-8">
+                    <h3 class="text-2xl md:text-3xl font-serif text-ocean-900 mb-4 leading-snug">1 DAY TRIP WHALE SHARK – LABUHAN JAMBU</h3>
+                    <p class="text-4xl font-bold text-gold-500 mb-6">Rp 750.000</p>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-2">Rasakan pengalaman tak terlupakan berenang bersama hiu paus di habitat aslinya di Teluk Saleh, Sumbawa. Program ini dimulai langsung dari Labuhan Jambu dan sangat cocok untuk Anda yang sudah berada di area Sumbawa.</p>
+                    <p class="text-sm text-red-500 font-medium italic">Tidak termasuk transportasi darat & penginapan.</p>
+                </div>
+                
+                <div class="mb-10">
+                    <h4 class="text-lg font-bold text-ocean-900 mb-6 flex items-center gap-2">📅 ITINERARY</h4>
+                    <div class="border-l-2 border-gray-200 pl-6 ml-3 space-y-6 text-sm">
+                        <div class="relative timeline-dot">
+                            <p class="font-bold text-ocean-900 mb-1">04:30 AM – Meeting Point</p>
+                            <p class="text-gray-600">Berkumpul di Labuhan Jambu dan persiapan sebelum keberangkatan.</p>
+                        </div>
+                        <div class="relative timeline-dot">
+                            <p class="font-bold text-ocean-900 mb-1">05:00 AM – Berangkat ke Lokasi</p>
+                            <p class="text-gray-600">Berangkat menggunakan perahu menuju spot hiu paus di Teluk Saleh.</p>
+                        </div>
+                        <div class="relative timeline-dot">
+                            <p class="font-bold text-ocean-900 mb-1">06:00 AM – Snorkeling dengan Hiu Paus</p>
+                            <p class="text-gray-600">Tiba di lokasi. Nikmati pengalaman snorkeling dan melihat hiu paus secara langsung di habitat alaminya dengan aman.</p>
+                        </div>
+                        <div class="relative timeline-dot">
+                            <p class="font-bold text-ocean-900 mb-1">08:30 AM – Sarapan di Perahu</p>
+                            <p class="text-gray-600">Sarapan ringan disediakan di atas perahu sambil menikmati suasana laut yang segar.</p>
+                        </div>
+                        <div class="relative timeline-dot">
+                            <p class="font-bold text-ocean-900 mb-1">10:00 AM – Kembali ke Labuhan Jambu</p>
+                            <p class="text-gray-600">Perjalanan kembali menuju Labuhan Jambu.</p>
+                        </div>
+                        <div class="relative timeline-dot">
+                            <p class="font-bold text-ocean-900 mb-1">11:00 AM – Trip Selesai</p>
+                            <p class="text-gray-600">Tiba di Labuhan Jambu dan program selesai.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-8 p-6 bg-white border border-gray-100 rounded-md shadow-sm">
+                    <h4 class="font-bold text-ocean-900 mb-1">⏱️ Durasi</h4>
+                    <p class="text-sm text-gray-600">± 6–7 jam</p>
+                </div>
+
+                <div class="mb-8 p-6 bg-yellow-50 border border-yellow-200 rounded-md">
+                    <h4 class="font-bold text-yellow-800 mb-3">⚠️ INFORMASI PENTING</h4>
+                    <p class="text-sm text-gray-700 leading-relaxed">Hiu paus merupakan satwa liar yang hidup di alam bebas, sehingga pertemuan tidak dapat dijamin. Berdasarkan pengalaman, peluang bertemu hiu paus berkisar 60–80%, tergantung kondisi alam dan cuaca.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 text-sm">
+                    <div>
+                        <h4 class="font-bold text-green-700 mb-4">✅ Termasuk (Include)</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>Perahu (sharing trip)</li>
+                            <li>Guide lokal berpengalaman</li>
+                            <li>Peralatan snorkeling (mask & snorkel)</li>
+                            <li>Sarapan ringan</li>
+                            <li>Air mineral</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-red-600 mb-4">❌ Tidak Termasuk (Exclude)</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>Transportasi menuju/ dari Labuhan Jambu</li>
+                            <li>Penginapan</li>
+                            <li>Makan siang</li>
+                            <li>Asuransi perjalanan</li>
+                            <li>Pengeluaran pribadi</li>
+                            <li>Tips untuk guide & crew (opsional)</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 3. PRIVATE PROGRAM WHALE SHARK -->
+            <article class="package-card bg-editorial-bg border border-gray-200 rounded-lg p-6 md:p-12 reveal delay-200">
+                <div class="border-b border-gray-200 pb-8 mb-8 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gold-500 rounded-bl-full opacity-10"></div>
+                    <h3 class="text-2xl md:text-3xl font-serif text-ocean-900 mb-4 leading-snug relative z-10">PRIVATE PROGRAM WHALE SHARK DARI LOMBOK KE SUMBAWA</h3>
+                    <p class="text-4xl font-bold text-gold-500 mb-6 relative z-10">Rp 3.500.000</p>
+                    <p class="text-sm text-gray-600 leading-relaxed relative z-10 mb-2">Nikmati pengalaman tak terlupakan berenang bersama hiu paus di habitat aslinya di Teluk Saleh, Sumbawa.</p>
+                    <p class="text-sm text-gray-600 leading-relaxed relative z-10">Program ini adalah private trip (khusus untuk grup Anda) sehingga lebih nyaman dan fleksibel, namun perahu menuju lokasi hiu paus tetap sharing dengan peserta lain.</p>
+                </div>
+                
+                <div class="mb-10">
+                    <h4 class="text-lg font-bold text-ocean-900 mb-6 flex items-center gap-2">📅 DAY 1: LOMBOK – SUMBAWA</h4>
+                    <div class="border-l-2 border-gray-200 pl-6 ml-3 space-y-6 text-sm">
+                        <div class="relative timeline-dot">
+                            <p class="font-bold text-ocean-900 mb-1">08:30 AM – Penjemputan</p>
+                            <p class="text-gray-600">Tim kami akan menjemput Anda di hotel area Mataram, Senggigi, atau Pelabuhan Bangsal.<br>Semua transportasi menggunakan kendaraan private khusus untuk grup Anda.</p>
+                        </div>
+                        <div class="relative timeline-dot">
+                            <p class="font-bold text-ocean-900 mb-1">10:00 AM – Perjalanan Darat</p>
+                            <p class="text-gray-600">Perjalanan menuju pelabuhan menggunakan kendaraan ber-AC, melewati pemandangan indah Lombok bagian timur.</p>
+                        </div>
+                        <div class="relative timeline-dot">
+                            <p class="font-bold text-ocean-900 mb-1">01:00 PM – Penyeberangan ke Sumbawa</p>
+                            <p class="text-gray-600">Menyeberang dengan feri melalui Selat Alas menuju Sumbawa.<br>Waktu bebas untuk bersantai dan makan siang (biaya pribadi).</p>
+                        </div>
+                        <div class="relative timeline-dot">
+                            <p class="font-bold text-ocean-900 mb-1">03:00 PM – Tiba di Sumbawa</p>
+                            <p class="text-gray-600">Tiba di Sumbawa, kemudian melanjutkan perjalanan menuju Labuan Jambu.</p>
+                        </div>
+                        <div class="relative timeline-dot">
+                            <p class="font-bold text-ocean-900 mb-1">08:00 PM – Check-in Penginapan</p>
+                            <p class="text-gray-600">Check-in di penginapan di Labuan Jambu.<br>Istirahat dan nikmati suasana tenang desa nelayan untuk persiapan aktivitas esok hari.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-10">
+                    <h4 class="text-lg font-bold text-ocean-900 mb-6 flex items-center gap-2">📅 DAY 2: PENGALAMAN HIU PAUS</h4>
+                    <div class="border-l-2 border-gray-200 pl-6 ml-3 space-y-6 text-sm">
+                        <div class="relative timeline-dot">
+                            <p class="font-bold text-ocean-900 mb-1">04:00 AM – Berangkat ke Lokasi</p>
+                            <p class="text-gray-600">Berangkat dari penginapan menggunakan perahu menuju lokasi hiu paus di Teluk Saleh.<br>Perahu digunakan bersama (sharing) dengan peserta lain.</p>
+                        </div>
+                        <div class="relative timeline-dot">
+                            <p class="font-bold text-ocean-900 mb-1">06:00 AM – Snorkeling dengan Hiu Paus</p>
+                            <p class="text-gray-600">Tiba di lokasi. Nikmati pengalaman snorkeling dan melihat hiu paus secara langsung di habitat alaminya dengan aman.</p>
+                        </div>
+                        <div class="relative timeline-dot">
+                            <p class="font-bold text-ocean-900 mb-1">08:30 AM – Sarapan di Perahu</p>
+                            <p class="text-gray-600">Sarapan ringan disediakan di atas perahu sambil menikmati suasana laut yang segar.</p>
+                        </div>
+                        <div class="relative timeline-dot">
+                            <p class="font-bold text-ocean-900 mb-1">11:00 AM – Perjalanan Pulang</p>
+                            <p class="text-gray-600">Kembali ke Lombok dengan membawa pengalaman yang tak terlupakan.</p>
+                        </div>
+                        <div class="relative timeline-dot">
+                            <p class="font-bold text-ocean-900 mb-1">08:00 PM – Tiba di Lombok</p>
+                            <p class="text-gray-600">Tiba di Lombok dan kami akan mengantar Anda ke hotel di area Senggigi, Mataram, atau Pelabuhan Bangsal.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-8 p-6 bg-yellow-50 border border-yellow-200 rounded-md">
+                    <h4 class="font-bold text-yellow-800 mb-3">⚠️ INFORMASI PENTING: PERTEMUAN DENGAN HIU PAUS</h4>
+                    <p class="text-sm text-gray-700 leading-relaxed mb-2">Hiu paus adalah satwa liar yang hidup di habitat alaminya, sehingga pertemuan tidak dapat dijamin. Berdasarkan pengalaman di Teluk Saleh, peluang bertemu hiu paus sekitar 60–80%.</p>
+                    <p class="text-sm text-gray-700 leading-relaxed mb-2">Jika pada hari pertama belum berhasil melihat hiu paus, pencarian akan dilanjutkan pada hari berikutnya untuk meningkatkan peluang.</p>
+                    <p class="text-sm text-gray-700 leading-relaxed">Jika setelah dua hari masih belum bertemu hiu paus, perjalanan akan tetap kembali ke titik penjemputan awal. Seluruh biaya operasional selama perjalanan tetap ditanggung oleh penyelenggara, namun tidak ada pengembalian dana, karena seluruh rangkaian program telah dijalankan sesuai rencana.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 text-sm">
+                    <div>
+                        <h4 class="font-bold text-green-700 mb-4">✅ Termasuk (Include)</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>Transportasi private Lombok – Sumbawa (PP)</li>
+                            <li>Tiket feri Lombok – Sumbawa (PP)</li>
+                            <li>Akomodasi 1 malam di Labuan Jambu</li>
+                            <li>Perahu untuk trip hiu paus (sharing boat)</li>
+                            <li>Guide lokal berpengalaman</li>
+                            <li>Peralatan snorkeling (mask & snorkel)</li>
+                            <li>Sarapan di hari ke-2</li>
+                            <li>Air mineral selama perjalanan</li>
+                            <li>Dokumentasi GoPro</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-red-600 mb-4">❌ Tidak Termasuk (Exclude)</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>Makan siang & makan malam</li>
+                            <li>Tiket pesawat / transport menuju Lombok</li>
+                            <li>Asuransi perjalanan</li>
+                            <li>Pengeluaran pribadi</li>
+                            <li>Tips untuk guide & crew (opsional)</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- FORMULIR BOOKING KHUSUS HIU PAUS -->
+    <section id="booking" class="py-24 bg-ocean-900 relative">
+        <div class="max-w-3xl mx-auto px-6 text-center reveal">
+            <h2 class="text-4xl font-serif text-white mb-4">Secure Your Spot</h2>
+            <p class="text-[10px] font-bold tracking-widest text-gold-400 uppercase mb-12">Konsultasi dan Reservasi Eksklusif via WhatsApp</p>
+
+            <form onsubmit="sendToWA(event)" class="space-y-6 text-left bg-white p-8 md:p-14 shadow-xl rounded-sm border border-gray-200 relative">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gold-500"></div>
+                
+                <div>
+                    <label class="block text-[10px] font-bold uppercase tracking-widest text-ocean-900 mb-2">Nama Pemesan</label>
+                    <input type="text" id="name" required class="w-full px-0 py-3 border-b border-gray-300 focus:border-ocean-800 outline-none transition-all bg-transparent font-sans text-gray-800" placeholder="Ketik nama lengkap Anda...">
+                </div>
+                <div class="mt-6">
+                    <label class="block text-[10px] font-bold uppercase tracking-widest text-ocean-900 mb-2">Pilih Paket Hiu Paus</label>
+                    <select id="package" required class="w-full px-0 py-3 border-b border-gray-300 focus:border-ocean-800 outline-none transition-all bg-transparent text-gray-800 font-sans text-sm md:text-base">
+                        <option value="" disabled selected>Pilih Paket...</option>
+                        <option value="Sharing Program Hiu Paus">Sharing Program Sumbawa (Rp 2.650.000)</option>
+                        <option value="1 Day Trip Hiu Paus">1 Day Trip Labuhan Jambu (Rp 750.000)</option>
+                        <option value="Private Program Hiu Paus">Private Program Sumbawa (Rp 3.500.000)</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-2 gap-8 mt-6">
+                    <div>
+                        <label class="block text-[10px] font-bold uppercase tracking-widest text-ocean-900 mb-2">Tanggal Berangkat</label>
+                        <input type="date" id="date" required class="w-full px-0 py-3 border-b border-gray-300 focus:border-ocean-800 outline-none transition-all bg-transparent text-gray-800 font-sans">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold uppercase tracking-widest text-ocean-900 mb-2">Jumlah Peserta</label>
+                        <select id="pax" required class="w-full px-0 py-3 border-b border-gray-300 focus:border-ocean-800 outline-none transition-all bg-transparent text-gray-800 font-sans">
+                            <option value="" disabled selected>Pilih...</option>
+                            <option value="1">1 Orang (Solo)</option>
+                            <option value="2">2 Orang</option>
+                            <option value="3">3 Orang</option>
+                            <option value="4+">4+ Orang (Grup)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="pt-12 text-center">
+                    <button type="submit" class="inline-flex items-center justify-center gap-3 bg-[#112B45] hover:bg-[#2A5C8D] text-white text-xs font-bold tracking-widest uppercase px-12 py-5 transition-all w-full md:w-auto shadow-xl hover:shadow-2xl hover:-translate-y-1 rounded-sm">
+                        <i data-lucide="calendar-check" class="w-4 h-4"></i> Ajukan Reservasi
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="relative py-16 bg-[#0a1520] text-center text-white">
+        <div class="relative z-10 max-w-4xl mx-auto px-6 flex flex-col items-center pointer-events-auto">
+            <p class="text-[10px] opacity-50 tracking-[0.2em] uppercase font-bold">© 2026 WHALE SHARK EXPEDITIONS INDONESIA.</p>
+        </div>
+    </footer>
+
+    <!-- WIDGETS -->
+    <div id="google_translate_element" style="display:none;"></div>
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+        <a href="https://wa.me/6282266558435" target="_blank" class="w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:-translate-y-1 transition-transform relative border-2 border-white/10">
+            <i data-lucide="phone" class="w-7 h-7 fill-current"></i>
+        </a>
+    </div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: 'id', includedLanguages: 'en,id,zh-CN,ja,ko,fr,de,es,ru,it', autoDisplay: false }, 'google_translate_element'); }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+        lucide.createIcons();
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('glass-nav');
+                navbar.classList.remove('text-white', 'py-4');
+                navbar.classList.add('text-gray-900', 'py-3');
+            } else {
+                navbar.classList.remove('glass-nav', 'text-gray-900', 'py-3');
+                navbar.classList.add('text-white', 'py-4');
+            }
+        });
+
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('active'); observer.unobserve(entry.target); } });
+        }, { root: null, threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+        revealElements.forEach(el => revealObserver.observe(el));
+        const timelineDots = document.querySelectorAll('.timeline-dot');
+        const timelineObserver = new IntersectionObserver((entries, observer) => { entries.forEach(entry => { if (entry.isIntersecting) { setTimeout(() => { entry.target.classList.add('active'); }, 50); observer.unobserve(entry.target); } }); }, { root: null, threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
+        timelineDots.forEach((el, index) => { el.style.transitionDelay = `${(index % 4) * 0.15}s`; timelineObserver.observe(el); });
+
+        function sendToWA(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const pkg = document.getElementById('package').value;
+            const date = document.getElementById('date').value;
+            const pax = document.getElementById('pax').value;
+            const message = `Salam hormat.%0A%0ASaya bermaksud mengajukan reservasi tour.%0A%0A*Info:*%0A- Nama: ${name}%0A- Paket: ${pkg}%0A- Tanggal: ${date}%0A- Peserta: ${pax} Orang%0A%0AMohon konfirmasi. Terima kasih.`;
+            window.open(`https://wa.me/6282266558435?text=${message}`, '_blank');
+        }
+    </script>
+</body>
+</html>
