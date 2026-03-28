@@ -5,18 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Whale Shark Expedition Lombok | Premium Experience</title>
+    <title>Whale Shark & Komodo Expeditions | Premium Liveaboard</title>
     <link rel="icon" type="image/png" sizes="192x192" href="images/whaleshark-logo.png">
     <link rel="apple-touch-icon" href="images/whaleshark-logo.png">
     <meta name="msapplication-TileImage" content="images/whaleshark-logo.png">
-    <meta name="description" content="Bergabunglah dalam ekspedisi eksklusif dari Lombok ke Sumbawa. Temui langsung hiu paus di perairan Teluk Saleh dengan layanan premium dan ramah lingkungan.">
-    <meta name="keywords" content="whale shark lombok, tour hiu paus lombok, sumbawa whale shark, saleh bay tour, wisata hiu paus indonesia">
+    <meta name="description" content="Bergabunglah dalam ekspedisi eksklusif dari Lombok ke Sumbawa & Labuan Bajo.">
+    <meta name="keywords" content="whale shark lombok, tour hiu paus lombok, sailing komodo, wisata hiu paus indonesia">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Whale Shark Expeditions">
     
     <meta property="og:title" content="Whale Shark & Komodo Expedition | Premium Experience">
-    <meta property="og:description" content="Berenang bersama raksasa lembut di Teluk Saleh dan Sailing Komodo. Pesan trip eksklusifmu sekarang!">
-    <meta property="og:image" content="images/1.png">
+    <meta property="og:description" content="Berenang bersama raksasa lembut di Teluk Saleh dan Sailing Komodo.">
+    <meta property="og:image" content="images/1.jpg">
     <meta property="og:type" content="website">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +24,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
     <script src="https://unpkg.com/lucide@latest"></script>
-
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -53,56 +52,48 @@
         .goog-te-banner-frame, .goog-logo-link, .goog-te-gadget span { display: none !important; }
         body { top: 0px !important; }
         #google_translate_element { display: none; } 
-
-        .aesthetic-blob { position: absolute; border-radius: 50%; z-index: -1; filter: blur(60px); background: radial-gradient(circle, rgba(169, 214, 229, 0.4) 0%, rgba(255,255,255,0) 70%); will-change: transform; }
-        
         .bubbles-container { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 0; }
         .bubble { position: absolute; bottom: -50px; background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.6), rgba(255,255,255,0.05)); border-radius: 50%; box-shadow: inset 0 0 5px rgba(255,255,255,0.3); animation: floatUp infinite linear; }
         @keyframes floatUp { 0% { transform: translateY(0) scale(0.8); opacity: 0; } 10% { opacity: 0.8; } 90% { opacity: 0.2; } 100% { transform: translateY(-100vh) scale(1.5); opacity: 0; } }
-
         .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; will-change: opacity, transform; }
         .reveal.active { opacity: 1; transform: translateY(0); }
         .delay-100 { transition-delay: 100ms; }
         .delay-200 { transition-delay: 200ms; }
-        
         .animate-float-slow { animation: float-slow 6s ease-in-out infinite; will-change: transform; }
         @keyframes float-slow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
-        
-        .timeline-dot { opacity: 0; transform: translateX(30px); transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
-        .timeline-dot.active { opacity: 1; transform: translateX(0); }
-        .timeline-dot::before { content: ''; position: absolute; left: -29px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background-color: #3b597b; border: 2px solid white; box-shadow: 0 0 0 2px #3b597b; }
-        
         .text-glow { text-shadow: 0 10px 40px rgba(255,255,255,0.3), 0 2px 10px rgba(0,0,0,0.6); }
         .lang-scroll::-webkit-scrollbar { width: 4px; }
         .lang-scroll::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 10px; }
-        .package-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .package-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
     </style>
 </head>
 <body class="text-gray-800 font-sans antialiased overflow-x-hidden">
 
+    <!-- NAVBAR UTAMA -->
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-4 px-6 md:px-12 bg-transparent text-white">
         <div class="max-w-7xl mx-auto flex justify-between items-center text-xs tracking-widest uppercase font-bold">
             <div class="flex items-center gap-3 group cursor-pointer relative z-50">
                 <img src="images/whaleshark-logo.png" alt="Logo Hiu Paus Tour Lombok" class="h-10 md:h-12 w-auto object-contain rounded-full shadow-lg border-2 border-white/20 transition-all nav-logo">
                 <span id="nav-brand-text" class="font-sans font-extrabold tracking-[0.3em] hidden sm:block drop-shadow-md transition-all duration-300 whitespace-nowrap">WHALE SHARK</span>
             </div>
+            
             <div class="hidden lg:flex items-center gap-7 relative z-50">
-                <a href="#packages" class="hover:text-ocean-400 transition-colors drop-shadow-md nav-link">Whale Shark</a>
-                <a href="#komodo" class="hover:text-ocean-400 transition-colors drop-shadow-md nav-link text-gold-400">Komodo Trip</a>
+                <!-- Tautan Antar Halaman -->
+                <a href="index.html" class="hover:text-ocean-400 transition-colors drop-shadow-md nav-link text-gold-400">Home</a>
+                <a href="paket-whaleshark.html" class="hover:text-ocean-400 transition-colors drop-shadow-md nav-link">Whale Shark</a>
+                <a href="paket-komodo.html" class="hover:text-ocean-400 transition-colors drop-shadow-md nav-link">Komodo Trip</a>
                 <a href="#fleet" class="hover:text-ocean-400 transition-colors drop-shadow-md nav-link">Fleet</a>
-                <a href="#booking" class="hover:text-ocean-400 transition-colors drop-shadow-md nav-link">Book Now</a>
             </div>
+
             <button class="lg:hidden ml-auto nav-link relative z-50" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
                 <i data-lucide="menu" class="w-6 h-6 drop-shadow-md"></i>
             </button>
         </div>
         
         <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white p-6 flex flex-col gap-5 text-center shadow-lg border-t border-gray-100 text-ocean-900 z-40">
-            <a href="#packages" class="text-sm font-bold tracking-widest uppercase" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Whale Shark Packages</a>
-            <a href="#komodo" class="text-sm font-bold tracking-widest uppercase text-gold-500" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Sailing Komodo</a>
-            <a href="#fleet" class="text-sm font-bold tracking-widest uppercase" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Our Fleet</a>
-            <a href="#booking" class="text-sm font-bold tracking-widest uppercase text-ocean-600 mt-2 border-t pt-4" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Book Now</a>
+            <a href="index.html" class="text-sm font-bold tracking-widest uppercase text-gold-500">Home</a>
+            <a href="paket-whaleshark.html" class="text-sm font-bold tracking-widest uppercase">Whale Shark Packages</a>
+            <a href="paket-komodo.html" class="text-sm font-bold tracking-widest uppercase">Sailing Komodo</a>
+            <a href="#fleet" class="text-sm font-bold tracking-widest uppercase">Our Fleet</a>
         </div>
     </nav>
 
@@ -110,686 +101,100 @@
         <div class="bubbles-container">
             <div class="bubble" style="left: 10%; width: 15px; height: 15px; animation-duration: 6s; animation-delay: 0s;"></div>
             <div class="bubble" style="left: 30%; width: 25px; height: 25px; animation-duration: 8s; animation-delay: 2s;"></div>
-            <div class="bubble" style="left: 50%; width: 10px; height: 10px; animation-duration: 5s; animation-delay: 4s;"></div>
             <div class="bubble" style="left: 70%; width: 20px; height: 20px; animation-duration: 7s; animation-delay: 1s;"></div>
-            <div class="bubble" style="left: 85%; width: 30px; height: 30px; animation-duration: 9s; animation-delay: 3s;"></div>
         </div>
-        <img src="images/1.png" alt="Ekspedisi Hiu Paus dan Komodo" class="absolute inset-0 w-full h-full object-cover object-center transform scale-105 hover:scale-100 transition-transform duration-[20s]" style="z-index: -1;">
+        <img src="images/1.jpg" alt="Ekspedisi Hiu Paus dan Komodo" class="absolute inset-0 w-full h-full object-cover object-center transform scale-105 hover:scale-100 transition-transform duration-[20s]" style="z-index: -1;">
         <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-ocean-900/50" style="z-index: -1;"></div>
         
         <div class="relative z-10 text-center px-4 mt-16 animate-float-slow pointer-events-none w-full reveal active">
             <h1 class="font-serif text-white mb-2 tracking-wide drop-shadow-lg text-2xl md:text-4xl lg:text-5xl">
-                SWIM WITH <br>
-                <span class="font-cinzel text-[13vw] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] leading-none text-white mt-2 block drop-shadow-2xl font-bold text-glow mx-auto">
-                    WHALE SHARK
+                PREMIUM <br>
+                <span class="font-cinzel text-[10vw] sm:text-[5rem] md:text-[7rem] lg:text-[8rem] leading-none text-white mt-2 block drop-shadow-2xl font-bold text-glow mx-auto">
+                    EXPEDITIONS
                 </span>
             </h1>
             <p class="text-[9px] md:text-xs text-white tracking-[0.3em] uppercase max-w-2xl mx-auto font-bold mb-12 drop-shadow-lg mt-6">
-                An Exclusive Premium Adventure from Lombok to Sumbawa & Komodo
+                Sumbawa Whale Shark & Sailing Komodo Experience
             </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8 pointer-events-auto">
+                <a href="paket-whaleshark.html" class="bg-white/10 hover:bg-white/20 border border-white/50 text-white px-8 py-3 rounded-full text-xs font-bold tracking-widest uppercase transition-all backdrop-blur-sm">Whale Shark Tour</a>
+                <a href="paket-komodo.html" class="bg-gold-500 hover:bg-gold-400 text-ocean-900 px-8 py-3 rounded-full text-xs font-bold tracking-widest uppercase transition-all shadow-lg">Sailing Komodo</a>
+            </div>
         </div>
-        
-        <a href="#packages" class="absolute bottom-12 inline-flex items-center justify-center w-16 h-16 rounded-full border border-white/50 hover:bg-white/20 transition-all group backdrop-blur-sm z-20 reveal delay-200">
-            <i data-lucide="arrow-down" class="w-6 h-6 text-white group-hover:translate-y-2 transition-transform duration-500"></i>
-        </a>
     </header>
 
-    <section id="packages" class="py-24 bg-white border-y border-gray-100">
-        <div class="max-w-5xl mx-auto px-6">
+    <!-- OUR FLEET -->
+    <section id="fleet" class="py-24 bg-white border-b border-gray-100 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="order-2 md:order-1 reveal">
+                    <h2 class="text-4xl font-serif text-editorial-accent mb-4">Vessels &<br>Comfort</h2>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-8">Ekspedisi ini didukung oleh infrastruktur yang mengutamakan keselamatan tanpa mengurangi nilai autentik perjalanan bahari Nusantara. Kapal kami dirancang khusus untuk kenyamanan jelajah perairan Timur Indonesia.</p>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="life-buoy" class="w-6 h-6 text-ocean-600 shrink-0"></i>
+                            <div>
+                                <h4 class="text-xs font-bold uppercase text-ocean-900 mb-1">Standard Keamanan</h4>
+                                <p class="text-[10px] text-gray-500">Pelampung berstandar maritim & navigasi GPS modern.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="anchor" class="w-6 h-6 text-ocean-600 shrink-0"></i>
+                            <div>
+                                <h4 class="text-xs font-bold uppercase text-ocean-900 mb-1">Kru Bersertifikat</h4>
+                                <p class="text-[10px] text-gray-500">Dikemudikan oleh kapten ahli pembaca arus laut.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 reveal delay-100">
+                    <img src="images/4.jpg" alt="Kapal Whale Shark Sumbawa" loading="lazy" class="w-full aspect-square object-cover shadow-2xl rounded-sm">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews" class="py-24 bg-editorial-bg relative">
+        <div class="max-w-6xl mx-auto px-6">
             <div class="text-center mb-16 reveal">
-                <h2 class="text-4xl md:text-5xl font-serif text-editorial-accent mb-4">Whale Shark Expeditions</h2>
-                <p class="text-[10px] md:text-xs font-bold tracking-widest text-gray-500 uppercase">Teluk Saleh, Sumbawa Packages</p>
+                <i data-lucide="feather" class="w-8 h-8 text-ocean-400 mx-auto mb-4 opacity-70"></i>
+                <h2 class="text-4xl font-serif text-editorial-accent mb-4">Traveler Stories</h2>
+                <p class="text-[10px] font-bold tracking-widest text-gray-500 uppercase">Kata mereka yang udah nyobain</p>
             </div>
 
-            <!-- 1. SHARING PROGRAM WHALE SHARK -->
-            <article class="package-card bg-editorial-bg border border-gray-200 rounded-lg p-6 md:p-12 mb-16 reveal">
-                <div class="border-b border-gray-200 pb-8 mb-8">
-                    <h3 class="text-2xl md:text-3xl font-serif text-ocean-900 mb-4 leading-snug">SHARING PROGRAM WHALE SHARK DARI LOMBOK – SUMBAWA</h3>
-                    <p class="text-4xl font-bold text-gold-500 mb-6">Rp 2.650.000</p>
-                    <p class="text-sm text-gray-600 leading-relaxed">Rasakan pengalaman luar biasa berenang bersama hiu paus di habitat aslinya di Teluk Saleh, Sumbawa. Program ini dirancang untuk Anda yang ingin menikmati perjalanan seru dengan sistem sharing (bergabung dengan peserta lain), sehingga lebih hemat tanpa mengurangi kenyamanan.</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-sm shadow-sm border border-gray-100 reveal delay-100">
+                    <div class="flex text-gold-500 mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-sm text-gray-600 italic mb-6 leading-relaxed">"Sumpah trip ini pecah banget! Pas nyebur langsung disamperin hiu paus segede gaban tapi super jinak. Recommended abis pokoknya!"</p>
+                    <p class="text-[10px] font-bold uppercase tracking-widest text-ocean-900">- Bimo T. (Jakarta)</p>
                 </div>
-                
-                <div class="mb-10">
-                    <h4 class="text-lg font-bold text-ocean-900 mb-6 flex items-center gap-2">📅 DAY 1: LOMBOK – SUMBAWA</h4>
-                    <div class="border-l-2 border-gray-200 pl-6 ml-3 space-y-6 text-sm">
-                        <div class="relative timeline-dot">
-                            <p class="font-bold text-ocean-900 mb-1">08:30 AM – Penjemputan</p>
-                            <p class="text-gray-600">Kami akan menjemput Anda di hotel area Mataram, Senggigi, atau Pelabuhan Bangsal.<br>
-                            Peserta kurang dari 4 orang: menggunakan shuttle bus<br>
-                            Peserta 5 orang atau lebih: menggunakan transportasi private</p>
-                        </div>
-                        <div class="relative timeline-dot">
-                            <p class="font-bold text-ocean-900 mb-1">10:00 AM – Perjalanan Darat</p>
-                            <p class="text-gray-600">Perjalanan menuju pelabuhan menggunakan kendaraan ber-AC, melewati pemandangan indah Lombok bagian timur.</p>
-                        </div>
-                        <div class="relative timeline-dot">
-                            <p class="font-bold text-ocean-900 mb-1">01:00 PM – Penyeberangan ke Sumbawa</p>
-                            <p class="text-gray-600">Menyeberang dengan feri melalui Selat Alas menuju Sumbawa.<br>
-                            Waktu bebas untuk bersantai dan makan siang (biaya pribadi).</p>
-                        </div>
-                        <div class="relative timeline-dot">
-                            <p class="font-bold text-ocean-900 mb-1">03:00 PM – Tiba di Sumbawa</p>
-                            <p class="text-gray-600">Tiba di Sumbawa, kemudian melanjutkan perjalanan menuju Labuan Jambu.</p>
-                        </div>
-                        <div class="relative timeline-dot">
-                            <p class="font-bold text-ocean-900 mb-1">08:00 PM – Check-in Penginapan</p>
-                            <p class="text-gray-600">Check-in di penginapan di Labuan Jambu.<br>
-                            Nikmati suasana tenang desa nelayan dan beristirahat untuk persiapan aktivitas esok hari.</p>
-                        </div>
+                <div class="bg-white p-8 rounded-sm shadow-sm border border-gray-100 reveal delay-200">
+                    <div class="flex text-gold-500 mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
                     </div>
+                    <p class="text-sm text-gray-600 italic mb-6 leading-relaxed">"Awalnya deg-degan mampus karena basic renangku pas-pasan. Tapi ternyata aman banget, dikasih life jacket & guidenya ekstra sabar."</p>
+                    <p class="text-[10px] font-bold uppercase tracking-widest text-ocean-900">- Sisca N. (Surabaya)</p>
                 </div>
-
-                <div class="mb-10">
-                    <h4 class="text-lg font-bold text-ocean-900 mb-6 flex items-center gap-2">📅 DAY 2: PENGALAMAN HIU PAUS</h4>
-                    <div class="border-l-2 border-gray-200 pl-6 ml-3 space-y-6 text-sm">
-                        <div class="relative timeline-dot">
-                            <p class="font-bold text-ocean-900 mb-1">04:00 AM – Berangkat ke Lokasi</p>
-                            <p class="text-gray-600">Berangkat dari penginapan menggunakan perahu menuju lokasi hiu paus di Teluk Saleh.</p>
-                        </div>
-                        <div class="relative timeline-dot">
-                            <p class="font-bold text-ocean-900 mb-1">06:00 AM – Snorkeling dengan Hiu Paus</p>
-                            <p class="text-gray-600">Tiba di lokasi. Nikmati pengalaman snorkeling dan melihat hiu paus secara langsung di habitat alaminya dengan aman.</p>
-                        </div>
-                        <div class="relative timeline-dot">
-                            <p class="font-bold text-ocean-900 mb-1">08:30 AM – Sarapan di Perahu</p>
-                            <p class="text-gray-600">Sarapan ringan disediakan di atas perahu sambil menikmati udara laut yang segar.</p>
-                        </div>
-                        <div class="relative timeline-dot">
-                            <p class="font-bold text-ocean-900 mb-1">11:00 AM – Perjalanan Pulang</p>
-                            <p class="text-gray-600">Kembali ke Lombok dengan membawa pengalaman yang tak terlupakan.</p>
-                        </div>
-                        <div class="relative timeline-dot">
-                            <p class="font-bold text-ocean-900 mb-1">08:00 PM – Tiba di Lombok</p>
-                            <p class="text-gray-600">Tiba di Lombok dan kami akan mengantar Anda kembali ke penginapan di area Senggigi, Mataram, atau Pelabuhan Bangsal.</p>
-                        </div>
+                <div class="bg-white p-8 rounded-sm shadow-sm border border-gray-100 reveal delay-300">
+                    <div class="flex text-gold-500 mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
                     </div>
+                    <p class="text-sm text-gray-600 italic mb-6 leading-relaxed">"Sailing komodonya juara. Makanan di kapal berlimpah dan enak-enak. Pemandangan Pulau Padar pas sunrise gak ada duanya."</p>
+                    <p class="text-[10px] font-bold uppercase tracking-widest text-ocean-900">- Kevin S. (Bali)</p>
                 </div>
-
-                <div class="mb-8 p-6 bg-white border border-gray-100 rounded-md shadow-sm">
-                    <h4 class="font-bold text-ocean-900 mb-3">✨ Catatan Penting</h4>
-                    <ul class="list-disc pl-5 text-sm text-gray-600 space-y-2">
-                        <li>Program ini bersifat sharing (gabung dengan peserta lain)</li>
-                        <li>Jadwal dapat menyesuaikan kondisi cuaca dan situasi di lapangan</li>
-                    </ul>
-                </div>
-
-                <div class="mb-8 p-6 bg-yellow-50 border border-yellow-200 rounded-md">
-                    <h4 class="font-bold text-yellow-800 mb-3">⚠️ INFORMASI PENTING: PERTEMUAN DENGAN HIU PAUS</h4>
-                    <p class="text-sm text-gray-700 leading-relaxed mb-2">Hiu paus adalah satwa liar yang hidup di habitat alaminya, sehingga pertemuan tidak dapat dijamin. Berdasarkan pengalaman di Teluk Saleh, peluang bertemu hiu paus sekitar 60–80%.</p>
-                    <p class="text-sm text-gray-700 leading-relaxed mb-2">Jika pada hari pertama belum berhasil melihat hiu paus, pencarian akan dilanjutkan pada hari kedua untuk meningkatkan peluang.</p>
-                    <p class="text-sm text-gray-700 leading-relaxed">Jika setelah dua hari masih belum bertemu hiu paus, perjalanan akan tetap kembali ke titik penjemputan awal. Seluruh biaya operasional selama perjalanan tetap ditanggung oleh penyelenggara, namun tidak ada pengembalian dana, karena seluruh rangkaian program telah dijalankan sesuai rencana.</p>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-8 text-sm">
-                    <div>
-                        <h4 class="font-bold text-green-700 mb-4">✅ Termasuk (Include)</h4>
-                        <ul class="space-y-2 text-gray-600">
-                            <li>Transportasi pulang-pergi Lombok – Sumbawa</li>
-                            <li>Tiket feri (PP)</li>
-                            <li>Akomodasi 1 malam di Labuan Jambu</li>
-                            <li>Lunch box</li>
-                            <li>Perahu untuk trip hiu paus (sharing)</li>
-                            <li>Guide lokal berpengalaman</li>
-                            <li>Peralatan snorkeling</li>
-                            <li>Dokumentasi GoPro</li>
-                            <li>Air mineral selama perjalanan</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-red-600 mb-4">❌ Tidak Termasuk (Exclude)</h4>
-                        <ul class="space-y-2 text-gray-600">
-                            <li>Makan malam</li>
-                            <li>Pengeluaran pribadi</li>
-                            <li>Asuransi perjalanan</li>
-                            <li>Tips untuk guide & crew (opsional)</li>
-                        </ul>
-                    </div>
-                </div>
-            </article>
-
-            <!-- 2. 1 DAY TRIP WHALE SHARK -->
-            <article class="package-card bg-editorial-bg border border-gray-200 rounded-lg p-6 md:p-12 mb-16 reveal delay-100">
-                <div class="border-b border-gray-200 pb-8 mb-8">
-                    <h3 class="text-2xl md:text-3xl font-serif text-ocean-900 mb-4 leading-snug">1 DAY TRIP WHALE SHARK – LABUHAN JAMBU</h3>
-                    <p class="text-4xl font-bold text-gold-500 mb-6">Rp 750.000</p>
-                    <p class="text-sm text-gray-600 leading-relaxed mb-2">Rasakan pengalaman tak terlupakan berenang bersama hiu paus di habitat aslinya di Teluk Saleh, Sumbawa. Program ini dimulai langsung dari Labuhan Jambu dan sangat cocok untuk Anda yang sudah berada di area Sumbawa.</p>
-                    <p class="text-sm text-red-500 font-medium italic">Tidak termasuk transportasi darat & penginapan.</p>
-                </div>
-                
-                <div class="mb-10">
-                    <h4 class="text-lg font-bold text-ocean-900 mb-6 flex items-center gap-2">📅 ITINERARY</h4>
-                    <div class="border-l-2 border-gray-200 pl-6 ml-3 space-y-6 text-sm">
-                        <div class="relative timeline-dot">
-                            <p class="font-bold text-ocean-900 mb-1">04:30 AM – Meeting Point</p>
-                            <p class="text-gray-600">Berkumpul di Labuhan Jambu dan persiapan sebelum keberangkatan.</p>
-                        </div>
-                        <div class="relative timeline-dot">
-                            <p class="font-bold text-ocean-900 mb-1">05:00 AM – Berangkat ke Lokasi</p>
-                            <p class="text-gray-600">Berangkat menggunakan perahu menuju spot hiu paus di Teluk Saleh.</p>
-                        </div>
-                        <div class="relative timeline-dot">
-                            <p class="font-bold text-ocean-900 mb-1">06:00 AM – Snorkeling dengan Hiu Paus</p>
-                            <p class="text-gray-600">Tiba di lokasi. Nikmati pengalaman snorkeling dan melihat hiu paus secara langsung di habitat alaminya dengan aman.</p>
-                        </div>
-                        <div class="relative timeline-dot">
-                            <p class="font-bold text-ocean-900 mb-1">08:30 AM – Sarapan di Perahu</p>
-                            <p class="text-gray-600">Sarapan ringan disediakan di atas perahu sambil menikmati suasana laut yang segar.</p>
-                        </div>
-                        <div class="relative timeline-dot">
-                            <p class="font-bold text-ocean-900 mb-1">10:00 AM – Kembali ke Labuhan Jambu</p>
-                            <p class="text-gray-600">Perjalanan kembali menuju Labuhan Jambu.</p>
-                        </div>
-                        <div class="relative timeline-dot">
-                            <p class="font-bold text-ocean-900 mb-1">11:00 AM – Trip Selesai</p>
-                            <p class="text-gray-600">Tiba di Labuhan Jambu dan program selesai.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mb-8 p-6 bg-white border border-gray-100 rounded-md shadow-sm">
-                    <h4 class="font-bold text-ocean-900 mb-1">⏱️ Durasi</h4>
-                    <p class="text-sm text-gray-600">± 6–7 jam</p>
-                </div>
-
-                <div class="mb-8 p-6 bg-yellow-50 border border-yellow-200 rounded-md">
-                    <h4 class="font-bold text-yellow-800 mb-3">⚠️ INFORMASI PENTING</h4>
-                    <p class="text-sm text-gray-700 leading-relaxed">Hiu paus merupakan satwa liar yang hidup di alam bebas, sehingga pertemuan tidak dapat dijamin. Berdasarkan pengalaman, peluang bertemu hiu paus berkisar 60–80%, tergantung kondisi alam dan cuaca.</p>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-8 text-sm">
-                    <div>
-                        <h4 class="font-bold text-green-700 mb-4">✅ Termasuk (Include)</h4>
-                        <ul class="space-y-2 text-gray-600">
-                            <li>Perahu (sharing trip)</li>
-                            <li>Guide lokal berpengalaman</li>
-                            <li>Peralatan snorkeling (mask & snorkel)</li>
-                            <li>Sarapan ringan</li>
-                            <li>Air mineral</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-red-600 mb-4">❌ Tidak Termasuk (Exclude)</h4>
-                        <ul class="space-y-2 text-gray-600">
-                            <li>Transportasi menuju/ dari Labuhan Jambu</li>
-                            <li>Penginapan</li>
-                            <li>Makan siang</li>
-                            <li>Asuransi perjalanan</li>
-                            <li>Pengeluaran pribadi</li>
-                            <li>Tips untuk guide & crew (opsional)</li>
-                        </ul>
-                    </div>
-                </div>
-            </article>
-
-            <!-- 3. PRIVATE PROGRAM WHALE SHARK -->
-            <article class="package-card bg-editorial-bg border border-gray-200 rounded-lg p-6 md:p-12 reveal delay-200">
-                <div class="border-b border-gray-200 pb-8 mb-8 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-gold-500 rounded-bl-full opacity-10"></div>
-                    <h3 class="text-2xl md:text-3xl font-serif text-ocean-900 mb-4 leading-snug relative z-10">PRIVATE PROGRAM WHALE SHARK DARI LOMBOK KE SUMBAWA</h3>
-                    <p class="text-4xl font-bold text-gold-500 mb-6 relative z-10">Rp 3.500.000</p>
-                    <p class="text-sm text-gray-600 leading-relaxed relative z-10 mb-2">Nikmati pengalaman tak terlupakan berenang bersama hiu paus di habitat aslinya di Teluk Saleh, Sumbawa.</p>
-                    <p class="text-sm text-gray-600 leading-relaxed relative z-10">Program ini adalah private trip (khusus untuk grup Anda) sehingga lebih nyaman dan fleksibel, namun perahu menuju lokasi hiu paus tetap sharing dengan peserta lain.</p>
-                </div>
-                
-                <div class="mb-10">
-                    <h4 class="text-lg font-bold text-ocean-900 mb-6 flex items-center gap-2">📅 DAY 1: LOMBOK – SUMBAWA</h4>
-                    <div class="border-l-2 border-gray-200 pl-6 ml-3 space-y-6 text-sm">
-                        <div class="relative timeline-dot">
-                            <p class="font-bold text-ocean-900 mb-1">08:30 AM – Penjemputan</p>
-                            <p class="text-gray-600">Tim kami akan menjemput Anda di hotel area Mataram, Senggigi, atau Pelabuhan Bangsal.<br>
-                            Semua transportasi menggunakan kendaraan private khusus untuk grup Anda.</p>
-                        </div>
-                        <div class="relative timeline-dot">
-                            <p class="font-bold text-ocean-900 mb-1">10:00 AM – Perjalanan Darat</p>
-                            <p class="text-gray-600">Perjalanan menuju pelabuhan menggunakan kendaraan ber-AC, melewati pemandangan indah Lombok bagian timur.</p>
-                        </div>
-                        <div class="relative timeline-dot">
-                            <p class="font-bold text-ocean-900 mb-1">01:00 PM – Penyeberangan ke Sumbawa</p>
-                            <p class="text-gray-600">Menyeberang dengan feri melalui Selat Alas menuju Sumbawa.<br>
-                            Waktu bebas untuk bersantai dan makan siang (biaya pribadi).</p>
-                        </div>
-                        <div class="relative timeline-dot">
-                            <p class="font-bold text-ocean-900 mb-1">03:00 PM – Tiba di Sumbawa</p>
-                            <p class="text-gray-600">Tiba di Sumbawa, kemudian melanjutkan perjalanan menuju Labuan Jambu.</p>
-                        </div>
-                        <div class="relative timeline-dot">
-                            <p class="font-bold text-ocean-900 mb-1">08:00 PM – Check-in Penginapan</p>
-                            <p class="text-gray-600">Check-in di penginapan di Labuan Jambu.<br>
-                            Istirahat dan nikmati suasana tenang desa nelayan untuk persiapan aktivitas esok hari.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mb-10">
-                    <h4 class="text-lg font-bold text-ocean-900 mb-6 flex items-center gap-2">📅 DAY 2: PENGALAMAN HIU PAUS</h4>
-                    <div class="border-l-2 border-gray-200 pl-6 ml-3 space-y-6 text-sm">
-                        <div class="relative timeline-dot">
-                            <p class="font-bold text-ocean-900 mb-1">04:00 AM – Berangkat ke Lokasi</p>
-                            <p class="text-gray-600">Berangkat dari penginapan menggunakan perahu menuju lokasi hiu paus di Teluk Saleh.<br>
-                            Perahu digunakan bersama (sharing) dengan peserta lain.</p>
-                        </div>
-                        <div class="relative timeline-dot">
-                            <p class="font-bold text-ocean-900 mb-1">06:00 AM – Snorkeling dengan Hiu Paus</p>
-                            <p class="text-gray-600">Tiba di lokasi. Nikmati pengalaman snorkeling dan melihat hiu paus secara langsung di habitat alaminya dengan aman.</p>
-                        </div>
-                        <div class="relative timeline-dot">
-                            <p class="font-bold text-ocean-900 mb-1">08:30 AM – Sarapan di Perahu</p>
-                            <p class="text-gray-600">Sarapan ringan disediakan di atas perahu sambil menikmati suasana laut yang segar.</p>
-                        </div>
-                        <div class="relative timeline-dot">
-                            <p class="font-bold text-ocean-900 mb-1">11:00 AM – Perjalanan Pulang</p>
-                            <p class="text-gray-600">Kembali ke Lombok dengan membawa pengalaman yang tak terlupakan.</p>
-                        </div>
-                        <div class="relative timeline-dot">
-                            <p class="font-bold text-ocean-900 mb-1">08:00 PM – Tiba di Lombok</p>
-                            <p class="text-gray-600">Tiba di Lombok dan kami akan mengantar Anda ke hotel di area Senggigi, Mataram, atau Pelabuhan Bangsal.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mb-8 p-6 bg-yellow-50 border border-yellow-200 rounded-md">
-                    <h4 class="font-bold text-yellow-800 mb-3">⚠️ INFORMASI PENTING: PERTEMUAN DENGAN HIU PAUS</h4>
-                    <p class="text-sm text-gray-700 leading-relaxed mb-2">Hiu paus adalah satwa liar yang hidup di habitat alaminya, sehingga pertemuan tidak dapat dijamin. Berdasarkan pengalaman di Teluk Saleh, peluang bertemu hiu paus sekitar 60–80%.</p>
-                    <p class="text-sm text-gray-700 leading-relaxed mb-2">Jika pada hari pertama belum berhasil melihat hiu paus, pencarian akan dilanjutkan pada hari berikutnya untuk meningkatkan peluang.</p>
-                    <p class="text-sm text-gray-700 leading-relaxed">Jika setelah dua hari masih belum bertemu hiu paus, perjalanan akan tetap kembali ke titik penjemputan awal. Seluruh biaya operasional selama perjalanan tetap ditanggung oleh penyelenggara, namun tidak ada pengembalian dana, karena seluruh rangkaian program telah dijalankan sesuai rencana.</p>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-8 text-sm">
-                    <div>
-                        <h4 class="font-bold text-green-700 mb-4">✅ Termasuk (Include)</h4>
-                        <ul class="space-y-2 text-gray-600">
-                            <li>Transportasi private Lombok – Sumbawa (PP)</li>
-                            <li>Tiket feri Lombok – Sumbawa (PP)</li>
-                            <li>Akomodasi 1 malam di Labuan Jambu</li>
-                            <li>Perahu untuk trip hiu paus (sharing boat)</li>
-                            <li>Guide lokal berpengalaman</li>
-                            <li>Peralatan snorkeling (mask & snorkel)</li>
-                            <li>Sarapan di hari ke-2</li>
-                            <li>Air mineral selama perjalanan</li>
-                            <li>Dokumentasi GoPro</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-red-600 mb-4">❌ Tidak Termasuk (Exclude)</h4>
-                        <ul class="space-y-2 text-gray-600">
-                            <li>Makan siang & makan malam</li>
-                            <li>Tiket pesawat / transport menuju Lombok</li>
-                            <li>Asuransi perjalanan</li>
-                            <li>Pengeluaran pribadi</li>
-                            <li>Tips untuk guide & crew (opsional)</li>
-                        </ul>
-                    </div>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <!-- MEGA SECTION 2: SAILING KOMODO DENGAN FOTO ASLI -->
-    <section id="komodo" class="py-24 bg-ocean-900 text-white relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-1 bg-gold-500"></div>
-        <div class="max-w-6xl mx-auto px-6 relative z-10">
-            <div class="text-center mb-16 reveal">
-                <p class="text-[10px] font-bold tracking-[0.3em] text-gold-400 uppercase mb-4">Extend Your Journey</p>
-                <h2 class="text-4xl md:text-5xl font-serif text-white mb-4">SAILING KOMODO EXPERIENCE</h2>
-                <p class="text-sm text-gray-300 max-w-2xl mx-auto leading-relaxed uppercase tracking-wider">KLM ETERNITY EXPLORE NUSA TENGGARA • OPEN TRIP<br>SWIM WITH WHALE SHARK & SEE THE KOMODO DRAGONS</p>
-            </div>
-
-            <!-- KOMODO ROUTE 1: WEST TO EAST (LOMBOK TO BAJO) -->
-            <article class="bg-ocean-800 border border-gold-500/50 rounded-lg p-6 md:p-12 mb-16 hover:border-gold-400 transition-colors reveal shadow-2xl relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-gold-500 rounded-bl-full opacity-5 pointer-events-none"></div>
-                
-                <div class="mb-12 border-b border-ocean-600 pb-8 text-center md:text-left">
-                    <h3 class="text-3xl md:text-4xl font-serif text-gold-400 mb-4">YOUR 4-DAY LOMBOK TO KOMODO EXPEDITION</h3>
-                    <div class="inline-flex items-center gap-2 bg-ocean-950 px-4 py-2 rounded-full border border-ocean-700">
-                        <i data-lucide="compass" class="w-4 h-4 text-gold-500"></i>
-                        <span class="text-xs font-bold tracking-widest uppercase text-gray-300">WEST TO EAST (LOMBOK TO LABUAN BAJO)</span>
-                    </div>
-                </div>
-
-                <!-- OVERVIEW & CABIN PRICES -->
-                <div class="grid md:grid-cols-2 gap-12 mb-12">
-                    <div>
-                        <h4 class="text-sm font-bold uppercase tracking-widest text-gold-500 mb-4">TRIP OVERVIEW</h4>
-                        <ul class="text-sm text-gray-300 space-y-3 font-medium">
-                            <li>• ROUTE: LOMBOK TO LABUAN BAJO, FLORES</li>
-                            <li>• DURATION: 4 DAYS / 3 NIGHT</li>
-                            <li>• START FROM HARBOUR (LOMBOK ISLAND, WEST NUSA TENGGARA) 15.00 WITA</li>
-                            <li>• FINISH AT LABUAN BAJO (FLORES ISLAND, EAST NUSA TENGGARA) 12.00 WITA</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <!-- Foto Kapal Luar Asli -->
-                        <img src="images/kapal-luar.png" alt="KLM Eternity Boat" class="w-full h-40 object-cover rounded-md shadow-lg border border-ocean-700">
-                    </div>
-                </div>
-
-                <!-- HARGA TIKET -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-                    <div class="bg-ocean-950 border border-gold-500 p-6 rounded-md transform hover:-translate-y-1 transition-transform">
-                        <h5 class="text-lg font-bold text-gold-400 mb-2 uppercase">SHARE CABIN</h5>
-                        <p class="text-2xl font-bold text-white mb-4">IDR 3.000.000 <span class="text-xs font-normal text-gray-400">/ PAX</span></p>
-                        <ul class="text-xs text-gray-300 space-y-2 uppercase tracking-wide">
-                            <li>Capacity: 4 Person</li>
-                            <li>AC, Sharing Bathroom, Blanket</li>
-                        </ul>
-                    </div>
-                    <div class="bg-ocean-900 border border-ocean-600 p-6 rounded-md hover:border-gold-500/50 transition-colors">
-                        <h5 class="text-lg font-bold text-gold-400 mb-2 uppercase">PRIVATE CABIN</h5>
-                        <p class="text-2xl font-bold text-white mb-4">IDR 3.500.000 <span class="text-xs font-normal text-gray-400">/ PAX</span></p>
-                        <ul class="text-xs text-gray-300 space-y-2 uppercase tracking-wide">
-                            <li>Capacity: 2 Person</li>
-                            <li>AC, Private Bathroom, Blanket</li>
-                        </ul>
-                    </div>
-                    <div class="bg-ocean-900 border border-ocean-600 p-6 rounded-md hover:border-gold-500/50 transition-colors">
-                        <h5 class="text-lg font-bold text-gold-400 mb-2 uppercase">MASTER CABIN</h5>
-                        <p class="text-2xl font-bold text-white mb-4">IDR 4.000.000 <span class="text-xs font-normal text-gray-400">/ PAX</span></p>
-                        <ul class="text-xs text-gray-300 space-y-2 uppercase tracking-wide">
-                            <li>Capacity: 2 Person</li>
-                            <li>AC, Private Bathroom, Ocean View, Blanket</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- ITINERARY LENGKAP -->
-                <h4 class="text-lg font-serif text-gold-400 mb-6 border-b border-ocean-700 pb-2">ITINERARY</h4>
-                <div class="grid md:grid-cols-2 gap-8 mb-16">
-                    <!-- Day 1 & 2 -->
-                    <div class="space-y-8">
-                        <div>
-                            <p class="font-bold text-white mb-3 bg-ocean-950 inline-block px-3 py-1 rounded text-sm uppercase">DAY 1: LOMBOK - KENAWA ISLAND (THURSDAY)</p>
-                            <ul class="text-sm text-gray-300 space-y-2 border-l-2 border-ocean-600 pl-4 ml-2">
-                                <li>10.00 - 12.00: PICK UP FROM (SENGGIGI, BANGSAL, KUTA, MATARAM)</li>
-                                <li>12.00 - 14.00: GO TO HARBOUR</li>
-                                <li>14.00 - 15.00: BOARDING</li>
-                                <li>15.00 - 17.00: SAILING TO KENAWA ISLAND</li>
-                                <li>17.00 - 18.00: TREKKING AT KENAWA ISLAND TO ENJOY SUNSET</li>
-                                <li>18.00: SAILING TO MOYO ISLAND</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <p class="font-bold text-white mb-3 bg-ocean-950 inline-block px-3 py-1 rounded text-sm uppercase">DAY 2: MOYO ISLAND - WHALE SHARK (FRIDAY)</p>
-                            <ul class="text-sm text-gray-300 space-y-2 border-l-2 border-ocean-600 pl-4 ml-2">
-                                <li>06.00 - 08.00: SNORKELING AT MOYO ISLAND</li>
-                                <li>08.00 - 10.00: SAILING TO SALEH BAY</li>
-                                <li>10.00 - 12.00: SWIMMING WITH WHALE SHARKS</li>
-                                <li>12.00: SAILING TO KOMODO ISLAND</li>
-                            </ul>
-                        </div>
-                        <!-- Foto Snorkeling/Manta Asli -->
-                        <img src="images/manta.png" alt="Snorkeling Experience" class="w-full h-32 object-cover rounded-md opacity-90 mt-4 border border-ocean-600">
-                    </div>
-                    <!-- Day 3 & 4 -->
-                    <div class="space-y-8">
-                        <div>
-                            <p class="font-bold text-white mb-3 bg-ocean-950 inline-block px-3 py-1 rounded text-sm uppercase">DAY 3: KOMODO ISLAND - PINK BEACH - PADAR ISLAND (SATURDAY)</p>
-                            <ul class="text-sm text-gray-300 space-y-2 border-l-2 border-ocean-600 pl-4 ml-2">
-                                <li>08.00 - 11.00: SEE THE KOMODO DRAGON AT KOMODO ISLAND</li>
-                                <li>11.00 - 14.00: SNORKELING AT PINK BEACH</li>
-                                <li>14.00 - 15.00: SAILING TO PADAR ISLAND</li>
-                                <li>15.00 - 18.00: TREKKING AT PADAR ISLAND TO ENJOY SUNSET</li>
-                                <li>18.00: SAILING TO MANJARITE</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <p class="font-bold text-white mb-3 bg-ocean-950 inline-block px-3 py-1 rounded text-sm uppercase">DAY 4: MANJARITE - KELOR ISLAND - LABUAN BAJO (SUNDAY)</p>
-                            <ul class="text-sm text-gray-300 space-y-2 border-l-2 border-ocean-600 pl-4 ml-2">
-                                <li>08.00 - 10.00: SNORKELING AT MANJARITE</li>
-                                <li>10.00 - 12.00: TREKKING AND SNORKELING AT KELOR ISLAND</li>
-                                <li>12.00 - 13.00: SAILING TO LABUAN BAJO</li>
-                                <li>13.00: END OF THE TRIP & SHUTTLE DROP</li>
-                            </ul>
-                        </div>
-                        <!-- Foto Padar Asli -->
-                        <img src="images/padar.png" alt="Padar Island" class="w-full h-32 object-cover rounded-md opacity-90 mt-4 border border-ocean-600">
-                    </div>
-                </div>
-
-                <!-- INCLUDE / EXCLUDE -->
-                <div class="grid md:grid-cols-2 gap-8 pt-8 border-t border-ocean-700">
-                    <div>
-                        <h4 class="text-sm font-bold uppercase tracking-widest text-green-400 mb-4">PACKAGE INCLUSIONS & SERVICES (WHAT'S INCLUDED)</h4>
-                        <ul class="space-y-2 text-xs text-gray-300 uppercase leading-relaxed">
-                            <li>• FREE SHUTTLE PICK UP FROM "KUTA, BANGSAL, SENGGIGI AREA"</li>
-                            <li>• FREE SHUTTLE DROP TO HOTEL / AIRPORT (LABUAN BAJO)</li>
-                            <li>• LIVEABOARD BOAT WITH AC FOR 4 DAY 3 NIGHT</li>
-                            <li>• DAILY BREAKFAST, LUNCH AND DINNER DURING THE TRIP</li>
-                            <li>• CHEF AND BOAT CREW</li>
-                            <li>• SUNDECK AND A COMFORTABLE DINING AREA</li>
-                            <li>• TENDER BOAT</li>
-                            <li>• SNORKELING EQUIPMENT</li>
-                            <li>• MINERAL WATER DURING THE TRIP</li>
-                            <li>• SNACK, COFFEE AND TEA DURING THE TRIP</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="text-sm font-bold uppercase tracking-widest text-red-400 mb-4">WHAT'S EXCLUDED</h4>
-                        <ul class="space-y-2 text-xs text-gray-300 uppercase leading-relaxed">
-                            <li>• PERSONAL EXPENSES</li>
-                            <li>• FLIGHT TICKET RETURN</li>
-                            <li>• TRAVEL INSURANCE</li>
-                            <li>• ENTRANCE FEE KOMODO PARK & WHALE SHARK</li>
-                            <li>• DOCUMENTATION</li>
-                        </ul>
-                    </div>
-                </div>
-            </article>
-
-            <!-- KOMODO ROUTE 2: EAST TO WEST (BAJO TO LOMBOK) -->
-            <article class="bg-ocean-800 border border-ocean-600 rounded-lg p-6 md:p-12 mb-16 hover:border-gold-500/50 transition-colors reveal delay-100 shadow-xl relative overflow-hidden">
-                <div class="mb-12 border-b border-ocean-700 pb-8 text-center md:text-left">
-                    <h3 class="text-3xl md:text-4xl font-serif text-white mb-4">YOUR 4-DAY KOMODO TO LOMBOK EXPEDITION</h3>
-                    <div class="inline-flex items-center gap-2 bg-ocean-950 px-4 py-2 rounded-full border border-ocean-700">
-                        <i data-lucide="compass" class="w-4 h-4 text-gray-400"></i>
-                        <span class="text-xs font-bold tracking-widest uppercase text-gray-400">EAST TO WEST (LABUAN BAJO TO LOMBOK)</span>
-                    </div>
-                </div>
-
-                <!-- OVERVIEW & CABIN PRICES -->
-                <div class="grid md:grid-cols-2 gap-12 mb-12">
-                    <div>
-                        <h4 class="text-sm font-bold uppercase tracking-widest text-gold-500 mb-4">TRIP OVERVIEW</h4>
-                        <ul class="text-sm text-gray-300 space-y-3 font-medium">
-                            <li>• ROUTE: LABUAN BAJO TO LOMBOK</li>
-                            <li>• DURATION: 4 DAYS / 3 NIGHT</li>
-                            <li>• START FROM LABUAN BAJO (FLORES ISLAND, EAST NUSA TENGGARA) 23:00 - 00:00 WITA</li>
-                            <li>• FINISH AT HARBOUR (LOMBOK ISLAND, WEST NUSA TENGGARA) 22:00 - 23:00 WITA</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <!-- Foto Kabin Dalam Asli -->
-                        <img src="images/kapal-dalam.png" alt="KLM Eternity Cabin" class="w-full h-40 object-cover rounded-md shadow-lg border border-ocean-700 opacity-90">
-                    </div>
-                </div>
-
-                <!-- HARGA TIKET -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-                    <div class="bg-ocean-900 border border-ocean-700 p-6 rounded-md hover:border-gold-500/30 transition-colors">
-                        <h5 class="text-lg font-bold text-gray-300 mb-2 uppercase">SHARE CABIN</h5>
-                        <p class="text-2xl font-bold text-white mb-4">IDR 3.000.000 <span class="text-xs font-normal text-gray-400">/ PAX</span></p>
-                        <ul class="text-xs text-gray-400 space-y-2 uppercase tracking-wide">
-                            <li>Capacity: 4 Person</li>
-                            <li>AC, Sharing Bathroom, Blanket</li>
-                        </ul>
-                    </div>
-                    <div class="bg-ocean-900 border border-ocean-700 p-6 rounded-md hover:border-gold-500/30 transition-colors">
-                        <h5 class="text-lg font-bold text-gray-300 mb-2 uppercase">PRIVATE CABIN</h5>
-                        <p class="text-2xl font-bold text-white mb-4">IDR 3.500.000 <span class="text-xs font-normal text-gray-400">/ PAX</span></p>
-                        <ul class="text-xs text-gray-400 space-y-2 uppercase tracking-wide">
-                            <li>Capacity: 2 Person</li>
-                            <li>AC, Private Bathroom, Blanket</li>
-                        </ul>
-                    </div>
-                    <div class="bg-ocean-900 border border-ocean-700 p-6 rounded-md hover:border-gold-500/30 transition-colors">
-                        <h5 class="text-lg font-bold text-gray-300 mb-2 uppercase">MASTER CABIN</h5>
-                        <p class="text-2xl font-bold text-white mb-4">IDR 4.000.000 <span class="text-xs font-normal text-gray-400">/ PAX</span></p>
-                        <ul class="text-xs text-gray-400 space-y-2 uppercase tracking-wide">
-                            <li>Capacity: 2 Person</li>
-                            <li>AC, Private Bathroom, Ocean View, Blanket</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- ITINERARY LENGKAP -->
-                <h4 class="text-lg font-serif text-gray-300 mb-6 border-b border-ocean-700 pb-2">ITINERARY</h4>
-                <div class="grid md:grid-cols-2 gap-8 mb-16">
-                    <!-- Day 1 & 2 -->
-                    <div class="space-y-8">
-                        <div>
-                            <p class="font-bold text-white mb-3 bg-ocean-950 inline-block px-3 py-1 rounded text-sm uppercase">DAY 1: MEETING POINT LABUAN BAJO (SUNDAY)</p>
-                            <ul class="text-sm text-gray-400 space-y-2 border-l-2 border-ocean-700 pl-4 ml-2">
-                                <li>10.00 - 16.00: Pick up from Hotel / Airport</li>
-                                <li>17.00 - 18.00: Go to Meeting Point</li>
-                                <li>19.00 - 23.00: Dinner & Briefing</li>
-                                <li>00.00: Sailing to Kelor Island</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <p class="font-bold text-white mb-3 bg-ocean-950 inline-block px-3 py-1 rounded text-sm uppercase">DAY 2: KELOR - MANJARITE - KALONG (MONDAY)</p>
-                            <ul class="text-sm text-gray-400 space-y-2 border-l-2 border-ocean-700 pl-4 ml-2">
-                                <li>07.00 - 09.00: Trekking at Kelor Island</li>
-                                <li>09.00 - 11.00: Snorkeling at Manjarite</li>
-                                <li>11.00 - 15.00: Sailing to Kalong Island</li>
-                                <li>15.00 - 18.00: Enjoy the sunset with thousands of bats</li>
-                                <li>18.00 - 19.00: Sailing to Padar Island</li>
-                            </ul>
-                        </div>
-                        <!-- Foto Komodo Asli -->
-                        <img src="images/komodo.png" alt="Komodo Dragon" class="w-full h-32 object-cover rounded-md opacity-90 mt-4 border border-ocean-600">
-                    </div>
-                    <!-- Day 3 & 4 -->
-                    <div class="space-y-8">
-                        <div>
-                            <p class="font-bold text-white mb-3 bg-ocean-950 inline-block px-3 py-1 rounded text-sm uppercase">DAY 3: PADAR - PINK BEACH - KOMODO (TUESDAY)</p>
-                            <ul class="text-sm text-gray-400 space-y-2 border-l-2 border-ocean-700 pl-4 ml-2">
-                                <li>05.00 - 08.00: Trekking at Padar Island</li>
-                                <li>08.00 - 10.00: Snorkeling at Pink Beach</li>
-                                <li>10.00 - 13.00: See the Komodo Dragon</li>
-                                <li>13.00 - 16.00: Sailing to Moyo Island</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <p class="font-bold text-white mb-3 bg-ocean-950 inline-block px-3 py-1 rounded text-sm uppercase">DAY 4: MOYO - WHALE SHARK - LOMBOK (WEDNESDAY)</p>
-                            <ul class="text-sm text-gray-400 space-y-2 border-l-2 border-ocean-700 pl-4 ml-2">
-                                <li>06.00 - 08.00: Snorkeling at Moyo Island</li>
-                                <li>08.00 - 10.00: Swimming with Whale Shark</li>
-                                <li>10.00 - 15.00: Sailing to Lombok</li>
-                                <li>15.00 - 22.00: Drop to Senggigi</li>
-                            </ul>
-                        </div>
-                        <!-- Foto Hiu Paus Asli -->
-                        <img src="images/hiu-paus.png" alt="Whale Shark" class="w-full h-32 object-cover rounded-md opacity-90 mt-4 border border-ocean-600">
-                    </div>
-                </div>
-
-                <!-- INCLUDE / EXCLUDE -->
-                <div class="grid md:grid-cols-2 gap-8 pt-8 border-t border-ocean-700">
-                    <div>
-                        <h4 class="text-sm font-bold uppercase tracking-widest text-green-500 mb-4">PACKAGE INCLUSIONS & SERVICES (WHAT'S INCLUDED)</h4>
-                        <ul class="space-y-2 text-xs text-gray-400 uppercase leading-relaxed">
-                            <li>• FREE SHUTTLE PICK UP FROM LABUAN BAJO (HOTEL / AIRPORT) & MEETING POINT</li>
-                            <li>• FREE SHUTTLE DROP TO SENGGIGI (LOMBOK)</li>
-                            <li>• LIVEABOARD BOAT WITH AC FOR 4 DAY 3 NIGHT</li>
-                            <li>• DAILY BREAKFAST, LUNCH AND DINNER DURING THE TRIP</li>
-                            <li>• CHEF AND BOAT CREW</li>
-                            <li>• SUNDECK AND A COMFORTABLE DINING AREA</li>
-                            <li>• TENDER BOAT</li>
-                            <li>• SNORKELING EQUIPMENT</li>
-                            <li>• MINERAL WATER DURING THE TRIP</li>
-                            <li>• SNACK, COFFEE AND TEA DURING THE TRIP</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="text-sm font-bold uppercase tracking-widest text-red-500 mb-4">WHAT'S EXCLUDED</h4>
-                        <ul class="space-y-2 text-xs text-gray-400 uppercase leading-relaxed">
-                            <li>• PERSONAL EXPENSES</li>
-                            <li>• FLIGHT TICKET RETURN</li>
-                            <li>• TRAVEL INSURANCE</li>
-                            <li>• ENTRANCE FEE KOMODO PARK & WHALE SHARK</li>
-                            <li>• DOCUMENTATION</li>
-                        </ul>
-                    </div>
-                </div>
-            </article>
-
-            <!-- FORCE MAJEURE INFO -->
-            <div class="mt-12 bg-ocean-950 p-6 rounded-lg border border-red-900/50 reveal">
-                <h4 class="text-xs font-bold uppercase tracking-widest text-red-400 mb-3 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-4 h-4"></i> Terms & Force Majeure (KLM Eternity)</h4>
-                <p class="text-[10px] text-gray-400 leading-relaxed uppercase">
-                    If Eternity or the charterer must cancel due to Force Majeure, including pandemics, all amounts paid will be retained as a deposit and the itinerary may be rescheduled within 12 months. No refund if no rebooking is made. Additionally, the captain reserves the right to cancel any charter without refund for reasons including over intoxication, illegal drug use, unruly behavior, or acts that distract the crew. By booking, the guest acknowledges all inherent risks of sea travel.
-                </p>
             </div>
         </div>
     </section>
 
-    <section id="booking" class="py-24 bg-white relative">
-        <div class="max-w-3xl mx-auto px-6 text-center reveal">
-            <h2 class="text-4xl font-serif text-editorial-accent mb-4">Secure Your Spot</h2>
-            <p class="text-[10px] font-bold tracking-widest text-gray-500 uppercase mb-12">Konsultasi dan Reservasi Eksklusif via WhatsApp</p>
-
-            <form onsubmit="sendToWA(event)" class="space-y-6 text-left bg-editorial-bg p-8 md:p-14 shadow-xl rounded-sm border border-gray-200 relative">
-                <div class="absolute top-0 left-0 w-full h-1 bg-ocean-800"></div>
-                
-                <div>
-                    <label class="block text-[10px] font-bold uppercase tracking-widest text-ocean-900 mb-2">Nama Pemesan</label>
-                    <input type="text" id="name" required class="w-full px-0 py-3 border-b border-gray-300 focus:border-ocean-800 outline-none transition-all bg-transparent font-sans text-gray-800" placeholder="Ketik nama lengkap Anda...">
-                </div>
-                <div class="mt-6">
-                    <label class="block text-[10px] font-bold uppercase tracking-widest text-ocean-900 mb-2">Pilih Paket Program</label>
-                    <select id="package" required class="w-full px-0 py-3 border-b border-gray-300 focus:border-ocean-800 outline-none transition-all bg-transparent text-gray-800 font-sans text-sm md:text-base">
-                        <option value="" disabled selected>Pilih Paket Ekspedisi...</option>
-                        <optgroup label="Whale Shark Sumbawa">
-                            <option value="Sharing Program Hiu Paus">Sharing Program Sumbawa (Rp 2.650.000)</option>
-                            <option value="1 Day Trip Hiu Paus">1 Day Trip Labuhan Jambu (Rp 750.000)</option>
-                            <option value="Private Program Hiu Paus">Private Program Sumbawa (Rp 3.500.000)</option>
-                        </optgroup>
-                        <optgroup label="Sailing Komodo (Lombok -> Labuan Bajo)">
-                            <option value="Komodo Lombok-Bajo (Share Cabin)">Lombok-Bajo Share Cabin (IDR 3.000.000)</option>
-                            <option value="Komodo Lombok-Bajo (Private Cabin)">Lombok-Bajo Private Cabin (IDR 3.500.000)</option>
-                            <option value="Komodo Lombok-Bajo (Master Cabin)">Lombok-Bajo Master Cabin (IDR 4.000.000)</option>
-                        </optgroup>
-                        <optgroup label="Sailing Komodo (Labuan Bajo -> Lombok)">
-                            <option value="Komodo Bajo-Lombok (Share Cabin)">Bajo-Lombok Share Cabin (IDR 3.000.000)</option>
-                            <option value="Komodo Bajo-Lombok (Private Cabin)">Bajo-Lombok Private Cabin (IDR 3.500.000)</option>
-                            <option value="Komodo Bajo-Lombok (Master Cabin)">Bajo-Lombok Master Cabin (IDR 4.000.000)</option>
-                        </optgroup>
-                    </select>
-                </div>
-                <div class="grid grid-cols-2 gap-8 mt-6">
-                    <div>
-                        <label class="block text-[10px] font-bold uppercase tracking-widest text-ocean-900 mb-2">Tanggal Berangkat</label>
-                        <input type="date" id="date" required class="w-full px-0 py-3 border-b border-gray-300 focus:border-ocean-800 outline-none transition-all bg-transparent text-gray-800 font-sans">
-                    </div>
-                    <div>
-                        <label class="block text-[10px] font-bold uppercase tracking-widest text-ocean-900 mb-2">Jumlah Peserta</label>
-                        <select id="pax" required class="w-full px-0 py-3 border-b border-gray-300 focus:border-ocean-800 outline-none transition-all bg-transparent text-gray-800 font-sans">
-                            <option value="" disabled selected>Pilih...</option>
-                            <option value="1">1 Orang (Solo)</option>
-                            <option value="2">2 Orang</option>
-                            <option value="3">3 Orang</option>
-                            <option value="4+">4+ Orang (Grup)</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="pt-12 text-center">
-                    <button type="submit" class="inline-flex items-center justify-center gap-3 bg-[#112B45] hover:bg-[#2A5C8D] text-white text-xs font-bold tracking-widest uppercase px-12 py-5 transition-all w-full md:w-auto shadow-xl hover:shadow-2xl hover:-translate-y-1 rounded-sm">
-                        <i data-lucide="calendar-check" class="w-4 h-4"></i> Ajukan Reservasi
-                    </button>
-                    <p class="text-[10px] text-gray-500 mt-5 uppercase tracking-[0.2em] font-bold">Terhubung Langsung Ke WhatsApp Admin</p>
-                </div>
-            </form>
-        </div>
-    </section>
-
+    <!-- FOOTER -->
     <footer class="relative py-24 bg-[#0a1520] text-center text-white overflow-hidden">
-        <div class="bubbles-container">
-            <div class="bubble" style="left: 15%; width: 20px; height: 20px; animation-duration: 7s; animation-delay: 1s;"></div>
-            <div class="bubble" style="left: 45%; width: 15px; height: 15px; animation-duration: 5s; animation-delay: 3s;"></div>
-            <div class="bubble" style="left: 75%; width: 25px; height: 25px; animation-duration: 8s; animation-delay: 0s;"></div>
-        </div>
         <div class="relative z-10 max-w-4xl mx-auto px-6 flex flex-col items-center pointer-events-auto">
             <div class="bg-white/10 p-4 rounded-full backdrop-blur-md border border-white/20 shadow-2xl mb-6">
-                <!-- Ganti ke .png -->
                 <img src="images/whaleshark-logo.png" alt="Whale Shark Tour Logo" loading="lazy" class="h-20 w-auto object-contain rounded-full mix-blend-lighten">
             </div>
             <div class="text-center mt-2">
@@ -802,8 +207,8 @@
         </div>
     </footer>
 
+    <!-- WIDGETS (Translate & WA) -->
     <div id="google_translate_element" style="display:none;"></div>
-
     <div class="fixed bottom-6 left-6 z-50 flex flex-col items-start group">
         <div class="absolute bottom-full mb-4 left-0 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto">
             <div class="bg-white rounded-xl shadow-2xl border border-gray-100 w-40 overflow-hidden">
@@ -813,7 +218,7 @@
                 <div class="max-h-56 overflow-y-auto lang-scroll py-2">
                     <button onclick="changeLanguage('id')" class="w-full text-left px-4 py-2 text-xs text-gray-700 hover:bg-ocean-50">🇮🇩 Indonesia</button>
                     <button onclick="changeLanguage('en')" class="w-full text-left px-4 py-2 text-xs text-gray-700 hover:bg-ocean-50">🇬🇧 English</button>
-                    </div>
+                </div>
             </div>
         </div>
         <button class="w-14 h-14 bg-white text-ocean-900 rounded-full flex items-center justify-center shadow-2xl border border-gray-100 hover:-translate-y-1 transition-transform relative">
@@ -822,15 +227,9 @@
     </div>
 
     <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
-        <div id="fab-menu" class="flex flex-col gap-3 transition-all duration-300 opacity-0 translate-y-10 scale-90 origin-bottom pointer-events-none">
-            <a href="https://wa.me/6282266558435" target="_blank" class="w-12 h-12 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-xl hover:-translate-x-1 transition-transform group relative ml-auto">
-                <i data-lucide="phone" class="w-5 h-5 fill-current"></i>
-            </a>
-        </div>
-        <button id="fab-toggle" class="w-16 h-16 bg-ocean-800 text-white rounded-full flex items-center justify-center shadow-2xl hover:bg-ocean-600 transition-colors animate-pulse-glow z-10 relative border-2 border-white/10">
-            <i data-lucide="message-circle" class="w-7 h-7" id="fab-icon-1"></i>
-            <i data-lucide="x" class="w-7 h-7 absolute hidden" id="fab-icon-2"></i>
-        </button>
+        <a href="https://wa.me/6282266558435" target="_blank" class="w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:-translate-y-1 transition-transform relative border-2 border-white/10">
+            <i data-lucide="phone" class="w-7 h-7 fill-current"></i>
+        </a>
     </div>
 
     <script type="text/javascript">
@@ -841,81 +240,37 @@
 
     <script>
         lucide.createIcons();
-
-        // 1. Navbar
         const navbar = document.getElementById('navbar');
         const navLinks = navbar.querySelectorAll('.nav-link, .nav-text');
         const logoImg = navbar.querySelector('.nav-logo');
         const navBrandText = document.getElementById('nav-brand-text');
         
-        let isScrolling = false;
         window.addEventListener('scroll', () => {
-            if (!isScrolling) {
-                window.requestAnimationFrame(() => {
-                    if (window.scrollY > 50) {
-                        navbar.classList.add('glass-nav');
-                        navbar.classList.remove('text-white', 'py-4');
-                        navbar.classList.add('text-gray-900', 'py-3');
-                        navLinks.forEach(el => el.classList.remove('drop-shadow-md'));
-                        logoImg.classList.remove('border-white/20');
-                        logoImg.classList.add('border-gray-200');
-                        navBrandText.classList.remove('hidden', 'sm:block', 'font-sans', 'text-xs', 'font-extrabold', 'tracking-[0.3em]');
-                        navBrandText.classList.add('font-cinzel', 'text-xl', 'font-bold', 'text-ocean-900', 'tracking-widest');
-                    } else {
-                        navbar.classList.remove('glass-nav', 'text-gray-900', 'py-3');
-                        navbar.classList.add('text-white', 'py-4');
-                        navLinks.forEach(el => { el.style.color = ''; el.classList.add('drop-shadow-md'); });
-                        logoImg.classList.remove('border-gray-200');
-                        logoImg.classList.add('border-white/20');
-                        navBrandText.classList.add('hidden', 'sm:block', 'font-sans', 'text-xs', 'font-extrabold', 'tracking-[0.3em]');
-                        navBrandText.classList.remove('font-cinzel', 'text-xl', 'font-bold', 'text-ocean-900', 'tracking-widest');
-                    }
-                    isScrolling = false;
-                });
-                isScrolling = true;
+            if (window.scrollY > 50) {
+                navbar.classList.add('glass-nav');
+                navbar.classList.remove('text-white', 'py-4');
+                navbar.classList.add('text-gray-900', 'py-3');
+                navLinks.forEach(el => el.classList.remove('drop-shadow-md'));
+                logoImg.classList.remove('border-white/20');
+                logoImg.classList.add('border-gray-200');
+                navBrandText.classList.remove('hidden', 'sm:block', 'font-sans', 'text-xs', 'font-extrabold', 'tracking-[0.3em]');
+                navBrandText.classList.add('font-cinzel', 'text-xl', 'font-bold', 'text-ocean-900', 'tracking-widest');
+            } else {
+                navbar.classList.remove('glass-nav', 'text-gray-900', 'py-3');
+                navbar.classList.add('text-white', 'py-4');
+                navLinks.forEach(el => { el.style.color = ''; el.classList.add('drop-shadow-md'); });
+                logoImg.classList.remove('border-gray-200');
+                logoImg.classList.add('border-white/20');
+                navBrandText.classList.add('hidden', 'sm:block', 'font-sans', 'text-xs', 'font-extrabold', 'tracking-[0.3em]');
+                navBrandText.classList.remove('font-cinzel', 'text-xl', 'font-bold', 'text-ocean-900', 'tracking-widest');
             }
         });
 
-        // 2. Animasi Reveal Umum
         const revealElements = document.querySelectorAll('.reveal');
         const revealObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('active'); observer.unobserve(entry.target); } });
         }, { root: null, threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
         revealElements.forEach(el => revealObserver.observe(el));
-
-        // 3. Expandable FAB
-        const fabToggle = document.getElementById('fab-toggle');
-        const fabMenu = document.getElementById('fab-menu');
-        const icon1 = document.getElementById('fab-icon-1');
-        const icon2 = document.getElementById('fab-icon-2');
-        let fabOpen = false;
-        fabToggle.addEventListener('click', () => {
-            fabOpen = !fabOpen;
-            if (fabOpen) {
-                fabMenu.classList.remove('opacity-0', 'translate-y-10', 'scale-90', 'pointer-events-none');
-                fabMenu.classList.add('opacity-100', 'translate-y-0', 'scale-100');
-                icon1.classList.add('hidden'); icon2.classList.remove('hidden');
-                fabToggle.classList.remove('animate-pulse-glow');
-            } else {
-                fabMenu.classList.add('opacity-0', 'translate-y-10', 'scale-90', 'pointer-events-none');
-                fabMenu.classList.remove('opacity-100', 'translate-y-0', 'scale-100');
-                icon1.classList.remove('hidden'); icon2.classList.add('hidden');
-                fabToggle.classList.add('animate-pulse-glow');
-            }
-        });
-
-        // 4. Submit to WhatsApp
-        function sendToWA(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const pkg = document.getElementById('package').value;
-            const date = document.getElementById('date').value;
-            const pax = document.getElementById('pax').value;
-            
-            const message = `Salam hormat tim Whale Shark Expeditions.%0A%0ASaya bermaksud mengajukan reservasi tour.%0A%0A*Informasi Ekspedisi:*%0A- Nama: ${name}%0A- Paket: ${pkg}%0A- Tanggal: ${date}%0A- Peserta: ${pax} Orang%0A%0AMohon konfirmasi ketersediaannya. Terima kasih.`;
-            const targetPhone = "6282266558435";
-            window.open(`https://wa.me/${targetPhone}?text=${message}`, '_blank');
-        }
     </script>
 </body>
 </html>
