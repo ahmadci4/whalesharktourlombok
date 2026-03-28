@@ -437,33 +437,39 @@
     </div>
     </section>
 
-    <!-- MEGA SECTION 2: SAILING KOMODO & KABIN -->
     <section id="komodo" class="py-24 bg-ocean-900 text-white relative overflow-hidden">
         <div class="absolute top-0 left-0 w-full h-1 bg-gold-500"></div>
         
-        <!-- FOTO BG KOMODO dengan Auto-Fallback -->
         <img src="images/komodo.png" alt="Komodo Background" class="absolute inset-0 w-full h-full object-cover opacity-20" style="z-index: 0;" onerror="this.onerror=null; this.src='images/komodo.jpg';">
 
         <div class="max-w-6xl mx-auto px-6 relative z-10">
-            <div class="text-center mb-16 reveal">
-                <p class="text-[10px] font-bold tracking-[0.3em] text-gold-400 uppercase mb-4">Extend Your Journey</p>
-                <h2 class="text-4xl md:text-5xl font-serif text-white mb-4">SAILING KOMODO EXPERIENCE</h2>
-                <p class="text-sm text-gray-300 max-w-2xl mx-auto leading-relaxed uppercase tracking-wider">KLM ETERNITY EXPLORE NUSA TENGGARA • OPEN TRIP<br>SWIM WITH WHALE SHARK & SEE THE KOMODO DRAGONS</p>
+            
+            <div class="text-center mb-16 reveal relative py-10">
+                <img src="images/kapalpinisi.svg" alt="Siluet Pinisi" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[80%] md:w-[50%] opacity-20 pointer-events-none" style="z-index: 0;">
+                
+                <div class="relative z-10">
+                    <p class="text-[10px] font-bold tracking-[0.3em] text-gold-400 uppercase mb-4 drop-shadow-md">Extend Your Journey</p>
+                    <h2 class="text-4xl md:text-5xl font-serif text-white mb-4 drop-shadow-xl">SAILING KOMODO EXPERIENCE</h2>
+                    <p class="text-sm text-gray-300 max-w-2xl mx-auto leading-relaxed uppercase tracking-wider drop-shadow-lg">KLM ETERNITY EXPLORE NUSA TENGGARA • OPEN TRIP<br>SWIM WITH WHALE SHARK & SEE THE KOMODO DRAGONS</p>
+                </div>
             </div>
 
-            <!-- CABIN TYPES -->
             <div class="mb-20 reveal">
                 <h4 class="text-xl font-serif text-gold-400 mb-6 border-b border-ocean-700 pb-3 text-center md:text-left">OUR CABIN CLASSES</h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     
-                    <!-- Superior Cabin -->
                     <div class="bg-ocean-800 border border-ocean-600 rounded-lg overflow-hidden hover:border-gold-500/50 transition-colors shadow-xl group">
-                        <!-- FOTO SUPERIOR CABIN dengan Auto-Fallback -->
-                        <div class="relative overflow-x-auto flex snap-x snap-mandatory h-48 hide-scrollbar">
-                            <img src="images/superior1.jpg" alt="Superior Cabin 1" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/superior1.jpg';">
-                            <img src="images/superior2.jpg" alt="Superior Cabin 2" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/superior2.jpg';">
-                            <img src="images/superior3.jpg" alt="Superior Cabin 3" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/superior3.jpg';">
+                        
+                        <div class="relative group h-48 overflow-hidden rounded-t-lg">
+                            <div class="cabin-slider relative overflow-x-auto flex snap-x snap-mandatory h-full hide-scrollbar scroll-smooth">
+                                <img src="images/superior1.jpg" alt="Superior Cabin 1" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/superior1.jpg';">
+                                <img src="images/superior2.jpg" alt="Superior Cabin 2" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/superior2.jpg';">
+                                <img src="images/superior3.jpg" alt="Superior Cabin 3" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/superior3.jpg';">
+                            </div>
+                            <button class="slider-btn-prev absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all z-10"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
+                            <button class="slider-btn-next absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all z-10"><i data-lucide="chevron-right" class="w-5 h-5"></i></button>
                         </div>
+
                         <div class="p-5">
                             <h5 class="text-sm font-bold text-gold-400 mb-2 uppercase tracking-widest">Superior Cabin</h5>
                             <p class="text-xl font-bold text-white mb-4">IDR 3.000.000 <span class="text-[10px] font-normal text-gray-400">/ PAX</span></p>
@@ -475,14 +481,18 @@
                         </div>
                     </div>
 
-                    <!-- Deluxe Cabin -->
                     <div class="bg-ocean-800 border border-ocean-600 rounded-lg overflow-hidden hover:border-gold-500/50 transition-colors shadow-xl group">
-                        <!-- FOTO DELUXE CABIN dengan Auto-Fallback -->
-                        <div class="relative overflow-x-auto flex snap-x snap-mandatory h-48 hide-scrollbar">
-                            <img src="images/deluxe1.jpg" alt="Deluxe Cabin 1" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/deluxe1.png';">
-                            <img src="images/deluxe2.jpg" alt="Deluxe Cabin 2" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/deluxe2.png';">
-                            <img src="images/deluxe3.jpg" alt="Deluxe Cabin 3" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/deluxe3.png';">
+                        
+                        <div class="relative group h-48 overflow-hidden rounded-t-lg">
+                            <div class="cabin-slider relative overflow-x-auto flex snap-x snap-mandatory h-full hide-scrollbar scroll-smooth">
+                                <img src="images/deluxe1.jpg" alt="Deluxe Cabin 1" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/deluxe1.png';">
+                                <img src="images/deluxe2.jpg" alt="Deluxe Cabin 2" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/deluxe2.png';">
+                                <img src="images/deluxe3.jpg" alt="Deluxe Cabin 3" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/deluxe3.png';">
+                            </div>
+                            <button class="slider-btn-prev absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all z-10"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
+                            <button class="slider-btn-next absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all z-10"><i data-lucide="chevron-right" class="w-5 h-5"></i></button>
                         </div>
+
                         <div class="p-5">
                             <h5 class="text-sm font-bold text-gold-400 mb-2 uppercase tracking-widest">Deluxe Cabin</h5>
                             <p class="text-xl font-bold text-white mb-4">IDR 3.500.000 <span class="text-[10px] font-normal text-gray-400">/ PAX</span></p>
@@ -494,16 +504,20 @@
                         </div>
                     </div>
 
-                    <!-- VIP Cabin -->
                     <div class="bg-ocean-800 border border-ocean-600 rounded-lg overflow-hidden hover:border-gold-500/50 transition-colors shadow-xl group">
-                        <!-- FOTO VIP CABIN dengan Auto-Fallback -->
-                        <div class="relative overflow-x-auto flex snap-x snap-mandatory h-48 hide-scrollbar">
-                            <img src="images/vip-ocean/1.jpg" alt="VIP Cabin 1" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/vip1.jpg';">
-                            <img src="images/vip-ocean/2.jpg" alt="VIP Cabin 2" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/vip2.jpg';">
-                            <img src="images/vip-ocean/3.jpg" alt="VIP Cabin 3" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/vip3.jpg';">
-                            <img src="images/vip-ocean/4.jpg" alt="VIP Cabin 4" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/vip4.jpg';">
-                            <img src="images/vip-ocean/5.jpg" alt="VIP Cabin 5" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/vip5.jpg';">
+                        
+                        <div class="relative group h-48 overflow-hidden rounded-t-lg">
+                            <div class="cabin-slider relative overflow-x-auto flex snap-x snap-mandatory h-full hide-scrollbar scroll-smooth">
+                                <img src="images/vip.jpg" alt="VIP Cabin 1" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/vip1.jpg';">
+                                <img src="images/vip2.jpg" alt="VIP Cabin 2" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/vip2.jpg';">
+                                <img src="images/vip3.jpg" alt="VIP Cabin 3" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/vip3.jpg';">
+                                <img src="images/vip4.jpg" alt="VIP Cabin 4" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/vip4.jpg';">
+                                <img src="images/vip5.jpg" alt="VIP Cabin 5" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/vip5.jpg';">
+                            </div>
+                            <button class="slider-btn-prev absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all z-10"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
+                            <button class="slider-btn-next absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all z-10"><i data-lucide="chevron-right" class="w-5 h-5"></i></button>
                         </div>
+
                         <div class="p-5">
                             <h5 class="text-sm font-bold text-gold-400 mb-2 uppercase tracking-widest">VIP Cabin</h5>
                             <p class="text-xl font-bold text-white mb-4">IDR 4.000.000 <span class="text-[10px] font-normal text-gray-400">/ PAX</span></p>
@@ -515,15 +529,18 @@
                         </div>
                     </div>
 
-                    <!-- Master Cabin -->
                     <div class="bg-ocean-800 border border-ocean-600 rounded-lg overflow-hidden hover:border-gold-500/50 transition-colors shadow-xl group">
-                        <!-- FOTO MASTER CABIN dengan Auto-Fallback -->
-                        <div class="relative overflow-x-auto flex snap-x snap-mandatory h-48 hide-scrollbar">
-                            <img src="images/master1.jpg" alt="Master Cabin 1" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/master-ocean/1.png';">
-                            <img src="images/master2.jpg" alt="Master Cabin 2" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/master-ocean/2.png';">
-                            <img src="images/master3.jpg" alt="Master Cabin 3" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/master-ocean/3.png';">
-                            <img src="images/master4.jpg" alt="Master Cabin 4" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/master-ocean/4.png';">
+                        
+                        <div class="relative group h-48 overflow-hidden rounded-t-lg">
+                            <div class="cabin-slider relative overflow-x-auto flex snap-x snap-mandatory h-full hide-scrollbar scroll-smooth">
+                                <img src="images/shared1.jpg" alt="Master Cabin 1" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/master-ocean/1.png';">
+                                <img src="images/shared2.jpg" alt="Master Cabin 2" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/master-ocean/2.png';">
+                                <img src="images/shared3.jpg" alt="Master Cabin 3" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/master-ocean/3.png';">
+                            </div>
+                            <button class="slider-btn-prev absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all z-10"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
+                            <button class="slider-btn-next absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all z-10"><i data-lucide="chevron-right" class="w-5 h-5"></i></button>
                         </div>
+
                         <div class="p-5">
                             <h5 class="text-sm font-bold text-gold-400 mb-2 uppercase tracking-widest">Master Cabin</h5>
                             <p class="text-xl font-bold text-white mb-4">IDR 4.500.000 <span class="text-[10px] font-normal text-gray-400">/ PAX</span></p>
