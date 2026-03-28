@@ -6,18 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Whale Shark & Komodo Expeditions | Premium Liveaboard</title>
+    <!-- Favicon dengan auto-fallback diatasi di sisi server biasanya, tapi kita set .png -->
     <link rel="icon" type="image/png" sizes="192x192" href="images/whaleshark-logo.png">
     <link rel="apple-touch-icon" href="images/whaleshark-logo.png">
-    <meta name="msapplication-TileImage" content="images/whaleshark-logo.png">
     <meta name="description" content="Bergabunglah dalam ekspedisi eksklusif dari Lombok ke Sumbawa & Labuan Bajo.">
-    <meta name="keywords" content="whale shark lombok, tour hiu paus lombok, sailing komodo, wisata hiu paus indonesia">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Whale Shark Expeditions">
-    
-    <meta property="og:title" content="Whale Shark & Komodo Expedition | Premium Experience">
-    <meta property="og:description" content="Berenang bersama raksasa lembut di Teluk Saleh dan Sailing Komodo.">
-    <meta property="og:image" content="images/hero.png">
-    <meta property="og:type" content="website">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -82,8 +74,8 @@
         <div class="max-w-7xl mx-auto flex justify-between items-center text-xs tracking-widest uppercase font-bold">
             <div class="flex items-center gap-3 group cursor-pointer relative z-50">
                 
-                <!-- FOTO: Foto ini untuk Logo di menu navigasi atas (Pojok Kiri). Pastikan nama filenya whaleshark-logo.png. by:ahmad yani -->
-                <img src="images/whaleshark-logo.png" alt="Logo Hiu Paus Tour Lombok" class="h-10 md:h-12 w-auto object-contain rounded-full shadow-lg border-2 border-white/20 transition-all nav-logo">
+                <!-- FOTO LOGO ATAS KIRI dengan Auto-Fallback -->
+                <img src="images/whaleshark-logo.png" alt="Logo Hiu Paus Tour Lombok" class="h-10 md:h-12 w-auto object-contain rounded-full shadow-lg border-2 border-white/20 transition-all nav-logo" onerror="this.onerror=null; this.src='images/whaleshark-logo.jpg';">
                 
                 <span id="nav-brand-text" class="font-sans font-extrabold tracking-[0.3em] hidden sm:block drop-shadow-md transition-all duration-300 whitespace-nowrap">WHALE SHARK</span>
             </div>
@@ -118,8 +110,8 @@
             <div class="bubble" style="left: 70%; width: 20px; height: 20px; animation-duration: 7s; animation-delay: 1s;"></div>
         </div>
         
-        <!-- FOTO: Foto ini untuk Latar Belakang (Background) utama di bagian paling atas website (Hero Section). Gunakan file hero.png. by:ahmad yani -->
-        <img src="images/hero.png" alt="Ekspedisi Hiu Paus dan Komodo" class="absolute inset-0 w-full h-full object-cover object-center transform scale-105 hover:scale-100 transition-transform duration-[20s]" style="z-index: -1;">
+        <!-- FOTO BG UTAMA dengan Auto-Fallback -->
+        <img src="images/hero.png" alt="Ekspedisi Hiu Paus dan Komodo" class="absolute inset-0 w-full h-full object-cover object-center transform scale-105 hover:scale-100 transition-transform duration-[20s]" style="z-index: -1;" onerror="this.onerror=null; this.src='images/hero.jpg';">
         
         <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-ocean-900/50" style="z-index: -1;"></div>
         
@@ -424,15 +416,8 @@
     </section>
 
     <!-- ========================================================================= -->
-    <!-- VIDEO: Ini adalah bagian untuk Video YouTube di website Anda.             -->
-    <!-- Jika ingin mengganti/memasukkan video dari YouTube, Anda HANYA PERLU      -->
-    <!-- mencopy ID videonya saja.                                                 -->
-    <!-- Contoh: Jika link YouTube adalah https://youtu.be/dQw4w9WgXcQ             -->
-    <!-- Maka ID-nya adalah tulisan di paling belakang: "dQw4w9WgXcQ".             -->
-    <!--                                                                           -->
-    <!-- CARA GANTI:                                                               -->
-    <!-- Ganti teks "MASUKKAN_ID_VIDEO_DISINI" pada baris 'iframe' di bawah        -->
-    <!-- dengan ID video YouTube Anda. by:ahmad yani                               -->
+    <!-- TEMPAT VIDEO YOUTUBE. by:ahmad yani                                       -->
+    <!-- Ganti MASUKKAN_ID_VIDEO_DISINI dengan ID Video Youtube Abang.             -->
     <!-- ========================================================================= -->
     <section class="py-16 bg-ocean-950 text-white border-t-4 border-gold-500">
         <div class="max-w-4xl mx-auto px-6 reveal">
@@ -441,18 +426,17 @@
                 <p class="text-xs font-bold tracking-[0.3em] text-gray-400 uppercase">Cuplikan Perjalanan Kami</p>
             </div>
             <div class="relative w-full rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-ocean-700 bg-black aspect-video">
-                <!-- Ubah MASUKKAN_ID_VIDEO_DISINI di bawah ini -->
                 <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/MASUKKAN_ID_VIDEO_DISINI?modestbranding=1&rel=0&showinfo=0" title="Whale Shark & Komodo Expedition Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </section>
 
-    <!-- MEGA SECTION 2: SAILING KOMODO & KABIN FOTO ASLI -->
+    <!-- MEGA SECTION 2: SAILING KOMODO & KABIN -->
     <section id="komodo" class="py-24 bg-ocean-900 text-white relative overflow-hidden">
         <div class="absolute top-0 left-0 w-full h-1 bg-gold-500"></div>
         
-        <!-- FOTO: Foto ini untuk Latar Belakang (Background) halaman utama khusus bagian Sailing Komodo. Gunakan file komodo.png. by:ahmad yani -->
-        <img src="images/komodo.png" alt="Komodo Background" class="absolute inset-0 w-full h-full object-cover opacity-20" style="z-index: 0;">
+        <!-- FOTO BG KOMODO dengan Auto-Fallback -->
+        <img src="images/komodo.png" alt="Komodo Background" class="absolute inset-0 w-full h-full object-cover opacity-20" style="z-index: 0;" onerror="this.onerror=null; this.src='images/komodo.jpg';">
 
         <div class="max-w-6xl mx-auto px-6 relative z-10">
             <div class="text-center mb-16 reveal">
@@ -461,21 +445,19 @@
                 <p class="text-sm text-gray-300 max-w-2xl mx-auto leading-relaxed uppercase tracking-wider">KLM ETERNITY EXPLORE NUSA TENGGARA • OPEN TRIP<br>SWIM WITH WHALE SHARK & SEE THE KOMODO DRAGONS</p>
             </div>
 
-            <!-- CABIN TYPES DENGAN FOTO ASLI (SUPERIOR, DELUXE, VIP, MASTER) -->
+            <!-- CABIN TYPES -->
             <div class="mb-20 reveal">
                 <h4 class="text-xl font-serif text-gold-400 mb-6 border-b border-ocean-700 pb-3 text-center md:text-left">OUR CABIN CLASSES</h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     
                     <!-- Superior Cabin -->
                     <div class="bg-ocean-800 border border-ocean-600 rounded-lg overflow-hidden hover:border-gold-500/50 transition-colors shadow-xl group">
-                        
-                        <!-- FOTO: Kumpulan foto ini untuk Paket Superior Cabin di bagian Sailing Komodo. Gambar di-set agar bisa digeser/swipe. Pastikan file ada di folder superior-ocean/. by:ahmad yani -->
+                        <!-- FOTO SUPERIOR CABIN dengan Auto-Fallback -->
                         <div class="relative overflow-x-auto flex snap-x snap-mandatory h-48 hide-scrollbar">
-                            <img src="images/superior-ocean/1.jpg" alt="Superior Cabin 1" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center">
-                            <img src="images/superior-ocean/2.jpg" alt="Superior Cabin 2" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center">
-                            <img src="images/superior-ocean/3.jpg" alt="Superior Cabin 3" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center">
+                            <img src="images/superior-ocean/1.jpg" alt="Superior Cabin 1" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/superior-ocean/1.png';">
+                            <img src="images/superior-ocean/2.jpg" alt="Superior Cabin 2" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/superior-ocean/2.png';">
+                            <img src="images/superior-ocean/3.jpg" alt="Superior Cabin 3" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/superior-ocean/3.png';">
                         </div>
-                        
                         <div class="p-5">
                             <h5 class="text-sm font-bold text-gold-400 mb-2 uppercase tracking-widest">Superior Cabin</h5>
                             <p class="text-xl font-bold text-white mb-4">IDR 3.000.000 <span class="text-[10px] font-normal text-gray-400">/ PAX</span></p>
@@ -489,14 +471,12 @@
 
                     <!-- Deluxe Cabin -->
                     <div class="bg-ocean-800 border border-ocean-600 rounded-lg overflow-hidden hover:border-gold-500/50 transition-colors shadow-xl group">
-                        
-                        <!-- FOTO: Kumpulan foto ini untuk Paket Deluxe Cabin di bagian Sailing Komodo. Gambar di-set agar bisa digeser/swipe. Pastikan file ada di folder deluxe-ocean/. by:ahmad yani -->
+                        <!-- FOTO DELUXE CABIN dengan Auto-Fallback -->
                         <div class="relative overflow-x-auto flex snap-x snap-mandatory h-48 hide-scrollbar">
-                            <img src="images/deluxe-ocean/1.jpg" alt="Deluxe Cabin 1" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center">
-                            <img src="images/deluxe-ocean/2.jpg" alt="Deluxe Cabin 2" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center">
-                            <img src="images/deluxe-ocean/3.jpg" alt="Deluxe Cabin 3" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center">
+                            <img src="images/deluxe-ocean/1.jpg" alt="Deluxe Cabin 1" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/deluxe-ocean/1.png';">
+                            <img src="images/deluxe-ocean/2.jpg" alt="Deluxe Cabin 2" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/deluxe-ocean/2.png';">
+                            <img src="images/deluxe-ocean/3.jpg" alt="Deluxe Cabin 3" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/deluxe-ocean/3.png';">
                         </div>
-                        
                         <div class="p-5">
                             <h5 class="text-sm font-bold text-gold-400 mb-2 uppercase tracking-widest">Deluxe Cabin</h5>
                             <p class="text-xl font-bold text-white mb-4">IDR 3.500.000 <span class="text-[10px] font-normal text-gray-400">/ PAX</span></p>
@@ -510,16 +490,14 @@
 
                     <!-- VIP Cabin -->
                     <div class="bg-ocean-800 border border-ocean-600 rounded-lg overflow-hidden hover:border-gold-500/50 transition-colors shadow-xl group">
-                        
-                        <!-- FOTO: Kumpulan foto ini untuk Paket VIP Cabin di bagian Sailing Komodo. Gambar di-set agar bisa digeser/swipe. Pastikan file ada di folder vip-ocean/. by:ahmad yani -->
+                        <!-- FOTO VIP CABIN dengan Auto-Fallback -->
                         <div class="relative overflow-x-auto flex snap-x snap-mandatory h-48 hide-scrollbar">
-                            <img src="images/vip-ocean/1.jpg" alt="VIP Cabin 1" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center">
-                            <img src="images/vip-ocean/2.jpg" alt="VIP Cabin 2" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center">
-                            <img src="images/vip-ocean/3.jpg" alt="VIP Cabin 3" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center">
-                            <img src="images/vip-ocean/4.jpg" alt="VIP Cabin 4" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center">
-                            <img src="images/vip-ocean/5.jpg" alt="VIP Cabin 5" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center">
+                            <img src="images/vip-ocean/1.jpg" alt="VIP Cabin 1" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/vip-ocean/1.png';">
+                            <img src="images/vip-ocean/2.jpg" alt="VIP Cabin 2" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/vip-ocean/2.png';">
+                            <img src="images/vip-ocean/3.jpg" alt="VIP Cabin 3" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/vip-ocean/3.png';">
+                            <img src="images/vip-ocean/4.jpg" alt="VIP Cabin 4" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/vip-ocean/4.png';">
+                            <img src="images/vip-ocean/5.jpg" alt="VIP Cabin 5" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/vip-ocean/5.png';">
                         </div>
-                        
                         <div class="p-5">
                             <h5 class="text-sm font-bold text-gold-400 mb-2 uppercase tracking-widest">VIP Cabin</h5>
                             <p class="text-xl font-bold text-white mb-4">IDR 4.000.000 <span class="text-[10px] font-normal text-gray-400">/ PAX</span></p>
@@ -533,15 +511,13 @@
 
                     <!-- Master Cabin -->
                     <div class="bg-ocean-800 border border-ocean-600 rounded-lg overflow-hidden hover:border-gold-500/50 transition-colors shadow-xl group">
-                        
-                        <!-- FOTO: Kumpulan foto ini untuk Paket Master Cabin di bagian Sailing Komodo. Gambar di-set agar bisa digeser/swipe. Pastikan file ada di folder master-ocean/. by:ahmad yani -->
+                        <!-- FOTO MASTER CABIN dengan Auto-Fallback -->
                         <div class="relative overflow-x-auto flex snap-x snap-mandatory h-48 hide-scrollbar">
-                            <img src="images/master-ocean/1.jpg" alt="Master Cabin 1" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center">
-                            <img src="images/master-ocean/2.jpg" alt="Master Cabin 2" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center">
-                            <img src="images/master-ocean/3.jpg" alt="Master Cabin 3" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center">
-                            <img src="images/master-ocean/4.jpg" alt="Master Cabin 4" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center">
+                            <img src="images/master-ocean/1.jpg" alt="Master Cabin 1" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/master-ocean/1.png';">
+                            <img src="images/master-ocean/2.jpg" alt="Master Cabin 2" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/master-ocean/2.png';">
+                            <img src="images/master-ocean/3.jpg" alt="Master Cabin 3" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/master-ocean/3.png';">
+                            <img src="images/master-ocean/4.jpg" alt="Master Cabin 4" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/master-ocean/4.png';">
                         </div>
-                        
                         <div class="p-5">
                             <h5 class="text-sm font-bold text-gold-400 mb-2 uppercase tracking-widest">Master Cabin</h5>
                             <p class="text-xl font-bold text-white mb-4">IDR 4.500.000 <span class="text-[10px] font-normal text-gray-400">/ PAX</span></p>
@@ -576,8 +552,8 @@
                         </ul>
                     </div>
                     <div>
-                        <!-- FOTO: Foto ini untuk ilustrasi/gambaran kapal untuk rute Lombok ke Bajo (West to East). Gunakan file pinisi.png. by:ahmad yani -->
-                        <img src="images/pinisi.png" alt="KLM Eternity Pinisi" class="w-full h-32 object-cover rounded-md shadow-lg border border-ocean-700">
+                        <!-- FOTO ILUSTRASI KAPAL LOMBOK-BAJO dengan Auto-Fallback -->
+                        <img src="images/pinisi.png" alt="KLM Eternity General" class="w-full h-32 object-cover rounded-md shadow-lg border border-ocean-700" onerror="this.onerror=null; this.src='images/pinisi.jpg';">
                     </div>
                 </div>
 
@@ -649,8 +625,8 @@
                         </ul>
                     </div>
                     <div>
-                        <!-- FOTO: Foto ini untuk ilustrasi/gambaran kapal untuk rute Bajo ke Lombok (East to West). Gunakan file pinisi.png. by:ahmad yani -->
-                        <img src="images/pinisi.png" alt="KLM Eternity Pinisi" class="w-full h-32 object-cover rounded-md shadow-lg border border-ocean-700">
+                        <!-- FOTO ILUSTRASI KAPAL BAJO-LOMBOK dengan Auto-Fallback -->
+                        <img src="images/pinisi.png" alt="KLM Eternity General" class="w-full h-32 object-cover rounded-md shadow-lg border border-ocean-700" onerror="this.onerror=null; this.src='images/pinisi.jpg';">
                     </div>
                 </div>
 
@@ -759,8 +735,8 @@
                     </div>
                 </div>
                 <div class="order-1 md:order-2 reveal delay-100">
-                    <!-- FOTO: Foto ini untuk menampilkan ilustrasi kapal dari luar di bagian Vessels & Comfort (Armada Kapal). Gunakan file pinisi.png. by:ahmad yani -->
-                    <img src="images/pinisi.png" alt="Kapal Pinisi Eksterior" loading="lazy" class="w-full aspect-square object-cover shadow-2xl rounded-sm">
+                    <!-- FOTO ILUSTRASI ARMADA KAPAL dengan Auto-Fallback -->
+                    <img src="images/pinisi.png" alt="Kapal Whale Shark Sumbawa" loading="lazy" class="w-full aspect-square object-cover shadow-2xl rounded-sm" onerror="this.onerror=null; this.src='images/pinisi.jpg';">
                 </div>
             </div>
         </div>
@@ -832,8 +808,10 @@
     <footer class="relative py-24 bg-[#0a1520] text-center text-white overflow-hidden">
         <div class="relative z-10 max-w-4xl mx-auto px-6 flex flex-col items-center pointer-events-auto">
             <div class="bg-white/10 p-4 rounded-xl backdrop-blur-md border border-white/20 shadow-2xl mb-6 inline-block">
-                <!-- FOTO: Foto ini untuk bagian paling bawah website (Footer). Gunakan file footer.png. by:ahmad yani -->
-                <img src="images/footer.png" alt="Whale Shark Tour Logo Footer" loading="lazy" class="h-auto max-h-32 w-auto object-contain mix-blend-lighten mx-auto">
+                
+                <!-- FOTO FOOTER dengan Auto-Fallback -->
+                <img src="images/footer.png" alt="Whale Shark Tour Logo Footer" loading="lazy" class="h-auto max-h-32 w-auto object-contain mix-blend-lighten mx-auto" onerror="this.onerror=null; this.src='images/footer.jpg';">
+                
             </div>
             <div class="text-center mt-2">
                 <span class="font-serif text-3xl tracking-widest drop-shadow-md block mb-1">WHALE SHARK & KOMODO</span>
