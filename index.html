@@ -444,16 +444,22 @@
 
         <div class="max-w-6xl mx-auto px-6 relative z-10">
             
-            <div class="text-center mb-16 reveal relative py-12 md:py-24 flex flex-col items-center justify-center overflow-hidden">
+            <div class="text-center mb-20 reveal flex flex-col items-center justify-center w-full">
                 
-                <img src="images/kapalpinisi.jpeg" alt="Siluet Pinisi" class="absolute inset-0 w-full h-full object-cover md:object-contain opacity-20 pointer-events-none" style="z-index: 0;">
-                
-                <div class="relative z-10 w-full">
+                <div class="w-full mb-10">
                     <p class="text-[10px] font-bold tracking-[0.3em] text-gold-400 uppercase mb-4 drop-shadow-md">Extend Your Journey</p>
                     <h2 class="text-4xl md:text-5xl font-serif text-white mb-4 drop-shadow-xl">SAILING KOMODO EXPERIENCE</h2>
                     <p class="text-sm text-gray-300 max-w-2xl mx-auto leading-relaxed uppercase tracking-wider drop-shadow-lg">KLM ETERNITY EXPLORE NUSA TENGGARA • OPEN TRIP<br>SWIM WITH WHALE SHARK & SEE THE KOMODO DRAGONS</p>
                 </div>
+                
+                <img src="images/kapalpinisi.jpeg" alt="Siluet Pinisi" class="w-full max-w-4xl h-auto object-contain drop-shadow-2xl" onerror="this.onerror=null; this.src='images/kapalpinisi.png';">
+                
             </div>
+            ```
+
+Dengan struktur baru ini, teksnya akan selesai dulu di atas, lalu gambarnya (`kapalpinisi.svg`) akan tampil persis di bawahnya dengan warna solid 100%.
+
+Silakan dipasang pelan-pelan ya Bang! Apakah ada lagi yang mau disesuaikan?
 
             <div class="mb-20 reveal">
                 <h4 class="text-xl font-serif text-gold-400 mb-6 border-b border-ocean-700 pb-3 text-center md:text-left">OUR CABIN CLASSES</h4>
@@ -771,7 +777,9 @@
         <div class="max-w-3xl mx-auto px-6 text-center reveal">
             <h2 class="text-4xl font-serif text-ocean-900 mb-4">Secure Your Spot</h2>
             <p class="text-[10px] font-bold tracking-widest text-ocean-600 uppercase mb-12">Konsultasi dan Reservasi Eksklusif via WhatsApp</p>
-
+                <div class="w-full h-64 md:h-80 my-8 rounded-xl overflow-hidden shadow-md relative group">
+                    <img src="images/pinisi-depan.jpg" alt="Ilustrasi Paket Whale Shark" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x400?text=Foto+Paket+Belum+Ada';">
+                </div>
             <form onsubmit="sendToWA(event)" class="space-y-6 text-left bg-white p-8 md:p-14 shadow-xl rounded-sm border border-gray-200 relative">
                 <div class="absolute top-0 left-0 w-full h-1 bg-ocean-800"></div>
                 
