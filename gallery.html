@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Gallery | Whale Shark & Komodo Expeditions</title>
+    <link rel="icon" type="image/png" sizes="192x192" href="images/whaleshark-logo.png">
+    <link rel="apple-touch-icon" href="images/whaleshark-logo.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ocean: { 900: '#061626', 800: '#112B45', 600: '#2A5C8D', 400: '#528CBE' },
+                        editorial: { bg: '#F9FAFB', accent: '#3b597b' },
+                        gold: { 500: '#D4AF37', 400: '#F3E5AB' }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        cinzel: ['Cinzel Decorative', 'serif'],
+                    },
+                    letterSpacing: { widest: '.25em' }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #F9FAFB; position: relative; }
+        .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .glass-nav a, .glass-nav span, .glass-nav i { color: #112B45 !important; }
+        .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; will-change: opacity, transform; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .text-glow { text-shadow: 0 10px 40px rgba(255,255,255,0.3), 0 2px 10px rgba(0,0,0,0.6); }
+    </style>
+</head>
+<body class="text-gray-800 font-sans antialiased overflow-x-hidden bg-editorial-bg">
+
+    <!-- NAVBAR UTAMA -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-4 px-6 md:px-12 bg-transparent text-white">
+        <div class="max-w-7xl mx-auto flex justify-between items-center text-xs tracking-widest uppercase font-bold">
+            <div class="flex items-center gap-3 group cursor-pointer relative z-50" onclick="window.location.href='index.html'">
+                <!-- FOTO LOGO -->
+                <img src="images/whaleshark-logo.png" alt="Logo Hiu Paus Tour Lombok" class="h-10 md:h-12 w-auto object-contain rounded-full shadow-lg border-2 border-white/20 transition-all nav-logo" onerror="this.onerror=null; this.src='images/whaleshark-logo.jpg';">
+                <span id="nav-brand-text" class="font-sans font-extrabold tracking-[0.3em] hidden sm:block drop-shadow-md transition-all duration-300 whitespace-nowrap">WHALE SHARK</span>
+            </div>
+            
+            <div class="hidden lg:flex items-center gap-7 relative z-50">
+                <a href="index.html" class="hover:text-ocean-400 transition-colors drop-shadow-md nav-link">Home</a>
+                <a href="index.html#packages" class="hover:text-ocean-400 transition-colors drop-shadow-md nav-link">Whale Shark</a>
+                <a href="index.html#komodo" class="hover:text-ocean-400 transition-colors drop-shadow-md nav-link">Komodo Trip</a>
+                <a href="index.html#fleet" class="hover:text-ocean-400 transition-colors drop-shadow-md nav-link">Fleet</a>
+                <a href="gallery.html" class="hover:text-ocean-400 transition-colors drop-shadow-md nav-link text-gold-400">Gallery</a>
+                <a href="index.html#booking" class="hover:text-ocean-400 transition-colors drop-shadow-md nav-link border border-white/50 px-4 py-2 rounded-full backdrop-blur-sm">Book Now</a>
+            </div>
+
+            <button class="lg:hidden ml-auto nav-link relative z-50" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i data-lucide="menu" class="w-6 h-6 drop-shadow-md"></i>
+            </button>
+        </div>
+        
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white p-6 flex flex-col gap-5 text-center shadow-lg border-t border-gray-100 text-ocean-900 z-40">
+            <a href="index.html" class="text-sm font-bold tracking-widest uppercase" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Home</a>
+            <a href="index.html#packages" class="text-sm font-bold tracking-widest uppercase" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Whale Shark Packages</a>
+            <a href="#index.html#komodo" class="text-sm font-bold tracking-widest uppercase" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Sailing Komodo</a>
+            <a href="index.html#fleet" class="text-sm font-bold tracking-widest uppercase" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Our Fleet</a>
+            <a href="gallery.html" class="text-sm font-bold tracking-widest uppercase text-gold-500" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Gallery</a>
+            <a href="index.html#booking" class="text-sm font-bold tracking-widest uppercase text-ocean-600 mt-2 border-t pt-4" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- HERO HEADER GALLERY -->
+    <header class="relative h-[50vh] flex flex-col items-center justify-center overflow-hidden">
+        <img src="images/komodo.png" alt="Gallery Background" class="absolute inset-0 w-full h-full object-cover object-center transform scale-105" style="z-index: -1;" onerror="this.onerror=null; this.src='images/hero.jpg';">
+        <div class="absolute inset-0 bg-ocean-900/80" style="z-index: -1;"></div>
+        
+        <div class="relative z-10 text-center px-4 w-full reveal active mt-16">
+            <h1 class="font-serif text-white mb-2 tracking-wide drop-shadow-lg text-4xl md:text-6xl">
+                OUR GALLERY
+            </h1>
+            <p class="text-[10px] md:text-xs text-gold-400 tracking-[0.3em] uppercase max-w-2xl mx-auto font-bold mt-4 drop-shadow-md">
+                A Glimpse of Paradise
+            </p>
+        </div>
+    </header>
+
+    <!-- BAGIAN FOTO GALLERY -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-4xl font-serif text-ocean-900 mb-4">Photo Collections</h2>
+                <div class="w-24 h-1 bg-gold-500 mx-auto"></div>
+            </div>
+
+            <!-- GRID FOTO -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 reveal">
+                
+                <!-- ========================================== -->
+                <!-- AWAL COPY PASTE FOTO -->
+                <!-- Blok kode div ini adalah satu foto. Copy dari baris div class relative sampai /div -->
+                <div class="relative group overflow-hidden rounded-xl shadow-lg aspect-square bg-gray-100">
+                    <img src="images/superior-ocean/1.jpg" alt="Gallery Photo" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.onerror=null; this.src='https://via.placeholder.com/600x600?text=Foto+1';">
+                </div>
+                <!-- AKHIR COPY PASTE FOTO -->
+                <!-- ========================================== -->
+
+                <!-- ========================================== -->
+                <!-- AWAL COPY PASTE FOTO -->
+                <div class="relative group overflow-hidden rounded-xl shadow-lg aspect-square bg-gray-100">
+                    <img src="images/deluxe-ocean/1.jpg" alt="Gallery Photo" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.onerror=null; this.src='https://via.placeholder.com/600x600?text=Foto+2';">
+                </div>
+                <!-- AKHIR COPY PASTE FOTO -->
+                <!-- ========================================== -->
+
+                <!-- ========================================== -->
+                <!-- AWAL COPY PASTE FOTO -->
+                <div class="relative group overflow-hidden rounded-xl shadow-lg aspect-square bg-gray-100">
+                    <img src="images/vip-ocean/1.jpg" alt="Gallery Photo" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.onerror=null; this.src='https://via.placeholder.com/600x600?text=Foto+3';">
+                </div>
+                <!-- AKHIR COPY PASTE FOTO -->
+                <!-- ========================================== -->
+
+                <!-- ========================================== -->
+                <!-- AWAL COPY PASTE FOTO -->
+                <div class="relative group overflow-hidden rounded-xl shadow-lg aspect-square bg-gray-100">
+                    <img src="images/master-ocean/1.jpg" alt="Gallery Photo" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.onerror=null; this.src='https://via.placeholder.com/600x600?text=Foto+4';">
+                </div>
+                <!-- AKHIR COPY PASTE FOTO -->
+                <!-- ========================================== -->
+
+                <!-- (Tinggal copy blok "AWAL COPY PASTE FOTO" di atas dan tempel di sini untuk menambah foto kelima, keenam, dst) -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BAGIAN VIDEO GALLERY -->
+    <section class="py-24 bg-ocean-950 text-white border-t-4 border-gold-500">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-4xl font-serif text-gold-400 mb-4">Video Diaries</h2>
+                <div class="w-24 h-1 bg-white/20 mx-auto"></div>
+            </div>
+
+            <!-- GRID VIDEO -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
+                
+                <!-- ========================================== -->
+                <!-- AWAL COPY PASTE VIDEO (YOUTUBE) -->
+                <!-- Ganti tulisan MASUKKAN_ID_VIDEO_1_DISINI dengan ID Youtube -->
+                <div class="relative w-full rounded-xl overflow-hidden shadow-2xl border border-ocean-700 bg-black aspect-video group">
+                    <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/MASUKKAN_ID_VIDEO_1_DISINI?modestbranding=1&rel=0&showinfo=0" title="Video Gallery" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <!-- AKHIR COPY PASTE VIDEO -->
+                <!-- ========================================== -->
+
+                <!-- ========================================== -->
+                <!-- AWAL COPY PASTE VIDEO (YOUTUBE) -->
+                <!-- Ganti tulisan MASUKKAN_ID_VIDEO_2_DISINI dengan ID Youtube -->
+                <div class="relative w-full rounded-xl overflow-hidden shadow-2xl border border-ocean-700 bg-black aspect-video group">
+                    <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/MASUKKAN_ID_VIDEO_2_DISINI?modestbranding=1&rel=0&showinfo=0" title="Video Gallery" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <!-- AKHIR COPY PASTE VIDEO -->
+                <!-- ========================================== -->
+
+                <!-- (Tinggal copy blok "AWAL COPY PASTE VIDEO" di atas dan tempel di sini untuk menambah video ketiga, dst) -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="relative py-24 bg-[#0a1520] text-center text-white overflow-hidden">
+        <div class="relative z-10 max-w-4xl mx-auto px-6 flex flex-col items-center pointer-events-auto">
+            <div class="bg-white/10 p-4 rounded-xl backdrop-blur-md border border-white/20 shadow-2xl mb-6 inline-block">
+                <!-- FOTO FOOTER -->
+                <img src="images/footer.png" alt="Whale Shark Tour Logo Footer" loading="lazy" class="h-auto max-h-32 w-auto object-contain mix-blend-lighten mx-auto" onerror="this.onerror=null; this.src='images/footer.jpg';">
+            </div>
+            <div class="text-center mt-2">
+                <span class="font-serif text-3xl tracking-widest drop-shadow-md block mb-1">WHALE SHARK & KOMODO</span>
+                <span class="text-[10px] font-sans font-bold tracking-[0.4em] opacity-80 uppercase">Expeditions Indonesia</span>
+            </div>
+            <p class="text-[10px] opacity-50 mt-10 max-w-sm tracking-[0.2em] uppercase leading-loose font-bold">
+                © 2026 PREMIUM SUSTAINABLE TOURISM INDONESIA.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const navbar = document.getElementById('navbar');
+        const navLinks = navbar.querySelectorAll('.nav-link');
+        const logoImg = navbar.querySelector('.nav-logo');
+        const navBrandText = document.getElementById('nav-brand-text');
+        
+        // Transisi Navbar saat di-scroll
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('glass-nav');
+                navbar.classList.remove('text-white', 'py-4');
+                navbar.classList.add('text-gray-900', 'py-3');
+                navLinks.forEach(el => el.classList.remove('drop-shadow-md', 'text-white'));
+                logoImg.classList.remove('border-white/20');
+                logoImg.classList.add('border-gray-200');
+                navBrandText.classList.remove('hidden', 'sm:block', 'font-sans', 'text-xs', 'font-extrabold', 'tracking-[0.3em]');
+                navBrandText.classList.add('font-cinzel', 'text-xl', 'font-bold', 'text-ocean-900', 'tracking-widest');
+            } else {
+                navbar.classList.remove('glass-nav', 'text-gray-900', 'py-3');
+                navbar.classList.add('text-white', 'py-4');
+                navLinks.forEach(el => { el.classList.add('drop-shadow-md'); });
+                logoImg.classList.remove('border-gray-200');
+                logoImg.classList.add('border-white/20');
+                navBrandText.classList.add('hidden', 'sm:block', 'font-sans', 'text-xs', 'font-extrabold', 'tracking-[0.3em]');
+                navBrandText.classList.remove('font-cinzel', 'text-xl', 'font-bold', 'text-ocean-900', 'tracking-widest');
+            }
+        });
+
+        // Efek Muncul (Reveal)
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('active'); observer.unobserve(entry.target); } });
+        }, { root: null, threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+        revealElements.forEach(el => revealObserver.observe(el));
+    </script>
+</body>
+</html>
