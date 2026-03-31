@@ -222,24 +222,52 @@
     </header>
 
     <!-- MEGA SECTION 1: WHALE SHARK PACKAGES -->
-    <div class="order-1 md:order-2 reveal delay-100">
-                    <!-- FOTO whaleshark : by: ahmad yani -->
-    <div style="position: relative; width: 100%; max-width: 500px; margin: 0 auto; overflow: hidden; border-radius: 0.25rem;">
-
-  <div id="slider-hiu" style="display: flex; transition: transform 0.4s ease-in-out;">
+   <!-- ========================================== -->
+    <!-- WIDGET MENGAMBANG (TRANSLATE & WHATSAPP) -->
+    <!-- ========================================== -->
+    <div id="google_translate_element" style="display:none;"></div>
     
-    <img src="images/whaleshark1.jpeg" alt="whalesharkimage" loading="lazy" class="w-full aspect-square object-cover shadow-2xl rounded-sm" style="flex: 0 0 100%;" onerror="this.onerror=null; this.src='images/whaleshark3.jpeg';">
-    
-    <img src="images/whaleshark1.jpeg" alt="whalesharkimage" loading="lazy" class="w-full aspect-square object-cover shadow-2xl rounded-sm" style="flex: 0 0 100%;" onerror="this.onerror=null; this.src='images/whaleshark3.jpeg';">
-    
-    <img src="images/whaleshark3.jpeg" alt="whalesharkimage" loading="lazy" class="w-full aspect-square object-cover shadow-2xl rounded-sm" style="flex: 0 0 100%;" onerror="this.onerror=null; this.src='images/whaleshark1.jpeg';">
-  </div>
+    <!-- Container Utama: Nempel di Kanan Bawah -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-4 font-sans">
+        
+        <!-- 1. TOMBOL TRANSLATE (Ukuran Kecil: w-12 h-12) -->
+        <div class="relative group flex flex-col items-end">
+            <!-- Dropdown Menu Bahasa -->
+            <div class="absolute bottom-full mb-3 right-0 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto origin-bottom-right">
+                <div class="bg-white rounded-xl shadow-2xl border border-gray-100 w-52 overflow-hidden">
+                    <div class="bg-[#112B45] px-4 py-3 flex items-center gap-2">
+                        <!-- Icon  di dalam header dropdown -->
+                        <i data-lucide="languages" class="w-4 h-4 text-[#D4AF37]"></i>
+                        <p class="text-[10px] text-white font-bold uppercase tracking-widest">Select Language</p>
+                    </div>
+                    <div class="max-h-64 overflow-y-auto lang-scroll py-2">
+                        <button onclick="changeLanguage('id')" class="w-full text-left px-4 py-3 text-xs text-gray-700 hover:bg-blue-50 flex items-center gap-3 transition-colors"><span class="text-base">🇮🇩</span> Indonesia</button>
+                        <button onclick="changeLanguage('en')" class="w-full text-left px-4 py-3 text-xs text-gray-700 hover:bg-blue-50 flex items-center gap-3 transition-colors"><span class="text-base">🇬🇧</span> English</button>
+                        <button onclick="changeLanguage('zh-CN')" class="w-full text-left px-4 py-3 text-xs text-gray-700 hover:bg-blue-50 flex items-center gap-3 transition-colors"><span class="text-base">🇨🇳</span> 中文 (Mandarin)</button>
+                        <button onclick="changeLanguage('es')" class="w-full text-left px-4 py-3 text-xs text-gray-700 hover:bg-blue-50 flex items-center gap-3 transition-colors"><span class="text-base">🇪🇸</span> Español (Spanish)</button>
+                        <button onclick="changeLanguage('fr')" class="w-full text-left px-4 py-3 text-xs text-gray-700 hover:bg-blue-50 flex items-center gap-3 transition-colors"><span class="text-base">🇫🇷</span> Français (French)</button>
+                        <button onclick="changeLanguage('de')" class="w-full text-left px-4 py-3 text-xs text-gray-700 hover:bg-blue-50 flex items-center gap-3 transition-colors"><span class="text-base">🇩🇪</span> Deutsch (German)</button>
+                        <button onclick="changeLanguage('ja')" class="w-full text-left px-4 py-3 text-xs text-gray-700 hover:bg-blue-50 flex items-center gap-3 transition-colors"><span class="text-base">🇯🇵</span> 日本語 (Japanese)</button>
+                        <button onclick="changeLanguage('ko')" class="w-full text-left px-4 py-3 text-xs text-gray-700 hover:bg-blue-50 flex items-center gap-3 transition-colors"><span class="text-base">🇰🇷</span> 한국어 (Korean)</button>
+                        <button onclick="changeLanguage('ru')" class="w-full text-left px-4 py-3 text-xs text-gray-700 hover:bg-blue-50 flex items-center gap-3 transition-colors"><span class="text-base">🇷🇺</span> Русский (Russian)</button>
+                        <button onclick="changeLanguage('it')" class="w-full text-left px-4 py-3 text-xs text-gray-700 hover:bg-blue-50 flex items-center gap-3 transition-colors"><span class="text-base">🇮🇹</span> Italiano (Italian)</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tombol Bulat Translate -->
+            <button class="w-12 h-12 bg-white text-[#112B45] rounded-full flex items-center justify-center shadow-lg border border-gray-200 hover:-translate-y-1 hover:shadow-2xl transition-all relative cursor-pointer group-hover:bg-gray-50">
+                <!-- Icon 'languages' yang lebih modern -->
+                <i data-lucide="languages" class="w-5 h-5"></i>
+            </button>
+        </div>
 
-  <button onclick="geserSlide(-1)" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 50%; font-size: 18px;">&#10094;</button>
-  
-  <button onclick="geserSlide(1)" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 50%; font-size: 18px;">&#10095;</button>
-
-</div>
+        <!-- 2. TOMBOL WHATSAPP (Ukuran Besar: w-16 h-16) -->
+        <a href="https://wa.me/6282266558435" target="_blank" class="w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(37,211,102,0.4)] transition-all relative border-2 border-white/20">
+            <i data-lucide="phone" class="w-7 h-7 fill-current"></i>
+        </a>
+        
+    </div>
 
 <script>
   let posisiSlide = 0;
