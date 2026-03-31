@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Whale Shark & Komodo Expeditions | Premium Liveaboard</title>
-    <!-- Favicon dengan auto-fallback diatasi di sisi server biasanya, tapi kita set .png -->
     <link rel="icon" type="image/png" sizes="192x192" href="images/whaleshark-logo.svg">
     <link rel="apple-touch-icon" href="images/whaleshark-logo.svg">
     <meta name="description" content="Bergabunglah dalam ekspedisi eksklusif dari Lombok ke Sumbawa & Labuan Bajo.">
@@ -22,7 +21,7 @@
             theme: {
                 extend: {
                     colors: {
-                        ocean: { 900: '#061626', 800: '#112B45', 600: '#2A5C8D', 400: '#528CBE' },
+                        ocean: { 900: '#061626', 800: '#112B45', 600: '#2A5C8D', 400: '#528CBE', 50: '#F0F5F9' },
                         editorial: { bg: '#F9FAFB', accent: '#3b597b' },
                         gold: { 500: '#D4AF37', 400: '#F3E5AB' }
                     },
@@ -39,7 +38,7 @@
 
     <style>
     /* --- STYLING BAWAAN WEBSITE ANDA --- */
-    body { background-color: #F9FAFB; position: relative; }
+    body { background-color: #F9FAFB; position: relative; top: 0px !important; }
     .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05); }
     .glass-nav a, .glass-nav span, .glass-nav i { color: #112B45 !important; }
     
@@ -47,10 +46,9 @@
     .bubble { position: absolute; bottom: -50px; background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.6), rgba(255,255,255,0.05)); border-radius: 50%; box-shadow: inset 0 0 5px rgba(255,255,255,0.3); animation: floatUp infinite linear; }
     @keyframes floatUp { 0% { transform: translateY(0) scale(0.8); opacity: 0; } 10% { opacity: 0.8; } 90% { opacity: 0.2; } 100% { transform: translateY(-100vh) scale(1.5); opacity: 0; } }
     
-    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; will-change: opacity, transform; }
+    /* ANIMASI REVEAL DIPERCEPAT (0.8s -> 0.6s) */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; will-change: opacity, transform; }
     .reveal.active { opacity: 1; transform: translateY(0); }
-    .delay-100 { transition-delay: 100ms; }
-    .delay-200 { transition-delay: 200ms; }
     
     .animate-float-slow { animation: float-slow 6s ease-in-out infinite; will-change: transform; }
     @keyframes float-slow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
@@ -72,88 +70,12 @@
 
     /* --- MENYEMBUNYIKAN ATRIBUT ASLI GOOGLE TRANSLATE --- */
     .goog-te-banner-frame, .goog-logo-link, .goog-te-gadget span { display: none !important; }
-    body { top: 0px !important; }
     #google_translate_element { display: none !important; }
     .goog-te-balloon-frame { display: none !important; }
     .goog-text-highlight { background-color: transparent !important; box-shadow: none !important; }
 
-    /* --- STYLING WIDGET GOOGLE TRANSLATE KUSTOM (BARU) --- */
-    .custom-translate-container {
-        position: fixed;
-        bottom: 20px;
-        left: 20px;
-        z-index: 999999;
-        font-family: inherit;
-    }
-
-    .translate-btn {
-        background-color: #ffffff;
-        color: #112B45; /* Disesuaikan dengan warna tema Anda */
-        border: 1px solid #e0e0e0;
-        padding: 12px 18px;
-        border-radius: 50px;
-        cursor: pointer;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        font-size: 14px;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        transition: all 0.3s ease;
-        outline: none;
-    }
-
-    .translate-btn:hover {
-        background-color: #F9FAFB;
-        box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-        transform: translateY(-2px);
-    }
-
-    .translate-menu {
-        position: absolute;
-        bottom: 60px;
-        left: 0;
-        background: #ffffff;
-        border-radius: 12px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        width: 180px;
-        max-height: 0;
-        overflow-y: auto;
-        opacity: 0;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        visibility: hidden;
-        display: flex;
-        flex-direction: column;
-        border: 1px solid #f0f0f0;
-    }
-
-    /* Scrollbar minimalis untuk menu agar senada */
-    .translate-menu::-webkit-scrollbar { width: 4px; }
-    .translate-menu::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
-
-    .translate-menu.show {
-        max-height: 350px;
-        opacity: 1;
-        visibility: visible;
-        padding: 10px 0;
-    }
-
-    .lang-option {
-        padding: 10px 15px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        font-size: 14px;
-        color: #444;
-        transition: background 0.2s ease;
-    }
-
-    .lang-option:hover {
-        background-color: #F9FAFB;
-        color: #112B45; /* Berubah menjadi biru gelap saat di-hover */
-        font-weight: 500;
-    }
+    /* Fix untuk Navbar pada Mobile */
+    .translate-menu { z-index: 100000; }
 </style>
 </head>
 <body class="text-gray-800 font-sans antialiased overflow-x-hidden">
@@ -162,9 +84,8 @@
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-4 px-6 md:px-12 bg-transparent text-white">
         <div class="max-w-7xl mx-auto flex justify-between items-center text-xs tracking-widest uppercase font-bold">
             <div class="flex items-center gap-3 group cursor-pointer relative z-50">
-                <!-- FOTO LOGO ATAS KIRI dengan Auto-Fallback -->
                 <img src="images/whaleshark-logo.svg" alt="Logo Hiu Paus Tour Lombok" class="h-10 md:h-12 w-auto object-contain rounded-full shadow-lg border-2 border-white/20 transition-all nav-logo" onerror="this.onerror=null; this.src='images/whaleshark-logo.svg';">
-                <span id="nav-brand-text" class="font-sans font-extrabold tracking-[0.3em] hidden sm:block drop-shadow-md transition-all duration-280 whitespace-nowrap">WHALE SHARK</span>
+                <span id="nav-brand-text" class="font-sans font-extrabold tracking-[0.3em] hidden sm:block drop-shadow-md transition-all duration-300 whitespace-nowrap">WHALE SHARK</span>
             </div>
             
             <div class="hidden lg:flex items-center gap-7 relative z-50">
@@ -199,36 +120,39 @@
             <div class="bubble" style="left: 70%; width: 20px; height: 20px; animation-duration: 7s; animation-delay: 1s;"></div>
         </div>
         
-        <!-- FOTO BG UTAMA dengan Auto-Fallback -->
         <img src="images/hero.svg" alt="Ekspedisi Hiu Paus dan Komodo" class="absolute inset-0 w-full h-full object-cover object-center transform scale-105 hover:scale-100 transition-transform duration-[20s]" style="z-index: -1;" onerror="this.onerror=null; this.src='images/hero.svg';">
-        
-        <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-ocean-900/50" style="z-index: -1;"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-ocean-900/50" style="z-index: -1;"></div>
         
         <div class="relative z-10 text-center px-4 mt-16 animate-float-slow pointer-events-none w-full reveal active">
-            <h1 class="font-serif text-white mb-2 tracking-wide drop-shadow-lg text-2xl md:text-4xl lg:text-5xl">
-                ADVENTURE <br>
-                <span class="font-cinzel text-[13vw] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] leading-none text-white mt-2 block drop-shadow-2xl font-bold text-glow mx-auto">
-                    WHALE SHARK & KOMODO TRIP
-                </span>
-            </h1>
-            <p class="text-[9px] md:text-xs text-white tracking-[0.3em] uppercase max-w-2xl mx-auto font-bold mb-12 drop-shadow-lg mt-6">
-                An Exclusive Premium Adventure from Lombok to Sumbawa & Komodo
-            </p>
+            <!-- Cover Judul Transparan -->
+            <div class="bg-black/30 backdrop-blur-sm p-6 md:p-10 rounded-3xl border border-white/10 inline-block">
+                <h1 class="font-serif text-white mb-2 tracking-wide drop-shadow-lg text-2xl md:text-4xl lg:text-5xl">
+                    ADVENTURE <br>
+                    <span class="font-cinzel text-[11vw] sm:text-[5rem] md:text-[6.5rem] lg:text-[8rem] leading-none text-white mt-2 block drop-shadow-2xl font-bold text-glow mx-auto">
+                        WHALE SHARK & KOMODO
+                    </span>
+                </h1>
+                <p class="text-[9px] md:text-xs text-white tracking-[0.3em] uppercase max-w-2xl mx-auto font-bold mt-6">
+                    An Exclusive Premium Adventure from Lombok to Sumbawa & Komodo
+                </p>
+            </div>
             
             <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8 pointer-events-auto">
-                <a href="#packages" class="bg-white/10 hover:bg-white/20 border border-white/50 text-white px-8 py-3 rounded-full text-xs font-bold tracking-widest uppercase transition-all backdrop-blur-sm">Explore Packages</a>
+                <a href="#packages" class="bg-white/10 hover:bg-white/20 border border-white/50 text-white px-8 py-3 rounded-full text-xs font-bold tracking-widest uppercase transition-all backdrop-blur-sm shadow-xl">Explore Packages</a>
             </div>
         </div>
     </header>
 
     <section id="packages" class="py-24 bg-white border-y border-gray-100">
         <div class="max-w-5xl mx-auto px-6">
-            <div class="text-center mb-16 reveal">
+            <!-- Sub Judul dibuatkan cover estetik agar jelas -->
+            <div class="text-center mb-16 reveal bg-ocean-50/80 backdrop-blur-sm py-10 px-6 rounded-2xl border border-ocean-100 max-w-3xl mx-auto shadow-sm">
                 <h2 class="text-4xl md:text-5xl font-serif text-editorial-accent mb-4">Whale Shark Expeditions</h2>
                 <p class="text-[10px] md:text-xs font-bold tracking-widest text-gray-500 uppercase">Teluk Saleh, Sumbawa Packages</p>
             </div>
+
 <!-- 2. 1 DAY TRIP WHALE SHARK -->
-            <article class="package-card bg-editorial-bg border border-gray-200 rounded-lg p-6 md:p-12 mb-16 reveal delay-100">
+            <article class="package-card bg-editorial-bg border border-gray-200 rounded-lg p-6 md:p-12 mb-16 reveal">
                 <div class="border-b border-gray-200 pb-8 mb-8">
                      <div class="relative group h-64 md:h-80 my-8 overflow-hidden rounded-xl shadow-md z-10">
                         <div class="cabin-slider relative overflow-x-auto flex snap-x snap-mandatory h-full hide-scrollbar scroll-smooth">
@@ -433,7 +357,7 @@
 
             
             <!-- 3. PRIVATE PROGRAM WHALE SHARK -->
-            <article class="package-card bg-editorial-bg border border-gray-200 rounded-lg p-6 md:p-12 reveal delay-200">
+            <article class="package-card bg-editorial-bg border border-gray-200 rounded-lg p-6 md:p-12 reveal">
                 <div class="border-b border-gray-200 pb-8 mb-8 relative overflow-hidden">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-gold-500 rounded-bl-full opacity-10"></div>
                     <h3 class="text-2xl md:text-3xl font-serif text-ocean-900 mb-4 leading-snug relative z-10">PRIVATE PROGRAM WHALE SHARK DARI LOMBOK KE SUMBAWA</h3>
@@ -567,21 +491,25 @@
     </div>
     </section>
 
- <section id="komodo" class="py-24 bg-ocean-900 text-white relative overflow-hidden">
+    <section id="komodo" class="py-24 bg-ocean-900 text-white relative overflow-hidden">
         <div class="absolute top-0 left-0 w-full h-1 bg-gold-500"></div>
 
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             
+            <!-- HEADER SECTION dengan Cover Kotak Hitam Estetik -->
             <div class="text-center mb-20 reveal flex flex-col items-center justify-center w-full">
-                <div class="w-full mb-10">
+                <div class="w-full mb-10 bg-black/40 backdrop-blur-sm p-8 rounded-2xl border border-white/10 max-w-4xl mx-auto shadow-2xl">
                     <p class="text-[10px] font-bold tracking-[0.3em] text-gold-400 uppercase mb-4 drop-shadow-md">Extend Your Journey</p>
-                    <h2 class="text-4xl md:text-5xl font-serif text-white mb-4 drop-shadow-xl">SAILING KOMODO EXPERIENCE</h2>
+                    <h2 class="text-3xl md:text-5xl font-serif text-white mb-4 drop-shadow-xl">SAILING KOMODO EXPERIENCE</h2>
                     <p class="text-sm text-gray-300 max-w-2xl mx-auto leading-relaxed uppercase tracking-wider drop-shadow-lg">KLM ETERNITY EXPLORE NUSA TENGGARA • OPEN TRIP</p>
                 </div>
                 
                 <img src="images/kapalpinisi.jpeg" alt="Siluet Pinisi" class="w-full max-w-4xl h-auto object-contain drop-shadow-2xl rounded-xl border border-ocean-700 shadow-2xl" onerror="this.onerror=null; this.src='images/pinisi.jpg';">
             </div>
 
+            <!-- ========================================== -->
+            <!-- ROUTE 1: KOMODO TO LOMBOK (EVERY SUNDAY)   -->
+            <!-- ========================================== -->
             <article class="bg-ocean-800/50 border border-ocean-700 rounded-lg p-6 md:p-12 mb-20 reveal shadow-2xl relative overflow-hidden">
                 <div class="mb-10 border-b border-ocean-600 pb-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
                     <div>
@@ -593,6 +521,7 @@
                             </span>
                         </div>
                     </div>
+                    <!-- Gambar Kapal Ilustrasi -->
                     <div class="w-full md:w-1/3">
                         <img src="images/labuhanbajo.svg" alt="Komodo Explore Labuan Bajo" class="w-full h-28 object-cover rounded-lg shadow-lg border border-ocean-700" onerror="this.onerror=null; this.src='images/pinisi.jpg';">
                     </div>
@@ -600,8 +529,10 @@
 
                 <h4 class="text-xl font-serif text-gold-400 mb-8 flex items-center gap-2"><i data-lucide="map" class="w-6 h-6"></i> ITINERARY</h4>
                 
+                <!-- GRID 4 HARI -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
                     
+                    <!-- DAY 1 -->
                     <div class="bg-ocean-900/50 p-6 rounded-xl border border-ocean-700 hover:border-gold-500/50 transition-all">
                         <div class="bg-ocean-950 inline-block px-4 py-2 rounded-lg mb-6 border border-ocean-800 shadow-md text-center w-full">
                             <p class="font-bold text-gold-400 text-sm uppercase tracking-widest">DAY 1</p>
@@ -611,10 +542,22 @@
                                 <div class="absolute -left-[27px] top-1 w-3 h-3 bg-gold-500 rounded-full border-2 border-ocean-900"></div>
                                 <span class="font-bold text-white block mb-1">Labuhan Bajo Harbour</span>
                             </li>
-                            
+                            <li class="relative">
+                                <div class="absolute -left-[27px] top-1 w-3 h-3 bg-gold-500 rounded-full border-2 border-ocean-900"></div>
+                                <span class="font-bold text-white block mb-1">Kelor Island</span>
+                            </li>
+                            <li class="relative">
+                                <div class="absolute -left-[27px] top-1 w-3 h-3 bg-gold-500 rounded-full border-2 border-ocean-900"></div>
+                                <span class="font-bold text-white block mb-1">Manjarite</span>
+                            </li>
+                            <li class="relative">
+                                <div class="absolute -left-[27px] top-1 w-3 h-3 bg-gold-500 rounded-full border-2 border-ocean-900"></div>
+                                <span class="font-bold text-white block mb-1">Kalong Island</span>
+                            </li>
                         </ul>
                     </div>
 
+                    <!-- DAY 2 -->
                     <div class="bg-ocean-900/50 p-6 rounded-xl border border-ocean-700 hover:border-gold-500/50 transition-all">
                         <div class="bg-ocean-950 inline-block px-4 py-2 rounded-lg mb-6 border border-ocean-800 shadow-md text-center w-full">
                             <p class="font-bold text-gold-400 text-sm uppercase tracking-widest">DAY 2</p>
@@ -639,6 +582,7 @@
                         </ul>
                     </div>
 
+                    <!-- DAY 3 -->
                     <div class="bg-ocean-900/50 p-6 rounded-xl border border-ocean-700 hover:border-gold-500/50 transition-all">
                         <div class="bg-ocean-950 inline-block px-4 py-2 rounded-lg mb-6 border border-ocean-800 shadow-md text-center w-full">
                             <p class="font-bold text-gold-400 text-sm uppercase tracking-widest">DAY 3</p>
@@ -655,6 +599,7 @@
                         </ul>
                     </div>
 
+                    <!-- DAY 4 -->
                     <div class="bg-ocean-900/50 p-6 rounded-xl border border-ocean-700 hover:border-gold-500/50 transition-all">
                         <div class="bg-ocean-950 inline-block px-4 py-2 rounded-lg mb-6 border border-ocean-800 shadow-md text-center w-full">
                             <p class="font-bold text-gold-400 text-sm uppercase tracking-widest">DAY 4</p>
@@ -674,21 +619,13 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="bg-ocean-900/50 p-6 rounded-xl border border-ocean-700 hover:border-gold-500/50 transition-all">
-                        <div class="bg-ocean-950 inline-block px-4 py-2 rounded-lg mb-6 border border-ocean-800 shadow-md text-center w-full">
-                            <p class="font-bold text-gold-400 text-sm uppercase tracking-widest">DAY 5</p>
-                        </div>
-                        <ul class="text-sm text-gray-300 space-y-4 border-l-2 border-ocean-600 pl-5 ml-2">
-                            <li class="relative">
-                                <div class="absolute -left-[27px] top-1 w-3 h-3 bg-gold-500 rounded-full border-2 border-ocean-900"></div>
-                                <span class="font-bold text-white block mb-1">Kayangan Harbour (Lombok)</span>
-                            </li> 
-                        </ul>
-                    </div>
 
                 </div>
             </article>
 
+            <!-- ========================================== -->
+            <!-- ROUTE 2: LOMBOK TO KOMODO (EVERY THURSDAY) -->
+            <!-- ========================================== -->
             <article class="bg-ocean-800/50 border border-ocean-700 rounded-lg p-6 md:p-12 mb-16 reveal shadow-2xl relative overflow-hidden">
                 <div class="mb-10 border-b border-ocean-600 pb-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
                     <div>
@@ -700,6 +637,7 @@
                             </span>
                         </div>
                     </div>
+                    <!-- Gambar Kapal Ilustrasi -->
                     <div class="w-full md:w-1/3">
                         <img src="images/labuhanbajo.svg" alt="Komodo Explore Labuan Bajo" class="w-full h-28 object-cover rounded-lg shadow-lg border border-ocean-700" onerror="this.onerror=null; this.src='images/pinisi.jpg';">
                     </div>
@@ -707,8 +645,10 @@
 
                 <h4 class="text-xl font-serif text-gold-400 mb-8 flex items-center gap-2"><i data-lucide="map" class="w-6 h-6"></i> ITINERARY</h4>
                 
+                <!-- GRID 4 HARI -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
                     
+                    <!-- DAY 1 -->
                     <div class="bg-ocean-900/50 p-6 rounded-xl border border-ocean-700 hover:border-gold-500/50 transition-all">
                         <div class="bg-ocean-950 inline-block px-4 py-2 rounded-lg mb-6 border border-ocean-800 shadow-md text-center w-full">
                             <p class="font-bold text-gold-400 text-sm uppercase tracking-widest">DAY 1</p>
@@ -725,6 +665,7 @@
                         </ul>
                     </div>
 
+                    <!-- DAY 2 -->
                     <div class="bg-ocean-900/50 p-6 rounded-xl border border-ocean-700 hover:border-gold-500/50 transition-all">
                         <div class="bg-ocean-950 inline-block px-4 py-2 rounded-lg mb-6 border border-ocean-800 shadow-md text-center w-full">
                             <p class="font-bold text-gold-400 text-sm uppercase tracking-widest">DAY 2</p>
@@ -745,6 +686,7 @@
                         </ul>
                     </div>
 
+                    <!-- DAY 3 -->
                     <div class="bg-ocean-900/50 p-6 rounded-xl border border-ocean-700 hover:border-gold-500/50 transition-all">
                         <div class="bg-ocean-950 inline-block px-4 py-2 rounded-lg mb-6 border border-ocean-800 shadow-md text-center w-full">
                             <p class="font-bold text-gold-400 text-sm uppercase tracking-widest">DAY 3</p>
@@ -767,13 +709,10 @@
                                 <div class="absolute -left-[27px] top-1 w-3 h-3 bg-gold-500 rounded-full border-2 border-ocean-900"></div>
                                 <span class="font-bold text-white block mb-1">Padar Island</span>
                             </li>
-                            <li class="relative">
-                                <div class="absolute -left-[27px] top-1 w-3 h-3 bg-gold-500 rounded-full border-2 border-ocean-900"></div>
-                                <span class="font-bold text-white block mb-1">Manjarite Island</span>
-                            </li>
                         </ul>
                     </div>
 
+                    <!-- DAY 4 -->
                     <div class="bg-ocean-900/50 p-6 rounded-xl border border-ocean-700 hover:border-gold-500/50 transition-all">
                         <div class="bg-ocean-950 inline-block px-4 py-2 rounded-lg mb-6 border border-ocean-800 shadow-md text-center w-full">
                             <p class="font-bold text-gold-400 text-sm uppercase tracking-widest">DAY 4</p>
@@ -797,6 +736,9 @@
                 </div>
             </article>
 
+            <!-- ========================================== -->
+            <!-- GLOBAL INCLUDE & EXCLUDE (UNTUK KEDUA PAKET) -->
+            <!-- ========================================== -->
             <div class="grid md:grid-cols-2 gap-8 pt-10 border-t border-ocean-700 reveal">
                 <div class="bg-ocean-900/30 p-6 rounded-xl border border-green-900/30">
                     <h4 class="text-sm font-bold uppercase tracking-widest text-green-400 mb-6 flex items-center gap-2"><i data-lucide="check-circle-2" class="w-5 h-5"></i> INCLUDE</h4>
@@ -820,6 +762,7 @@
                 </div>
             </div>
 
+            <!-- FORCE MAJEURE -->
             <div class="mt-12 bg-ocean-950 p-6 rounded-lg border border-red-900/50 reveal">
                 <h4 class="text-xs font-bold uppercase tracking-widest text-red-400 mb-3 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-4 h-4"></i> Terms & Force Majeure</h4>
                 <p class="text-[10px] text-gray-400 leading-relaxed uppercase">
@@ -828,85 +771,6 @@
             </div>
         </div>
     </section>
-<div class="mb-20 reveal">
-               <span class="bg-gold-500 text-ocean-900 px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase shadow-lg">ETERNITY CLASS</span>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    
-                    <div class="bg-ocean-800 border border-ocean-600 rounded-lg overflow-hidden hover:border-gold-500/50 transition-colors shadow-xl group">
-                        <div class="relative group h-48 overflow-hidden rounded-t-lg">
-                            <div class="cabin-slider relative overflow-x-auto flex snap-x snap-mandatory h-full hide-scrollbar scroll-smooth">
-                                <img src="images/superior1.jpg" alt="Superior Cabin 1" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/superior1.jpg';">
-                                <img src="images/superior2.jpg" alt="Superior Cabin 2" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/superior2.jpg';">
-                            </div>
-                            <button class="slider-btn-prev absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all z-10"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
-                            <button class="slider-btn-next absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all z-10"><i data-lucide="chevron-right" class="w-5 h-5"></i></button>
-                        </div>
-                        <div class="p-5">
-                            <h5 class="text-sm font-bold text-gold-400 mb-2 uppercase tracking-widest">SHARED FULL OCEAN CABIN</h5>
-                            <h4 class="text-sm font-bold text-gold-400 mb-2 uppercase tracking-widest">IDR 5.500.000/PAX</h4>
-                            <ul class="text-[10px] text-gray-300 space-y-2 uppercase tracking-wide mt-4">
-                                <li class="flex items-center gap-2"><i data-lucide="users" class="w-3 h-3 text-ocean-400"></i>2 Single Bunk bed + Extra bed With private Bathroom Min 1 Pax</li>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="bg-ocean-800 border border-ocean-600 rounded-lg overflow-hidden hover:border-gold-500/50 transition-colors shadow-xl group">
-                        <div class="relative group h-48 overflow-hidden rounded-t-lg">
-                            <div class="cabin-slider relative overflow-x-auto flex snap-x snap-mandatory h-full hide-scrollbar scroll-smooth">
-                                <img src="images/deluxe1.jpg" alt="Deluxe Cabin 1" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/deluxe1.png';">
-                                <img src="images/deluxe2.jpg" alt="Deluxe Cabin 2" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/deluxe2.png';">
-                            </div>
-                            <button class="slider-btn-prev absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all z-10"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
-                            <button class="slider-btn-next absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all z-10"><i data-lucide="chevron-right" class="w-5 h-5"></i></button>
-                        </div>
-                        <div class="p-5">
-                            <h5 class="text-sm font-bold text-gold-400 mb-2 uppercase tracking-widest">SUPERIOR FULL OCEAN</h5>
-                            <h4 class="text-sm font-bold text-gold-400 mb-2 uppercase tracking-widest">IDR 9.000.000/PAX</h4>
-                            <ul class="text-[10px] text-gray-300 space-y-2 uppercase tracking-wide mt-4">
-                                <li class="flex items-center gap-2"><i data-lucide="users" class="w-3 h-3 text-ocean-400"></i> Qween Bed + Extra Bed with private Bathroom ( Min 2 pax )</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="bg-ocean-800 border border-ocean-600 rounded-lg overflow-hidden hover:border-gold-500/50 transition-colors shadow-xl group">
-                        <div class="relative group h-48 overflow-hidden rounded-t-lg">
-                            <div class="cabin-slider relative overflow-x-auto flex snap-x snap-mandatory h-full hide-scrollbar scroll-smooth">
-                                <img src="images/vip.jpg" alt="VIP Cabin 1" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/vip1.jpg';">
-                                <img src="images/vip2.jpg" alt="VIP Cabin 2" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/vip2.jpg';">
-                            </div>
-                            <button class="slider-btn-prev absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all z-10"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
-                            <button class="slider-btn-next absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all z-10"><i data-lucide="chevron-right" class="w-5 h-5"></i></button>
-                        </div>
-                        <div class="p-5">
-                            <h5 class="text-sm font-bold text-gold-400 mb-2 uppercase tracking-widest">DELUXE FULL OCEAN</h5>
-                            <h4 class="text-sm font-bold text-gold-400 mb-2 uppercase tracking-widest">IDR 9.500.000/PAX</h4>
-                            <ul class="text-[10px] text-gray-300 space-y-2 uppercase tracking-wide mt-4">
-                                <li class="flex items-center gap-2"><i data-lucide="users" class="w-3 h-3 text-ocean-400"></i> Qween Bed with private Bathroom ( Min 2 pax )</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="bg-ocean-800 border border-ocean-600 rounded-lg overflow-hidden hover:border-gold-500/50 transition-colors shadow-xl group">
-                        <div class="relative group h-48 overflow-hidden rounded-t-lg">
-                            <div class="cabin-slider relative overflow-x-auto flex snap-x snap-mandatory h-full hide-scrollbar scroll-smooth">
-                                <img src="images/shared1.jpg" alt="Master Cabin 1" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/master-ocean/1.png';">
-                                <img src="images/shared2.jpg" alt="Master Cabin 2" loading="lazy" class="w-full h-full object-cover shrink-0 snap-center" onerror="this.onerror=null; this.src='images/master-ocean/2.png';">
-                            </div>
-                            <button class="slider-btn-prev absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all z-10"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
-                            <button class="slider-btn-next absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all z-10"><i data-lucide="chevron-right" class="w-5 h-5"></i></button>
-                        </div>
-                        <div class="p-5">
-                            <h5 class="text-sm font-bold text-gold-400 mb-2 uppercase tracking-widest">VIP OCEAN BALCONY</h5>
-                            <h4 class="text-sm font-bold text-gold-400 mb-2 uppercase tracking-widest">IDR 11.500.000/PAX</h4>
-                            <ul class="text-[10px] text-gray-300 space-y-2 uppercase tracking-wide mt-4">
-                                <li class="flex items-center gap-2"><i data-lucide="users" class="w-3 h-3 text-ocean-400"></i> KING BED + Extra Bed with Private bathroom ( BATHTUB ) Min 2 PAX</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <h4 class="text-sm font-bold text-gold-400 mb-2 uppercase tracking-widest">EXTRA BED AVAILABEL IDR 4.000.000/PAX </h4>
-                </div>
-            </div>
 
     <!-- OUR FLEET -->
     <section id="fleet" class="py-24 bg-white border-b border-gray-100 relative overflow-hidden">
@@ -933,8 +797,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="order-1 md:order-2 reveal delay-100">
-                    <!-- FOTO ILUSTRASI ARMADA KAPAL dengan Auto-Fallback -->
+                <div class="order-1 md:order-2 reveal">
                     <img src="images/kapalpinisi.jpeg" alt="Kapal Whale Shark Sumbawa" loading="lazy" class="w-full aspect-square object-cover shadow-2xl rounded-sm" onerror="this.onerror=null; this.src='images/pinisi.jpg';">
                 </div>
             </div>
@@ -997,7 +860,8 @@
                 </div>
                 <div class="pt-12 text-center">
                     <button type="submit" class="inline-flex items-center justify-center gap-3 bg-[#112B45] hover:bg-[#2A5C8D] text-white text-xs font-bold tracking-widest uppercase px-12 py-5 transition-all w-full md:w-auto shadow-xl hover:shadow-2xl hover:-translate-y-1 rounded-sm">
-                        <i data-lucide="calendar-check" class="w-4 h-4"></i> Ajukan Reservasi
+                        <!-- ICON DIGANTI KE calendar-plus SEPERTI REQUEST -->
+                        <i data-lucide="calendar-plus" class="w-5 h-5"></i> Ajukan Reservasi
                     </button>
                     <p class="text-[10px] text-gray-500 mt-5 uppercase tracking-[0.2em] font-bold">Terhubung Langsung Ke WhatsApp Admin</p>
                 </div>
@@ -1009,10 +873,7 @@
     <footer class="relative py-24 bg-[#0a1520] text-center text-white overflow-hidden">
         <div class="relative z-10 max-w-4xl mx-auto px-6 flex flex-col items-center pointer-events-auto">
             <div class="bg-white/10 p-4 rounded-xl backdrop-blur-md border border-white/20 shadow-2xl mb-6 inline-block">
-                
-                <!-- FOTO FOOTER dengan Auto-Fallback -->
                 <img src="images/whaleshark-logo.svg" alt="Whale Shark Tour Logo Footer" loading="lazy" class="h-auto max-h-32 w-auto object-contain mix-blend-lighten mx-auto" onerror="this.onerror=null; this.src='images/footer.jpg';">
-                
             </div>
             <div class="text-center mt-2">
                 <span class="font-serif text-3xl tracking-widest drop-shadow-md block mb-1">WHALE SHARK & KOMODO</span>
@@ -1027,10 +888,12 @@
     <!-- ========================================== -->
     <!-- WIDGET MENGAMBANG (TRANSLATE & WHATSAPP) -->
     <!-- ========================================== -->
-    <div id="google_translate_element" style="display:none;"></div>
+    
+    <!-- Wadah Asli Google Translate (Disembunyikan) -->
+    <div id="google_translate_element"></div>
     
     <!-- Container Utama: Nempel di Kanan Bawah -->
-    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-4 font-sans">
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-4 font-sans translate-menu">
         
         <!-- 1. TOMBOL TRANSLATE (Ukuran Kecil: w-12 h-12) -->
         <div class="relative group flex flex-col items-end">
@@ -1038,7 +901,6 @@
             <div class="absolute bottom-full mb-3 right-0 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto origin-bottom-right">
                 <div class="bg-white rounded-xl shadow-2xl border border-gray-100 w-52 overflow-hidden">
                     <div class="bg-[#112B45] px-4 py-3 flex items-center gap-2">
-                        <!-- Icon keren di dalam header dropdown -->
                         <i data-lucide="languages" class="w-4 h-4 text-[#D4AF37]"></i>
                         <p class="text-[10px] text-white font-bold uppercase tracking-widest">Select Language</p>
                     </div>
@@ -1057,9 +919,7 @@
                 </div>
             </div>
             
-            <!-- Tombol Bulat Translate -->
             <button class="w-12 h-12 bg-white text-[#112B45] rounded-full flex items-center justify-center shadow-lg border border-gray-200 hover:-translate-y-1 hover:shadow-2xl transition-all relative cursor-pointer group-hover:bg-gray-50">
-                <!-- Icon 'languages' yang lebih modern -->
                 <i data-lucide="languages" class="w-5 h-5"></i>
             </button>
         </div>
@@ -1070,6 +930,24 @@
         </a>
         
     </div>
+
+    <!-- SCRIPT GOOGLE TRANSLATE -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'id', autoDisplay: false}, 'google_translate_element');
+        }
+        
+        function changeLanguage(langCode) {
+            let selectField = document.querySelector("select.goog-te-combo");
+            if (selectField) {
+                selectField.value = langCode;
+                selectField.dispatchEvent(new Event('change'));
+            }
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- SCRIPT JS WEBSITE ANDA -->
     <script>
         lucide.createIcons();
         const navbar = document.getElementById('navbar');
@@ -1085,27 +963,109 @@
                 navLinks.forEach(el => el.classList.remove('drop-shadow-md'));
                 logoImg.classList.remove('border-white/20');
                 logoImg.classList.add('border-gray-200');
+                
+                // UKURAN JUDUL DIPERKECIL (MENGGUNAKAN text-base DARI SEBELUMNYA text-xl)
                 navBrandText.classList.remove('hidden', 'sm:block', 'font-sans', 'text-xs', 'font-extrabold', 'tracking-[0.3em]');
-                navBrandText.classList.add('font-cinzel', 'text-xl', 'font-bold', 'text-ocean-900', 'tracking-widest');
+                navBrandText.classList.add('font-cinzel', 'text-base', 'font-bold', 'text-ocean-900', 'tracking-widest');
             } else {
                 navbar.classList.remove('glass-nav', 'text-gray-900', 'py-3');
                 navbar.classList.add('text-white', 'py-4');
                 navLinks.forEach(el => { el.style.color = ''; el.classList.add('drop-shadow-md'); });
                 logoImg.classList.remove('border-gray-200');
                 logoImg.classList.add('border-white/20');
+                
+                // KEMBALI KE UKURAN SEMULA
                 navBrandText.classList.add('hidden', 'sm:block', 'font-sans', 'text-xs', 'font-extrabold', 'tracking-[0.3em]');
-                navBrandText.classList.remove('font-cinzel', 'text-xl', 'font-bold', 'text-ocean-900', 'tracking-widest');
+                navBrandText.classList.remove('font-cinzel', 'text-base', 'font-bold', 'text-ocean-900', 'tracking-widest');
             }
         });
 
+        // ANIMASI BERURUTAN (SEQUENTIAL) DENGAN JEDA 150ms
         const revealElements = document.querySelectorAll('.reveal');
+        let delayCounter = 0;
+        let revealTimeout = null;
+
         const revealObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('active'); observer.unobserve(entry.target); } });
+            entries.forEach(entry => { 
+                if (entry.isIntersecting) { 
+                    setTimeout(() => {
+                        entry.target.classList.add('active'); 
+                    }, delayCounter * 150);
+                    delayCounter++;
+                    observer.unobserve(entry.target); 
+                } 
+            });
+            // Reset delay counter saat kelompok animasi selesai
+            clearTimeout(revealTimeout);
+            revealTimeout = setTimeout(() => { delayCounter = 0; }, 100);
         }, { root: null, threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+        
         revealElements.forEach(el => revealObserver.observe(el));
+
         const timelineDots = document.querySelectorAll('.timeline-dot');
         const timelineObserver = new IntersectionObserver((entries, observer) => { entries.forEach(entry => { if (entry.isIntersecting) { setTimeout(() => { entry.target.classList.add('active'); }, 50); observer.unobserve(entry.target); } }); }, { root: null, threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
         timelineDots.forEach((el, index) => { el.style.transitionDelay = `${(index % 4) * 0.15}s`; timelineObserver.observe(el); });
+
+        // JS CABIN & PACKAGE SLIDER (UPDATED)
+        document.addEventListener('DOMContentLoaded', () => {
+            const sliders = document.querySelectorAll('.cabin-slider');
+            sliders.forEach(slider => {
+                const container = slider.parentElement;
+                const prevBtn = container.querySelector('.slider-btn-prev');
+                const nextBtn = container.querySelector('.slider-btn-next');
+                let autoSlideInterval;
+
+                // Fungsi geser ke kanan
+                const slideNext = () => {
+                    if (slider.scrollLeft >= (slider.scrollWidth - slider.clientWidth - 10)) {
+                        slider.scrollTo({ left: 0, behavior: 'smooth' }); 
+                    } else {
+                        slider.scrollBy({ left: slider.clientWidth, behavior: 'smooth' }); 
+                    }
+                };
+
+                // Fungsi geser ke kiri
+                const slidePrev = () => {
+                    if (slider.scrollLeft <= 10) {
+                        slider.scrollTo({ left: slider.scrollWidth, behavior: 'smooth' }); 
+                    } else {
+                        slider.scrollBy({ left: -slider.clientWidth, behavior: 'smooth' }); 
+                    }
+                };
+
+                const startAutoSlide = () => { 
+                    clearInterval(autoSlideInterval);
+                    autoSlideInterval = setInterval(slideNext, 3000); 
+                };
+                
+                const resetAutoSlide = () => { 
+                    clearInterval(autoSlideInterval); 
+                    startAutoSlide(); 
+                };
+
+                if (nextBtn) { 
+                    nextBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        slideNext(); 
+                        resetAutoSlide(); 
+                    }); 
+                }
+                if (prevBtn) { 
+                    prevBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        slidePrev(); 
+                        resetAutoSlide(); 
+                    }); 
+                }
+
+                container.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+                container.addEventListener('mouseleave', startAutoSlide);
+                container.addEventListener('touchstart', () => clearInterval(autoSlideInterval), {passive: true});
+                container.addEventListener('touchend', startAutoSlide, {passive: true});
+
+                setTimeout(startAutoSlide, 1000);
+            });
+        });
 
         function sendToWA(e) {
             e.preventDefault();
