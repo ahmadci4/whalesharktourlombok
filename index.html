@@ -224,15 +224,38 @@
     <!-- MEGA SECTION 1: WHALE SHARK PACKAGES -->
     <div class="order-1 md:order-2 reveal delay-100">
                     <!-- FOTO whaleshark : by: ahmad yani -->
-                    <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+    <div style="position: relative; width: 100%; max-width: 500px; margin: 0 auto; overflow: hidden; border-radius: 0.25rem;">
 
-                        <img src="images/whaleshark1.jpeg" alt="whalesharkimage" loading="lazy" class="w-full aspect-square object-cover shadow-2xl rounded-sm" onerror="this.onerror=null; this.src='images/whaleshark3.jpeg';">
-                    
-                        <img src="images/whaleshark1.jpeg" alt="whalesharkimage" loading="lazy" class="w-full aspect-square object-cover shadow-2xl rounded-sm" onerror="this.onerror=null; this.src='images/whaleshark3.jpeg';">
-                    
-                        <img src="images/whaleshark3.jpeg" alt="whalesharkimage" loading="lazy" class="w-full aspect-square object-cover shadow-2xl rounded-sm" onerror="this.onerror=null; this.src='images/whaleshark1.jpeg';">
+  <div id="slider-hiu" style="display: flex; transition: transform 0.4s ease-in-out;">
+    
+    <img src="images/whaleshark1.jpeg" alt="whalesharkimage" loading="lazy" class="w-full aspect-square object-cover shadow-2xl rounded-sm" style="flex: 0 0 100%;" onerror="this.onerror=null; this.src='images/whaleshark3.jpeg';">
+    
+    <img src="images/whaleshark1.jpeg" alt="whalesharkimage" loading="lazy" class="w-full aspect-square object-cover shadow-2xl rounded-sm" style="flex: 0 0 100%;" onerror="this.onerror=null; this.src='images/whaleshark3.jpeg';">
+    
+    <img src="images/whaleshark3.jpeg" alt="whalesharkimage" loading="lazy" class="w-full aspect-square object-cover shadow-2xl rounded-sm" style="flex: 0 0 100%;" onerror="this.onerror=null; this.src='images/whaleshark1.jpeg';">
+  </div>
+
+  <button onclick="geserSlide(-1)" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 50%; font-size: 18px;">&#10094;</button>
+  
+  <button onclick="geserSlide(1)" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 50%; font-size: 18px;">&#10095;</button>
 
 </div>
+
+<script>
+  let posisiSlide = 0;
+  
+  function geserSlide(arah) {
+    const slider = document.getElementById('slider-hiu');
+    const totalSlide = slider.children.length;
+    
+    // Kalkulasi posisi slide berikutnya (looping kembali ke awal/akhir)
+    posisiSlide = (posisiSlide + arah + totalSlide) % totalSlide;
+    
+    // Geser container menggunakan translateX
+    slider.style.transform = `translateX(-${posisiSlide * 100}%)`;
+  }
+</script>                
+    </div>
 
     <section id="packages" class="py-24 bg-white border-y border-gray-100">
         <div class="max-w-5xl mx-auto px-6">
